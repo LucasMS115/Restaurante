@@ -1,0 +1,55 @@
+:root {
+    /* variáveis css*/
+    --color-background: #F0F0F7; 
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-base: #6A6180;
+
+    /* tamanho da fonte padrão: 16px - 100% - 1rem */
+    font-size: 60%; /* controle das medidas rem */
+}
+
+/* aplicado a varios elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100vh; /* height = altura */
+}
+
+body {
+    background: var(--color-background);
+}
+
+
+body,
+input,
+button,
+textarea {
+    /* font: 500 1.6rem Poppins; */
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--color-text-base);
+}
+
+#container {
+
+}
+
+@media (min-width: 700px) {
+    :root {
+        
+    }
+}
