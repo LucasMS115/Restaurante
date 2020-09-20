@@ -19,8 +19,9 @@ body {
     height: 100vh; 
 }
 
-span{
+h1{
     color: rgb(241, 15, 15);
+    font-size: 500%;
 }
 
 body {
@@ -33,7 +34,4 @@ body {
 
     }
 
-    span {
-        font-size: 500%;
-    }
 }

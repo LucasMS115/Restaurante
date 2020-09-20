@@ -1,19 +1,10 @@
 const express = require('express');
 const server = express();
+const routes = require('./routes');
+require("./sql/database");
 
-server.use(express.static("public"))
-//Routes
-.get("/", (req, res) => {
-    return res.sendFile(__dirname + "/pages/index.html");
-})
-.get("/menu", (req, res) => {
-    return res.sendFile(__dirname + "/pages/menu.html");
-})
-.get("/reserves", (req, res) => {
-    return res.sendFile(__dirname + "/pages/reserves.html");
-})
-.get("/adm", (req, res) => {
-    return res.sendFile(__dirname + "/pages/adm.html");
-})
+server.use(express.static("public"));
+server.use(express.json());
+server.use(routes)
 
 .listen(5000);
