@@ -21,6 +21,66 @@ class ReservesController {
     return res.json(reserves);
   }
 
+  async searchById(req, res){
+
+    if(!req.body.id) return res.status(400).json({ error: "No id received for the search"});
+    const id = req.body;
+    const reserves = await Reserves.findOne({ where: id});
+    if(!reserves) return res.json({ error: `We dont have a reserve to this ID (${id.id}).` });
+    return res.json(reserves);
+    
+  }
+
+  async searchByDay(req, res){
+
+    if(!req.body.day) return res.status(400).json({ error: "No day received for the search"});
+    const day = req.body;
+    const reserves = await Reserves.findAll({ where: day});
+    if(!reserves[0]) return res.json({ error: `We dont have a reserve to this DAY (${day.day}).` });
+    return res.json(reserves);
+    
+  }
+
+  async searchByRoom(req, res){
+
+    if(!req.body.room) return res.status(400).json({ error: "No room received for the search"});
+    const room = req.body;
+    const reserves = await Reserves.findAll({ where: room});
+    if(!reserves[0]) return res.json({ error: `We dont have a reserve to this ROOM (${room.room}).` });
+    return res.json(reserves);
+    
+  }
+
+  async searchByUser(req, res){
+
+    if(!req.body.user_id) return res.status(400).json({ error: "No user_id received for the search"});
+    const user_id = req.body;
+    const reserves = await Reserves.findAll({ where: user_id});
+    if(!reserves[0]) return res.json({ error: `We dont have a reserve to this user_id (${user_id.user_id}).` });
+    return res.json(reserves);
+    
+  }
+
+  async update(req, res) {
+    const {id} = req.params;
+    let reserve = await Reserves.findByPk(id);
+    const newValues = req.body;
+
+    if(!reserve) return res.status(400).json({ error: "Reserve not found"});
+    
+    await reserve.update({
+      hour: newValues.hour,
+      day: newValues.day,
+      room: newValues.room,
+      people: newValues.people,
+    })
+    .catch((error) => res.status(400).json(error));
+      
+    reserve = await Reserves.findByPk(id);
+
+    return res.json(reserve);
+  }
+
   async delete(req, res) {
 
     const {id} = req.body;

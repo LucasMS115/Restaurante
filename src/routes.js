@@ -27,13 +27,28 @@ routes.get("/adm", (req, res) => {
 /*** PAGES ROUTES ***/
 
 /*** DB CONTROLLERS ROUTES ***/ 
-routes.post('/users', UserController.store);
-routes.get('/users', UserController.index);
-routes.delete('/users', UserController.delete);
 
+//Users table
+routes.post('/users', UserController.store); // Create user
+routes.get('/users', UserController.index); // Show ALL users
+routes.get('/users/byId', UserController.searchById); // Search user by Id
+routes.get('/users/byEmail', UserController.searchByEmail); // Search user by email
+routes.get('/users/byName', UserController.searchByName); // Search users by name
+routes.put('/users/update/:id', UserController.update); // Update user
+routes.delete('/users', UserController.delete); // Delete user
+
+//Reserves table
 routes.post('/users/:user_id/reservesTable', ReservesController.store);
-routes.get('/reservesTable', ReservesController.index); //All reserves
+routes.get('/reservesTable', ReservesController.index); 
+routes.get('/reservesTable/byId', ReservesController.searchById); 
+routes.get('/reservesTable/byDay', ReservesController.searchByDay);
+routes.get('/reservesTable/byRoom', ReservesController.searchByRoom); 
+routes.get('/reservesTable/byUser', ReservesController.searchByUser); 
+routes.put('/reservesTable/update/:id', ReservesController.update); 
 routes.delete('/reservesTable', ReservesController.delete);
+
+//Dishes Table
+
 /*** DB CONTROLLERS ROUTES ***/ 
 
 module.exports = routes;

@@ -13,7 +13,6 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        //constraint
         references: { model: 'users', key: 'id'},
         //in case of a modification in the referenced id
         onUpdate:'CASCADE',

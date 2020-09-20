@@ -6,6 +6,9 @@ const txt_ug = document.getElementById("ugt");
 const btn_up = document.getElementById("up");
 const txt_up = document.getElementById("upt");
 
+const btn_update = document.getElementById("update");
+const txt_update = document.getElementById("update-txt");
+
 const btn_ud = document.getElementById("ud");
 const txt_ud = document.getElementById("udt");
 
@@ -41,10 +44,29 @@ async function createUser() {
     })
     .then(response => response.json())
     .then(data => { 
-        userData = data;
+        if(data.error) {
+            console.log(data.error);
+        }else{
+            userData = data; 
+        }; 
     });
 
     return userData;
+}
+
+async function updateUserName(id) {
+
+    await fetch('http://localhost:5000/users/update/'+id, {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'PUT',
+        body: JSON.stringify({
+            name: "Hodor"
+        })
+    })
+    .then(response => console.log(response));
+
 }
 
 async function deleteUser(id) {
@@ -58,10 +80,7 @@ async function deleteUser(id) {
             id: id
         })
     })
-    .then(response => response.json())
-    .then(data => { 
-        console.log(data);
-    });
+    .then(response => console.log(response));
 
 }
 
@@ -76,10 +95,15 @@ btn_ug.addEventListener('click', async () => {
 
 btn_up.addEventListener('click', async () => {
     let userData = await createUser();
-    let user = userData.name;
+    let user = "Error"; 
+    if(userData) user = userData.name;
     txt_up.innerText = user;
 });
 
+btn_update.addEventListener('click', async () => {
+    await updateUserName(35);
+});
+
 btn_ud.addEventListener('click', async () => {
-    await deleteUser(9);
+    await deleteUser(10);
 });
