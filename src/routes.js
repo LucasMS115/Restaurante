@@ -1,8 +1,14 @@
 const {Router} = require('express');
 const routes = new Router();
+const multer = require('multer');
+const upload = multer({
+  dest: 'uploads/' 
+});
 
 const UserController = require('./sql/controllers/UserController');
 const ReservesController = require('./sql/controllers/ReservesController');
+const DishesController = require('./sql/controllers/DishesController');
+
 
 /*** PAGES ROUTES **/
 routes.get("/", (req, res) => {
@@ -38,7 +44,7 @@ routes.put('/users/update/:id', UserController.update); // Update user
 routes.delete('/users', UserController.delete); // Delete user
 
 //Reserves table
-routes.post('/users/:user_id/reservesTable', ReservesController.store);
+routes.post('/users/reservesTable/:user_id', ReservesController.store);
 routes.get('/reservesTable', ReservesController.index); 
 routes.get('/reservesTable/byId', ReservesController.searchById); 
 routes.get('/reservesTable/byDay', ReservesController.searchByDay);
@@ -47,7 +53,18 @@ routes.get('/reservesTable/byUser', ReservesController.searchByUser);
 routes.put('/reservesTable/update/:id', ReservesController.update); 
 routes.delete('/reservesTable', ReservesController.delete);
 
-//Dishes Table
+//Dishes Table 
+routes.post('/dishesTable', DishesController.store);
+routes.get('/dishesTable', DishesController.index); 
+routes.get('/dishesTable/byId', DishesController.searchById); 
+routes.get('/dishesTable/byName', DishesController.searchByName); 
+routes.put('/dishesTable/update/:id', DishesController.update); 
+routes.delete('/dishesTable', DishesController.delete);
+
+//Por fazer: 1 - Criar a tabela images e ajustar a Dishes pra um relacionamento 1-1 com ela
+// 2 - Criar as rotas ta tabela images
+// 3 - Fazer a validacao nas migrations de todas as tabelas e dropálas de novo
+
 
 /*** DB CONTROLLERS ROUTES ***/ 
 
