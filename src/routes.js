@@ -9,29 +9,6 @@ const UserController = require('./sql/controllers/UserController');
 const ReservesController = require('./sql/controllers/ReservesController');
 const DishesController = require('./sql/controllers/DishesController');
 
-
-/*** PAGES ROUTES **/
-routes.get("/", (req, res) => {
-    return res.sendFile(__dirname + "/pages/index.html");
-});
-
-routes.get("/TEST", (req, res) => {
-    return res.sendFile(__dirname + "/pages/TEST.html");
-});
-
-routes.get("/menu", (req, res) => {
-    return res.sendFile(__dirname + "/pages/menu.html");
-});
-
-routes.get("/reserves", (req, res) => {
-    return res.sendFile(__dirname + "/pages/reserves.html");
-});
-
-routes.get("/adm", (req, res) => {
-    return res.sendFile(__dirname + "/pages/adm.html");
-});
-/*** PAGES ROUTES ***/
-
 /*** DB CONTROLLERS ROUTES ***/ 
 
 //Users table
