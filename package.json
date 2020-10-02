@@ -4,7 +4,9 @@
   "description": "Project of a project to a restaurant website",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "concurrently": "^3.5.0"
   }
 }

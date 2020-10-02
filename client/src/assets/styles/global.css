@@ -1,0 +1,18 @@
+:root {
+    /* variables css*/
+    --color-background: #F0F0F7; 
+    --color-text: #00000a; 
+
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--color-background);
+}
+
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 100%;
+    }
+}
