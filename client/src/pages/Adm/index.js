@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/styles.css';
 
-function Adm(){
+const adm = (props) =>{
     return(
         <div id="title">
             <h1 className="t1">Admin</h1>
@@ -9,4 +9,4 @@ function Adm(){
     );
 };
 
-export default Adm;
+export default adm;

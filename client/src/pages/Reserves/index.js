@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/styles.css';
 
-function Reserves(){
+const reserves = (props) => {
     return(
         <div id="title">
             <h1 className="t4">Reservas</h1>
@@ -9,4 +9,4 @@ function Reserves(){
     );
 };
 
-export default Reserves;
+export default reserves;

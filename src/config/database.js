@@ -2,6 +2,7 @@ module.exports = {
   "username": "postgres",
   "password": "a1b2c3d4",
   "database": "Restaurant",
+  "port": "5432",
   "host": "127.0.0.1",
   "dialect": "postgres",
   "define": {

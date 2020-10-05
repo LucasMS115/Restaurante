@@ -1,4 +1,4 @@
 .t2{
-    color: red;
+    color: var(--color-gold);
     font-size: 5rem;
 }

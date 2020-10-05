@@ -1,13 +1,17 @@
 :root {
     /* variables css*/
-    --color-background: #F0F0F7; 
-    --color-text: #00000a; 
+    --color-white: #ffffff;
+    --color-gold: #E9D56F; 
+    --color-grey-1: #333333;
+    --color-grey-2: #333333;
+    --color-black: #000000;
 
-    font-size: 62.5%;
+    /*10 pixels (100% = 16 pixels)*/
+    font-size: 62.5%; 
 }
 
 body {
-    background: var(--color-background);
+    background: var(--color-white);
 }
 
 

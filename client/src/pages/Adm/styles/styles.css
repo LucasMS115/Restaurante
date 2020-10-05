@@ -1,4 +1,4 @@
 .t1{
-    color: rgba(15, 1, 1, 0.61);
+    color: var(--color-black);
     font-size: 5rem;
 }

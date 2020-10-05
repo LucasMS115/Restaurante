@@ -1,4 +1,4 @@
 .t4{
-    color: rgba(251, 255, 0, 0.651);
+    color: var(--color-grey-2);
     font-size: 5rem;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/styles.css';
 
-function User(){
+const user = () => {
     return(
         <div id="title">
             <h1 className="t6">Página do usuário</h1>
@@ -9,4 +9,4 @@ function User(){
     );
 };
 
-export default User;
+export default user;
