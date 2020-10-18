@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import config from '../../config';
 import './styles/styles.css';
+
+const url = config.url;
 
 class teste extends Component {
 
@@ -8,7 +11,6 @@ class teste extends Component {
         email: "",
         cel: "12 934567890",
         password: "Senha",
-        url: 'http://localhost:5000/',
         users: "Nomes"
     };
 
@@ -17,7 +19,7 @@ class teste extends Component {
 
         let usersData;
         
-        await fetch(`${this.state.url}users/`, { method: 'GET' })
+        await fetch(`${url}users/`, { method: 'GET' })
         .then(response => response.json())
         .then(data => { 
             usersData = data;
@@ -51,7 +53,7 @@ class teste extends Component {
         console.log(`${this.state.name} | ${this.state.email}`);
 
         try {
-            await fetch(`${this.state.url}users/`, { 
+            await fetch(`${url}users/`, { 
                 headers: {
                     'Content-type': 'application/json'
                 },
@@ -76,7 +78,7 @@ class teste extends Component {
     render(){
 
         return(
-            <div class="testContainer">
+            <div className="testContainer">
                 <h1 className="t5">TESTE</h1>  
 
                 {/* Show users */}
