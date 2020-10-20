@@ -3,12 +3,15 @@ const Sequelize = require('sequelize');
 /*** IMPORTING MODELS ***/
 const User = require('../models/User');
 const Reserves = require('../models/Reserves');
+const Dishes = require('../models/Dishes');
+const Images = require('../models/Images');
+
 /*** IMPORTING MODELS ***/
 
 const databaseConfig = require('../../config/database');
 
 //Models array
-const models = [User, Reserves];
+const models = [User, Reserves, Dishes, Images];
 
 class Database {
   constructor() {

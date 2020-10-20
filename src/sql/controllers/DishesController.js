@@ -1,15 +1,12 @@
   
-const Dish = require('../models/Dishes');
-
-
-
+const Dishes = require('../models/Dishes');
 class DishesController {
   async store(req, res) {
     try {
-      const dish = await Dish.create(req.body);
+      const dish = await Dishes.create(req.body);
       return res.json(dish);
     }catch(error){
-      console.log("AT DISH CONTROLLER - STORE:\n" + error.name)
+      console.log("AT DISH CONTROLLER - STORE:\n" + error)
       return res.json({ error: error.name});
     }
   }
@@ -24,7 +21,7 @@ class DishesController {
     if(!req.body.id) return res.status(400).json({ error: "No id received for the search"});
     const id = req.body;
     const dishes = await Dishes.findOne({ where: id});
-    if(!dishes) return res.json({ error: `We dont have a user to this ID (${id.id}).` });
+    if(!dishes) return res.json({ error: `We dont have a dish to this ID (${id.id}).` });
     return res.json(dishes);
     
   }
@@ -63,13 +60,13 @@ class DishesController {
   async delete(req, res) {
 
     const {id} = req.body;
-    const dish = await Dish.findByPk(id);
+    const dish = await Dishes.findByPk(id);
 
     if(!dish){
       return res.status(400).json({ error: 'Dish not found' });
     }else{
       await dish.destroy();
-      return res.json();
+      return res.json({status: "complete"});
     };
   };
   

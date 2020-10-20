@@ -1,13 +1,16 @@
 const {Router} = require('express');
 const routes = new Router();
 const multer = require('multer');
-const upload = multer({
-  dest: 'uploads/' 
-});
+const multerConfig = require('./config/multer');
+/* const upload = multer({
+  dest: 'src/uploads/' 
+}); */
 
 const UserController = require('./sql/controllers/UserController');
 const ReservesController = require('./sql/controllers/ReservesController');
 const DishesController = require('./sql/controllers/DishesController');
+const ImagesController = require('./sql/controllers/ImagesController');
+
 
 /*** DB CONTROLLERS ROUTES ***/ 
 
@@ -38,9 +41,22 @@ routes.get('/dishesTable/byName', DishesController.searchByName);
 routes.put('/dishesTable/update/:id', DishesController.update); 
 routes.delete('/dishesTable', DishesController.delete);
 
-//Por fazer: 1 - Criar a tabela images e ajustar a Dishes pra um relacionamento 1-1 com ela
-// 2 - Criar as rotas ta tabela images
-// 3 - Fazer a validacao nas migrations de todas as tabelas e dropálas de novo
+routes.post('/imagesTable', ImagesController.store);
+routes.get('/imagesTable', ImagesController.index); 
+routes.get('/imagesTable/byId', ImagesController.searchById);
+routes.get('/imagesTable/byKey', ImagesController.searchByKey);
+routes.get('/imagesTable/byName', ImagesController.searchByName);
+routes.delete('/imagesTable', ImagesController.delete);
+
+
+routes.post('/imgTest', multer(multerConfig).single("image"), (req, res)=>{
+  console.log(req.file);
+  return res.json({teste: "oi"});
+});
+
+
+//Por fazer: 1 - ajustar a Dishes pra um relacionamento 1-1 com ela
+// 2 - Fazer a validacao nas migrations de todas as tabelas e dropálas de novo
 
 
 /*** DB CONTROLLERS ROUTES ***/ 
