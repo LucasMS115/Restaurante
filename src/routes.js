@@ -41,13 +41,13 @@ routes.get('/dishesTable/byName', DishesController.searchByName);
 routes.put('/dishesTable/update/:id', DishesController.update); 
 routes.delete('/dishesTable', DishesController.delete);
 
-routes.post('/imagesTable', ImagesController.store);
+// Images Table
+routes.post('/imagesTable', multer(multerConfig).single("image"), ImagesController.store);
 routes.get('/imagesTable', ImagesController.index); 
 routes.get('/imagesTable/byId', ImagesController.searchById);
 routes.get('/imagesTable/byKey', ImagesController.searchByKey);
 routes.get('/imagesTable/byName', ImagesController.searchByName);
 routes.delete('/imagesTable', ImagesController.delete);
-
 
 routes.post('/imgTest', multer(multerConfig).single("image"), (req, res)=>{
   console.log(req.file);

@@ -4,8 +4,17 @@ const Images = require('../models/Images');
 class ImagesController {
 
   async store(req, res) {
+
+    const body = {
+      key: req.file.filename,
+      url: req.file.path,
+      name: req.file.originalname,
+      size: req.file.size 
+    }
+
     try {
-      const img = await Images.create(req.body);
+      const img = await Images.create(body);
+      console.log(img);
       return res.json(img);
     }catch(error){
       console.log("AT IMG CONTROLLER - STORE:\n" + error)

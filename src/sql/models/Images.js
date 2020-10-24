@@ -10,7 +10,7 @@ class Images extends Sequelize.Model {
         key: Sequelize.STRING,
         url: Sequelize.STRING,
         name: Sequelize.STRING,
-        size: Sequelize.INTEGER       
+        size: Sequelize.DOUBLE       
       },
       //2nd, the connection 
       {
