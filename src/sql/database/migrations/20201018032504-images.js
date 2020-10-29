@@ -11,6 +11,15 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      dish_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        references: { model: 'dishes', key: 'id' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
+      },
       //generated name
       key: {
         type: Sequelize.STRING,

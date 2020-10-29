@@ -1,11 +1,15 @@
+require("./sql/database");
+const path = require('path');
 const express = require('express');
 const server = express();
 const routes = require('./routes');
 const cors = require('cors');
-require("./sql/database");
 
-server.use(express.static("public"));
 server.use(express.json());
+server.use(
+    "/files",
+    express.static(path.resolve(__dirname, "..", "temp", "uploads"))
+);
 server.use((req, res, next) => {
     console.log("\nMiddlewere\n");
     res.header("Access-Control-Allow-Origin", "*");

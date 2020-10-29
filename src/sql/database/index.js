@@ -5,7 +5,6 @@ const User = require('../models/User');
 const Reserves = require('../models/Reserves');
 const Dishes = require('../models/Dishes');
 const Images = require('../models/Images');
-
 /*** IMPORTING MODELS ***/
 
 const databaseConfig = require('../../config/database');

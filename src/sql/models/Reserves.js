@@ -8,7 +8,7 @@ class Reserves extends Sequelize.Model {
       //1st, Colums that aren't assigned automatically
       {
         hour: Sequelize.TIME,        
-        day: Sequelize.STRING,
+        day: Sequelize.DATEONLY,
         room: Sequelize.INTEGER,
         people: Sequelize.INTEGER
       },

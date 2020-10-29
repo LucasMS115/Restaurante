@@ -9,9 +9,9 @@ class Dish extends Sequelize.Model {
       {
         name: Sequelize.STRING,
         price: Sequelize.STRING,
+        type: Sequelize.STRING,
         description: Sequelize.STRING,        
-        active: Sequelize.BOOLEAN,
-        image: Sequelize.STRING
+        active: Sequelize.BOOLEAN
       },
       //2nd, the connection 
       {
@@ -21,6 +21,15 @@ class Dish extends Sequelize.Model {
 
     return this;
   }
+
+  static associate(models){
+    this.hasOne(models.Images, { 
+      foreignKey: 'dishId', 
+      as: 'imageDetails', 
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    }); // 1:1
+  };
   
 }
 

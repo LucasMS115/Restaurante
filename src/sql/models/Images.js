@@ -20,6 +20,10 @@ class Images extends Sequelize.Model {
 
     return this;
   }
+
+  static associate(models){
+    this.belongsTo(models.Images, { foreignKey: 'dishId', as: 'dish'}); //1-1
+  };
   
 }
 

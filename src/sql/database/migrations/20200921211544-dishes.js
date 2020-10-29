@@ -18,16 +18,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      type:{
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       description:{
         type: Sequelize.STRING,
         allowNull: false
       },
       active:{
-        type: Sequelize.BOOLEAN, //0 = inactive - 1 = waiting confirmation - 2 = active
-        allowNull: false
-      },
-      image:{
-        type: Sequelize.STRING,
+        type: Sequelize.BOOLEAN, 
         allowNull: false
       },
       created_at: {

@@ -1,5 +1,7 @@
-  
 const Dishes = require('../models/Dishes');
+const Images = require('../models/Images');
+const ImagesController = require('./ImagesController');
+  
 class DishesController {
   async store(req, res) {
     try {
@@ -36,6 +38,16 @@ class DishesController {
     
   }
 
+  async searchByType(req, res){
+
+    if(!req.body.type) return res.status(400).json({ error: "No type received for the search"});
+    const type = req.body;
+    const dishes = await Dishes.findAll({ where: type});
+    if(!dishes[0]) return res.json({ error: `We dont have a dish to this NAME (${type.type}).` });
+    return res.json(dishes);
+    
+  }
+
   async update(req, res) {
     const {id} = req.params;
     let dish = await Dishes.findByPk(id);
@@ -46,9 +58,9 @@ class DishesController {
     await dish.update({
       name: newValues.name,
       price: newValues.price,
+      type: newValues.type,
       description: newValues.description,
-      active: newValues.active,
-      image: newValues.image,
+      active: newValues.active
     })
     .catch((error) => res.status(400).json(error));
       
@@ -61,13 +73,32 @@ class DishesController {
 
     const {id} = req.body;
     const dish = await Dishes.findByPk(id);
+    const img = await Images.findOne({where: {dish_id:id}});
+    
+    try {
 
-    if(!dish){
-      return res.status(400).json({ error: 'Dish not found' });
-    }else{
-      await dish.destroy();
-      return res.json({status: "complete"});
-    };
+      if(img){
+        console.log("Removing img from storage - Start");
+        await ImagesController.delete({dish_id: id}, res);
+        console.log("Removing img from storage - Complete");
+      } 
+      else console.log("No img associated");
+  
+      if(!dish){
+        return res.status(400).json({ error: 'Dish not found' });
+      }else{
+        console.log("Removing dish and img from database - Start");
+        await dish.destroy();
+        console.log("Removing dish and img from database - Complete");
+        return res.json({status: "complete"});
+      };
+
+    } catch (error) {
+      console.log("\nOn delete dish process \n");
+      console.log(error);
+      console.log("\nOn delete dish process \n");
+    }
+    
   };
   
 };

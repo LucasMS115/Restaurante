@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false
       },
       day: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATEONLY,
         allowNull: false
       },
       room: {
