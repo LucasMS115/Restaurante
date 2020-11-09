@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import './styles/styles.css';
+import CompTest from '../../components/testComponents/CompTest';
+import NavBarTest from '../../components/testComponents/NavBarTest';
 
 const url = config.url;
 
@@ -11,7 +13,28 @@ class teste extends Component {
         email: "",
         cel: "12 934567890",
         password: "Senha",
-        users: "Nomes"
+        users: "Nomes",
+
+        countries: [
+            {
+                name: "Brazel",
+                id: 0,
+                color: 'black'
+            },
+
+            {
+                name: "UZA",
+                id: 1,
+                color: 'black'
+            },
+
+            {
+                name: "Xile",
+                id: 2,
+                color: 'black'
+            }
+        ]
+
     };
 
     /* Show names */
@@ -72,15 +95,38 @@ class teste extends Component {
         this.usersNames();
 
     }
-
     /* Create user */
+
+    // Styles
+    styleVar = {
+        border: '0.5rem solid green',
+        display: 'flex',
+        flexDirection: 'column' ,
+        alignItems: 'center',
+        paddingTop: '1rem'
+    };
+
+    heroImg = {
+        height: '50vh',
+        width: '90vw',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        position: 'relative'
+    };
+
+    // -----------------------------------------------------------------------------------------------
 
     render(){
 
         return(
             <div className="testContainer">
-                <h1 className="t5">TESTE</h1>  
 
+                <NavBarTest/>
+                <br/>
+                
+                <h1 className="t5">TESTE</h1> 
+                
                 {/* Show users */}
                 <h1>Usuarios:</h1>
                 <p>{this.state.users}</p>
@@ -101,12 +147,46 @@ class teste extends Component {
                 </form>
                 {/*  Create user */}
 
-
+                <div style={this.styleTest()}>
+                    <CompTest countries={this.state.countries} changeColor={this.changeColor}/>
+                </div>
 
             </div>
         );
     }
+
+    // *** Return style functions *** //
+
+    styleTest = () => {
+        return {
+            border: '0.5rem solid purple',
+            display: 'flex',
+            flexDirection: 'column' ,
+            alignItems: 'center',
+            paddingTop: '1rem'
+        }
+    };
+
+    // *** Return style functions *** //
+
+    // *** Style change functions *** //
+
+    changeColor = (id) => {
+
+        this.setState({countries: this.state.countries.map((country) =>{
+            if(country.id === id){
+                country.color === 'black'? country.color = 'green': country.color = 'black'; 
+            };  
+            return country;
+        }) });
+
+    };
+
+    // *** Style change functions *** //
+
 };
+
+
 
 
 export default teste;

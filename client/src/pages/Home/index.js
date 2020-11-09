@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles/styles.css';
+import Header from '../../components/Header';
 
 const home = (props) => {
     return(
         <div id="title">
-            <h1 className="t2">Pagina Inicial</h1>
+            <Header/>
         </div>
     );
 }

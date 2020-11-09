@@ -8,7 +8,6 @@ import Reserves from './pages/Reserves';
 import Teste from './pages/Teste';
 import User from './pages/User';
 
-
 import './assets/styles/global.css';
 
 class App extends Component{
