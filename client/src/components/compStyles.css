@@ -10,6 +10,11 @@
     src: url('../assets/font-italianno/italianno-v10-latin-regular.woff'); 
 }
 
+@font-face {
+    font-family: 'Sintony';
+    src: url('../assets/font-sintony/Sintony-Regular.ttf'); 
+}
+
 .img-container{
     display: flex;
     flex-direction: column;
@@ -44,6 +49,7 @@
 .img-container .subtitle{
     filter: brightness(97%);
     color: var(--color-white);
+    font-family: Sintony;
     font-style: normal;
     font-weight: bold;
     font-size: 1.6rem;
@@ -53,6 +59,7 @@
 .img-container .separator{
     filter: brightness(97%);
     color: var(--color-white);
+    font-family: Sintony;
     font-style: normal;
     font-weight: normal;
     font-size: 1.6rem;

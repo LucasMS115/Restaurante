@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Sintony';
-    src: url('https://fonts.googleapis.com/css2?family=Sintony&display=swap'); 
+    src: url('../assets/font-sintony/Sintony-Regular.ttf'); 
 }
 
 .black-container {
@@ -26,8 +26,8 @@ h2 {
     font-family: Italianno;
     font-style: normal;
     font-weight: normal;
-    font-size: 10rem; 
-    margin: 1.5rem 0 0 0;   
+    font-size: 7rem; 
+    margin: 3rem 0 0 0;   
 }
 
 p {
@@ -35,8 +35,8 @@ p {
     color: var(--color-white);
     font-family: Sintony;
     font-style: normal;
-    font-weight: bold;
     font-size: 1.6rem;  
+    margin: 1.5rem 0 2rem 0;
 }
 
 .pula-linha {
