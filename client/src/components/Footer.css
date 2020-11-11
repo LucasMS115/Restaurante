@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Sintony';
+    src: url('https://fonts.googleapis.com/css2?family=Sintony&display=swap'); 
+}
+
+.black-container {
+    background-color: #272626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    margin: auto;
+}
+
+.footer-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+h2 {
+
+    filter: brightness(98%);
+    color: var(--color-gold);
+    font-family: Italianno;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10rem; 
+    margin: 1.5rem 0 0 0;   
+}
+
+p {
+    filter: brightness(97%);
+    color: var(--color-white);
+    font-family: Sintony;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.6rem;  
+}
+
+.pula-linha {
+    margin: 0 0 0 0; 
+}
