@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import img from '../assets/images/m-header-back.jpg';
-import './compStyles.css';
+import './Header.css';
 
 export class Header extends Component {
 

@@ -10,11 +10,39 @@
     font-size: 62.5%; 
 }
 
+@font-face {
+    font-family: 'Italianno';
+    src: url('../font-italianno/italianno-v10-latin-regular.woff'); 
+}
+
+@font-face {
+    font-family: 'Sintony';
+    src: url('../font-sintony/Sintony-Regular.ttf'); 
+}
+
 body {
     background: var(--color-white);
     margin: 0 0 0 0 !important;
 }
 
+
+@media (max-width: 400px) {
+    :root {
+        font-size: 40%;
+    }
+}
+
+@media (min-width: 400px) {
+    :root {
+        font-size: 60%;
+    }
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 100%;
+    }
+}
 
 @media (min-width: 700px) {
     :root {

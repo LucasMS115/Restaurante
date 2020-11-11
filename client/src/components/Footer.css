@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
     margin: auto;
 }
 
@@ -41,4 +40,9 @@ p {
 
 .pula-linha {
     margin: 0 0 0 0; 
+}
+
+@media (min-width: 700px) {
+
+
 }

@@ -1,20 +1,3 @@
-/* @font-face {
-    font-family: 'Italianno';
-    src: url('https://fonts.googleapis.com/css?family=Italianno');
-} */
-
-@font-face {
-    font-family: 'Italianno';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/font-italianno/italianno-v10-latin-regular.woff'); 
-}
-
-@font-face {
-    font-family: 'Sintony';
-    src: url('../assets/font-sintony/Sintony-Regular.ttf'); 
-}
-
 .img-container{
     display: flex;
     flex-direction: column;
@@ -23,7 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 
@@ -64,4 +47,19 @@
     font-weight: normal;
     font-size: 1.6rem;
     margin: 4rem 0 0 0;    
+}
+
+@media (min-width: 700px) {
+
+    .img-container{
+        height: 100vh;
+        background-image: url('../assets/images/web-header-back.jpg');
+    }
+    
+    .filter{
+        filter: opacity(50%);
+        width: 100vw;
+        height: 100vh;
+    }
+
 }

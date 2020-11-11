@@ -3,7 +3,7 @@ import './styles/styles.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-const home = (props) => {
+const Home = (props) => {
     return(
         <div id="title">
             <Header/>
@@ -19,4 +19,4 @@ const home = (props) => {
     );
 }
 
-export default home;
+export default Home;

@@ -1,19 +1,13 @@
-.t2{
-    color: var(--color-gold);
-    font-size: 5rem;
-}
 
 .especialidade {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: justify;
     text-justify: inter-word;
 }
 
 .especialidade h1 {
-
     filter: brightness(98%);
     color: var(--color-gold);
     font-family: Italianno;
