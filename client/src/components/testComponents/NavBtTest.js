@@ -12,13 +12,13 @@ export class NavBtTest extends Component {
         return{
             textDecoration: 'none',
             color: this.state.color,
-            fontSize: '0.9rem'
+            fontSize: '1.5rem'
         }
     };
 
     divStyle = {
-        border: '0.2rem solid black',
-        width: '10vw',
+        /* border: '0.2rem solid black', */
+        margin: '0.5rem',
         alignContent: 'center',
         justifyContent: 'center',
     };

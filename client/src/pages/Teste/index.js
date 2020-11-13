@@ -3,6 +3,8 @@ import config from '../../config';
 import './styles/styles.css';
 import CompTest from '../../components/testComponents/CompTest';
 import NavBarTest from '../../components/testComponents/NavBarTest';
+import Btn1 from '../../components/Btn1';
+
 
 const url = config.url;
 
@@ -150,6 +152,14 @@ class teste extends Component {
                 <div style={this.styleTest()}>
                     <CompTest countries={this.state.countries} changeColor={this.changeColor}/>
                 </div>
+
+                <br/>
+                <br/>
+                <br/>
+                <Btn1/>
+                <br/>
+                <br/>
+                <br/>
 
             </div>
         );
