@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; 
+import './assets/styles/global.css';
 
 import Adm from './pages/Adm';
 import Home from './pages/Home';
@@ -8,7 +9,6 @@ import Reserves from './pages/Reserves';
 import Teste from './pages/Teste';
 import User from './pages/User';
 
-import './assets/styles/global.css';
 
 class App extends Component{
   render(){

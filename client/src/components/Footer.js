@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import './Footer.css';
+import './styles/Footer.css';
 
 function NewlineText(props) {
+    let id = 0;
     const text = props.text;
-    const newText = text.split('\n').map(str => <p className='pula-linha'>{str}</p>);
+    const newText = text.split('\n').map(str => {
+        id++;
+        return <p className='pula-linha' key={id}>{str}</p>
+    });
   
     return newText;
     //Solução retirada de: https://forum.freecodecamp.org/t/newline-in-react-string-solved/68484

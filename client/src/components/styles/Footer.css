@@ -1,25 +1,5 @@
-@font-face {
-    font-family: 'Sintony';
-    src: url('../assets/font-sintony/Sintony-Regular.ttf'); 
-}
-
-.black-container {
-    background-color: #272626;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-}
-
-.footer-itens {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-}
 
 h2 {
-
     filter: brightness(98%);
     color: var(--color-gold);
     font-family: Italianno;
@@ -36,6 +16,21 @@ p {
     font-style: normal;
     font-size: 1.6rem;  
     margin: 1.5rem 0 2rem 0;
+}
+
+.black-container {
+    background-color: #272626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.footer-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 .pula-linha {

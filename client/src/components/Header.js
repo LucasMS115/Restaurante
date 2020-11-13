@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './Header.css';
+import '../assets/styles/global.css';
+import './styles/Header.css';
+import SepWhite from "./SepWhite";
+import Btn1 from './Btn1';
 
 export class Header extends Component {
 
@@ -8,11 +11,27 @@ export class Header extends Component {
 
             <div>
                 <div className="img-container">
-                    <div className="filter"> bla </div>
+                    
+                    <div className="filter"/>
+
+                    {/* <span className="nav-bar"> teste </span> */}
+
                     <h1 className="title">Bem Vindo</h1>
                     <h2 className="subtitle">NOME DO RESTAURANTE</h2>
-                    <span className="separator">Alguma Coisa</span>
+                    
+                    <div className="sepContainer">
+                        <SepWhite />
+                        <span className="separator-txt">Alguma Coisa</span>
+                        <SepWhite />
+                    </div>
 
+                    <div className="flex-container">
+                        <Btn1 text="Cardapio" path="/Menu"/>
+                        <Btn1 text="Reservas" path="/Reserves"/>
+                        <Btn1 text="Contato" path="/"/>
+                    </div>
+                    
+                    
                 </div>
             </div>
             

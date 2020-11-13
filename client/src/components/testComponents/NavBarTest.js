@@ -5,11 +5,10 @@ export class NavBarTest extends Component {
     render() {
         return (
             <div style={{display:'flex', float: 'right'}}>
-                <NavBtTest path="/" name="Home"/>
+                <NavBtTest path="/" name="Inicio"/>
                 <NavBtTest path="/Menu" name="Cardapio"/>
                 <NavBtTest path="/Reserves" name="Reservas"/>
-                <NavBtTest path="/User" name="Pag. Usuario"/>
-                <NavBtTest path="/Adm" name="Admin" />
+                <NavBtTest path="/User" name="Conta"/>
             </div>
         )
     }
