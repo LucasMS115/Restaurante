@@ -20,7 +20,6 @@
 }
 
 .img-container .title{
-
     filter: brightness(100%);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.603);
     color: var(--color-gold);
@@ -50,22 +49,23 @@
 }
 
 .social-icons{
+    display: flex;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 1rem;
     color:white;
     font-size: 2rem;
     filter: brightness(100%);
     visibility: hidden;
 }
 
-.logo-container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    color:white;
-    font-size: 2rem;
+.social-icons .item{
+    height: 3rem;
+    width: 3rem;
+    margin: 0.5rem;
 }
+
+
 
 @media (min-width: 500px) {
 
