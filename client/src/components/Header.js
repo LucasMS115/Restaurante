@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../assets/styles/global.css';
 import './styles/Header.css';
 import logo from '../assets/images/icons/logo.svg';
@@ -7,10 +8,24 @@ import instaWhite from '../assets/images/icons/icon-insta.svg';
 import wppWhite from '../assets/images/icons/icon-wpp.svg';
 import NavBt from './NavBt';
 import SepWhite from "./SepWhite";
-import Btn1 from './Btn1';
+import Btn1Set from './Btn1Set';
 import { Link } from 'react-router-dom';
 
 export class Header extends Component {
+
+    state = {
+        nav0: this.props.nav[0],
+        nav1: this.props.nav[1],
+        nav2: this.props.nav[2],
+        nav3: this.props.nav[3],
+    }
+
+    hidden = () => {
+        if(this.props.type === "2") return {
+            position: "absolute",
+            visibility: "hidden"
+        }
+    }
 
     render() {
         return (
@@ -25,10 +40,10 @@ export class Header extends Component {
                     </Link>
 
                     <div className="nav-bar"> 
-                        <NavBt path="/" name="Inicio"/>
-                        <NavBt path="/Menu" name="Cardapio"/>
-                        <NavBt path="/Reserves" name="Reservas"/>
-                        <NavBt path="/User" name="Conta"/>
+                        <NavBt path={this.state.nav0.path} name={this.state.nav0.text}/>
+                        <NavBt path={this.state.nav1.path} name={this.state.nav1.text}/>
+                        <NavBt path={this.state.nav2.path} name={this.state.nav2.text}/>
+                        <NavBt path={this.state.nav3.path} name={this.state.nav3.text}/>
                     </div>
 
                     <div className="social-icons">
@@ -39,19 +54,17 @@ export class Header extends Component {
                         <a href='https://www.whatsapp.com/' target="blank"> <img src={wppWhite} className="item" alt="whats"/> </a>     
                     </div>
 
-                    <h1 className="title">Bem Vindo</h1>
-                    <h2 className="subtitle">NOME DO RESTAURANTE</h2>
+                    <h1 className="title">{this.props.title}</h1>
+                    <h2 className="subtitle">{this.props.subtitle}</h2>
                     
-                    <div className="sepContainer">
+                    <div style={this.hidden()} className="sepContainer">
                         <SepWhite />
-                        <span className="separator-txt">Alguma Coisa</span>
+                        <span className="separator-txt">{this.props.separator}</span>
                         <SepWhite />
                     </div>
 
                     <div className="flex-container">
-                        <Btn1 text="Cardapio" path="/Menu"/>
-                        <Btn1 text="Reservas" path="/Reserves"/>
-                        <Btn1 text="Contato" path="/"/>
+                        <Btn1Set itens={this.props.btns}/>
                     </div>
                     
                     
@@ -60,6 +73,15 @@ export class Header extends Component {
             
         )
     }
+}
+
+Header.propTypes = {
+    type: PropTypes.string.isRequired, //Toggle the separator visibility 
+    nav: PropTypes.array.isRequired, //Nav bar itens
+    btns: PropTypes.array.isRequired, //Information of the buttons 
+    title: PropTypes.string.isRequired, 
+    subtitle: PropTypes.string.isRequired,
+    separator: PropTypes.string.isRequired,
 }
 
 export default Header;

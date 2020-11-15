@@ -8,6 +8,7 @@ import Menu from './pages/Menu';
 import Reserves from './pages/Reserves';
 import Teste from './pages/Teste';
 import User from './pages/User';
+import Working from './pages/Working';
 
 
 class App extends Component{
@@ -22,6 +23,7 @@ class App extends Component{
           <Route path="/reserves" exact component={Reserves}/>
           <Route path="/teste" exact component={Teste}/>
           <Route path="/user" exact component={User}/>
+          <Route path="/working" exact component={Working}/>
   
         </Switch>
       </Router>

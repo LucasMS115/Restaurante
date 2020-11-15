@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 
 export class Btn1 extends Component {
 
-
     state = {
         btnSize: "12.5vw",
         color1: "#E9D56F",
@@ -85,15 +84,15 @@ export class Btn1 extends Component {
     }
 
     click = () => {
-        let temp1 = this.state.color1;
-        let temp2 = this.state.color2;
+        /* let temp1 = this.state.color1;
+        let temp2 = this.state.color2; */
         this.setState({color1: "white"});
         this.setState({color2: "white"});
 
-        setTimeout(() => { 
+        /* setTimeout(() => { 
             this.setState({color1: temp1});
             this.setState({color2: temp2});
-         }, 200);
+        }, 200); */
     }
 
     render() {
