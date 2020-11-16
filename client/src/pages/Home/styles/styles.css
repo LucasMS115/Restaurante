@@ -2,36 +2,6 @@
     margin-top: -1.2rem;
 }
 
-.especialidade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-    text-justify: inter-word;
-}
 
-.especialidade h1 {
-    filter: brightness(98%);
-    color: var(--color-gold);
-    font-family: Italianno;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 7rem; 
-    margin: 3rem 0 0 0;   
-}
 
-.separator {
-    font-family: Sintony;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.6rem;
-    margin: 0 0 0 0;  
-}
-
-.especialidade p {
-    color: #4f4f4f;
-    font-family: Sintony;
-    text-justify: auto;
-    width: 78%;
-}
 

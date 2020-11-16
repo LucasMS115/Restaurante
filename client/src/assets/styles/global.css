@@ -49,16 +49,6 @@ span{
     margin-bottom: 3vh;
     align-items: center;
     justify-content: center;  
-
-}
-
-.separator-txt{
-    filter: brightness(97%);
-    color: var(--color-white);
-    font-family: Sintony;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2rem;   
 }
 
 .logo-container{
@@ -82,6 +72,52 @@ span{
     right: 0.75rem;
     color:white;
     font-size: 2rem;
+}
+
+.titulo1 {
+    filter: brightness(100%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.603);
+    color: var(--color-gold);
+    font-family: Italianno;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13rem;
+    margin-bottom: -5rem; 
+}
+
+.subtitulo1 {
+    filter: brightness(100%);
+    color: var(--color-white);
+    font-family: Sintony;
+    font-style: normal;
+    letter-spacing: 0.17em;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.titulo2 {
+    filter: brightness(98%);
+    color: var(--color-gold);
+    font-family: Italianno;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7rem; 
+    margin: 3rem 0 0 0;  
+}
+
+.subtitulo2 {
+    font-family: Sintony;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    margin: 0 0 0 0; 
+}
+
+.paragrafo {
+    color: #4f4f4f;
+    font-family: Sintony;
+    text-justify: auto;
+    width: 78%;
 }
 
 

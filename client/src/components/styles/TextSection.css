@@ -1,0 +1,27 @@
+.comFotoDeFundo {
+    display: flex;
+    flex-direction: column;
+    height: 33vh;
+    width: 100%;
+    background-image: url('../../assets/images/events-back.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sepContainer{
+    margin-top: -1.2rem;
+}
+
+.especialidade {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    text-justify: inter-word;
+}

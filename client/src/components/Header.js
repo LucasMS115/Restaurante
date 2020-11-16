@@ -54,12 +54,12 @@ export class Header extends Component {
                         <a href='https://www.whatsapp.com/' target="blank"> <img src={wppWhite} className="item" alt="whats"/> </a>     
                     </div>
 
-                    <h1 className="title">{this.props.title}</h1>
-                    <h2 className="subtitle">{this.props.subtitle}</h2>
+                    <h1 className="titulo1">{this.props.title}</h1>
+                    <h2 className="subtitulo1">{this.props.subtitle}</h2>
                     
                     <div style={this.hidden()} className="sepContainer">
                         <SepWhite />
-                        <span className="separator-txt">{this.props.separator}</span>
+                        <span className="subtitulo2 separator">{this.props.separator}</span>
                         <SepWhite />
                     </div>
 

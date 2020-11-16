@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './styles/styles.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import SepBlack from '../../components/SepBlack';
+import TextSection from '../../components/TextSection';
+import Btn2 from '../../components/Btn2';
 
 export class Home extends Component {
     
@@ -62,17 +63,31 @@ export class Home extends Component {
                     separator={this.state.separator}
                 />
     
-                <div className="especialidade">
-                    <h1>Nossa especialidade</h1>
-    
-                    <div className="sepContainer">
-                        <SepBlack/>
-                        <span className="separator">ALGUMA COISA</span>
-                        <SepBlack/>
-                    </div>
-    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt.</p>
-                </div>
+                <TextSection
+                    type="normal"
+                    titulo="Nossa especialidade"
+                    subtitulo="ALGUMA COISA"
+                    texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt."
+                />
+
+                <TextSection
+                    type="comFotoDeFundo"
+                    titulo="Nossa especialidade"
+                    subtitulo="ALGUMA COISA"
+                    texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt."
+                />
+        
+                <Btn2 
+                    path="/Reserves"
+                    text="Faça uma reserva"
+                />
+
+                <TextSection
+                    type="normal"
+                    titulo="Fale conosco"
+                    subtitulo="ALGUMA COISA"
+                    texto="Lorem ipsum dolor sit amet, "
+                />
     
                 <Footer />
             </div>
