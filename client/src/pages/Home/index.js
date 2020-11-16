@@ -23,7 +23,9 @@ export class Home extends Component {
             {
                 text: "Contato",
                 path: "/"
-            }
+            },
+            
+            
         ],
 
         nav: [
@@ -42,7 +44,8 @@ export class Home extends Component {
             {
                 text: "Conta",
                 path: "/working"
-            }
+            },
+            
         ]
     }
 

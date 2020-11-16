@@ -13,6 +13,7 @@ class UserController {
   }
 
   async index(req, res){
+    console.log(process.env.DATABASE_URL);
     const users = await User.findAll();
     return res.json(users);
   }

@@ -1,13 +1,19 @@
+require('dotenv').config();
+
 module.exports = {
-  "username": "postgres",
-  "password": "a1b2c3d4",
-  "database": "Restaurant",
+  "url": process.env.DATABASE_URL,
+  "username": process.env.USER,
+  "password": process.env.PASSWORD,
+  "database": process.env.DATABASE,
   "port": "5432",
-  "host": "127.0.0.1",
+  "host": process.env.HOST,
   "dialect": "postgres",
   "define": {
     "timestamps": true,
     "underscored": true,
     "underscoredAll": true
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
   }
 }

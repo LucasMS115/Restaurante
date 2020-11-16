@@ -1,4 +1,3 @@
-require('dotenv').config();
 const path = require('path');
 var fs = require('fs');
 const Images = require('../models/Images');
@@ -10,6 +9,26 @@ class ImagesController {
 
     const url = `${process.env.APP_URL}/${req.file.filename}`;
     const dishId = req.params.id;
+    
+    // ### if the dish received already has an image, cancel the store by deleting the file
+    const img = await Images.findOne({ where: {dish_id: dishId}});  
+    if(img){
+
+      const key = req.file.filename;
+
+      try{
+        await fs.unlink(path.resolve(__dirname, "..", "..", "..", "uploads", key) ,function(err){
+          if(err){
+            console.log("Error while deleting the file" + err);
+          }
+        });
+      }catch(err){
+        console.log(`Error deleting file /n${err}`)
+      }
+
+      return res.status(400).json({ error: 'This dish already have an image' });
+    } 
+    //###
 
     const dish = await Dishes.findByPk(dishId);
     if(!dish){
@@ -85,26 +104,39 @@ class ImagesController {
 
   async delete(req, res) {
 
-    const dish_id = req.body;
-    const img = await Images.findOne({where: dish_id});
-    const key = img.dataValues.key;
+    //when the function is called by dishes delete, req.body = undefined 
+    let body;
+    if(req.body !== null && req.body !== undefined) body = req.body;
+    else body = req;
 
+    const {fd} = body; // from dishes, when true, req is comming from the dishes table delete
+    const {dish_id} = body;
+    const img = await Images.findOne({where: {dish_id: dish_id}});
+    
     if(!img){
       return res.status(400).json({ error: 'Image not found' });
     }else{
 
+      const key = img.dataValues.key;
+
       try{
-        await fs.unlink(path.resolve(__dirname, "..", "..", "..", "temp", "uploads", key) ,function(err){
+        //delete image file
+        await fs.unlink(path.resolve(__dirname, "..", "..", "..", "uploads", key) ,function(err){
           if(err){
             console.log("Error while deleting the file" + err);
           }
         });
       }catch(err){
-        console.log("\n###\n" + path.resolve(__dirname, "..", "..", "temp", "uploads", key) + "\n###\n")
+        console.log("\n###\n" + path.resolve(__dirname, "..", "..", "uploads", key) + "\n###\n")
         console.log(`Error deleting file /n${err}`)
       }
 
-      //await img.destroy();
+      //remove row from table Images
+      if(!fd){
+        await img.destroy();
+        return res.json({ res: `!fd Img delete -> done ` });
+      }
+
       return;
     };
   };  

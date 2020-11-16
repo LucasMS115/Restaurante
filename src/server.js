@@ -1,3 +1,4 @@
+require('dotenv').config();
 require("./sql/database");
 const path = require('path');
 const express = require('express');
@@ -5,6 +6,7 @@ const server = express();
 const routes = require('./routes');
 const cors = require('cors');
 
+server.use(cors());
 server.use(express.json());
 server.use(
     "/files",
@@ -19,4 +21,4 @@ server.use((req, res, next) => {
 });
 server.use(routes)
 
-.listen(5000);
+.listen(process.env.PORT || 5000);

@@ -73,13 +73,13 @@ class DishesController {
 
     const {id} = req.body;
     const dish = await Dishes.findByPk(id);
-    const img = await Images.findOne({where: {dish_id:id}});
+    const img = await Images.findOne({where: {dish_id: id}});
     
     try {
 
       if(img){
         console.log("Removing img from storage - Start");
-        await ImagesController.delete({dish_id: id}, res);
+        await ImagesController.delete({dish_id: id, fd: true}, res);
         console.log("Removing img from storage - Complete");
       } 
       else console.log("No img associated");
