@@ -21,9 +21,9 @@ export class Footer extends Component {
             <div>
                 <div className="black-container">
                     <div className="footer-itens">
-                        <p>NOME DO RESTAURANTE</p>
-                        <NewlineText text={'HORÁRIO DE ATENDIMENTO\nAberto todos os dias\ndas 5h às 24h'} />
-                        <h2 className="title">Bom Apetite</h2>
+                        <p className="subtitulo2">NOME DO RESTAURANTE</p>
+                        <NewlineText className="subtitulo2" text={'HORÁRIO DE ATENDIMENTO\nAberto todos os dias\ndas 5h às 24h'} />
+                        <h2 className="titulo2">Bom Apetite</h2>
                     </div>
                 </div>
             </div>

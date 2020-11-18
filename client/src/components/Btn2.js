@@ -6,12 +6,12 @@ import {Link} from 'react-router-dom';
 export class Btn2 extends Component {
 
     state = {
-        heigth: "5vw",
-        width: "25vw",
+        heigth: "3.8vw",
+        width: "23vw",
         color1: "#E9D56F",
         color2: "black",
-        innerHeigth: "4vw",
-        innerWidth: "24vw",
+        innerHeigth: "2.3vw",
+        innerWidth: "21.5vw",
         link: "teste",
         text: "teste"
     }
@@ -20,12 +20,12 @@ export class Btn2 extends Component {
         display: 'flex',
         alignItens: 'center',
         justifyItens: 'center',
-        margin: '2vw'
+        margin: '3rem'
     }
 
     outStyle = () => {
         return {
-            border: `0.23rem solid ${this.state.color2}`,
+            border: `0.20rem solid ${this.state.color2}`,
             filter: 'brightness(100%)',
             width: this.state.width,
             height: this.state.heigth,
@@ -39,7 +39,7 @@ export class Btn2 extends Component {
 
     innerStyle = () => {
         return{     
-            border: `0.23rem solid ${this.state.color1}`,
+            border: `0.20rem solid ${this.state.color1}`,
             filter: 'brightness(100%)', 
             width: this.state.innerWidth,
             height: this.state.innerHeigth,
@@ -54,7 +54,7 @@ export class Btn2 extends Component {
     text = () => {
         return {
             color: this.state.color2,
-            fontSize:'1.6rem',
+            fontSize:'1.2rem',
             margin: 'auto'
         }
     }

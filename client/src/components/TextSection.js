@@ -5,35 +5,46 @@ import '../pages/Menu/styles/styles.css';
 import SepBlack from './SepBlack';
 import './styles/TextSection.css';
 
+
+function NewlineText(props) {
+    let id = 0;
+    const text = props.text;
+    console.log(text);
+    const newText = text.split('\\n').map(str => {
+        id++;
+        return <p style={{margin: "0.5rem"}} className='paragrafo pula-linha' key={id}>{str}</p>
+    });
+    console.log(newText);
+    return newText;
+    //Solução retirada de: https://forum.freecodecamp.org/t/newline-in-react-string-solved/68484
+}
 export class TextSection extends Component {
-
-    state = {
-        
-    }
-
+    
     filter = () => {
-        if(this.props.type !== "comFotoDeFundo") return {
-            position: "absolute",
-            visibility: "hidden"
-        }; else return {
+        if(this.props.type !== "comFotoDeFundo")
+             return {
+                position: "absolute",
+                visibility: "hidden"
+             };
+        else return {
                 display: "flex",
                 filter: "opacity(50%)",
                 position: "absolute",
                 width: "98.7vw",
-                height: "33vh",
+                height: "40vh",
                 backgroundColor: "black"
         }
     }
 
-    subtitleColor = () => {
-        let color = "";
+    subtitleStyle = () => {
+        let subStyle = "";
         if(this.props.type !== "comFotoDeFundo") {
-            color = "subtitulo2"
+            subStyle = "subtitulo2"
         } else {
-            color = "subtitulo1"
+            subStyle = "subtitulo1"
         }
 
-        return color;
+        return subStyle;
     }
 
     hidden1 = () => {
@@ -54,28 +65,24 @@ export class TextSection extends Component {
         return (
 
             <div className="especialidade">
+                
                 <div className={this.props.type}>
-                    <div style={this.filter()} />
+                        <div style={this.filter()} />
 
-                    <div>
-                        <h1 className="titulo2" >{this.props.titulo}</h1>
+                        <h1 className={"titulo2"} >{this.props.titulo}</h1>
     
                         <div className="sepContainer" style={this.hidden1()}>
                             <SepBlack />
-                            <span className={this.subtitleColor()}>{this.props.subtitulo}</span>
+                            <span className={this.subtitleStyle()}>{this.props.subtitulo}</span>
                             <SepBlack />
                         </div>
 
                         <div className="sepContainer" style={this.hidden2()}>
-                            <span className={this.subtitleColor()}>{this.props.subtitulo}</span>
+                            <span className={this.subtitleStyle()}>{this.props.subtitulo}</span>
                         </div>
 
-                        
-                    </div>
-                    
                 </div>
-                    
-                <p className="paragrafo" >{this.props.texto}</p>
+                <NewlineText text={this.props.texto} />
             </div>
         )
     }

@@ -1,9 +1,17 @@
 .testContainer{
     text-align: center;
-    background-color: rgb(3, 31, 31);
+    background-color: rgb(115, 239, 255);
 }
 
 .t5{
     color: rgb(185, 8, 156);
     font-size: 5rem;
+}
+
+.home__icon g {
+    fill: #FFFFFF;
+}
+.home__icon path {
+    stroke: #e5e5e5;
+    stroke-width: 10px;
 }

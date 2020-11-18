@@ -4,6 +4,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import TextSection from '../../components/TextSection';
 import Btn2 from '../../components/Btn2';
+import faceWhite from '../../assets/images/icons/icon-face-black.svg';
+import instaWhite from '../../assets/images/icons/icon-insta-black.svg';
+import wppWhite from '../../assets/images/icons/icon-wpp-black.svg';
+
 
 export class Home extends Component {
     
@@ -14,11 +18,11 @@ export class Home extends Component {
 
         btns: [
             {
-                text: "Cardapio",
+                text: "Cardápio",
                 path: "/working"
             },
             {
-                text: "Reserves",
+                text: "Reservas",
                 path: "/working"
             },
             {
@@ -31,15 +35,15 @@ export class Home extends Component {
 
         nav: [
             {
-                text: "Inicio",
+                text: "Início",
                 path: "/"
             },
             {
-                text: "Cardapio",
+                text: "Cardápio",
                 path: "/working"
             },
             {
-                text: "Reserves",
+                text: "Reservas",
                 path: "/working"
             },
             {
@@ -50,8 +54,14 @@ export class Home extends Component {
         ]
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render(){
+
         return(
+
             <div>
 
                 <Header 
@@ -72,23 +82,33 @@ export class Home extends Component {
 
                 <TextSection
                     type="comFotoDeFundo"
-                    titulo="Nossa especialidade"
+                    titulo="Eventos"
                     subtitulo="ALGUMA COISA"
                     texto="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque, lorem ut malesuada mattis, ante nisl ultricies orci, ut scelerisque nulla nibh non ipsum. Duis nec condimentum nulla. Cras congue dui mi, eget elementum sapien finibus vel. Quisque at nibh massa. Nunc purus ex, tempus sed metus a, maximus feugiat lacus. Mauris fringilla pharetra consequat. In suscipit nibh sed est rhoncus, eget dapibus sapien tincidunt."
                 />
         
                 <Btn2 
-                    path="/Reserves"
+                    path="/working"
                     text="Faça uma reserva"
                 />
+
 
                 <TextSection
                     type="normal"
                     titulo="Fale conosco"
                     subtitulo="ALGUMA COISA"
-                    texto="Lorem ipsum dolor sit amet, "
+                    texto='Telefone: 11 9999-9999 \n E-mail: restaurante@email.com \n Endereço: Vila Sésamo,Rua dos bolos 0'
                 />
     
+    
+                    <div className="social-icons-black">
+                        <a href='https://www.facebook.com/' target="blank"> <img src={faceWhite} className="item" alt="face"/> </a>
+                        <a href='https://www.instagram.com/' target="blank">
+                             <img src={instaWhite} style={{marginLeft: "-1.4rem"}} className="item" alt="insta"/>
+                        </a>
+                        <a href='https://www.whatsapp.com/' target="blank"> <img src={wppWhite} className="item" alt="whats"/> </a>     
+                    </div>
+
                 <Footer />
             </div>
             
