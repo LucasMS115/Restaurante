@@ -122,7 +122,18 @@ span{
     margin: 0;
 }
 
-.social-icons-black{
+.social-icons-corner{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    color:white;
+    font-size: 2rem;
+    filter: brightness(100%);
+    visibility: hidden;
+}
+
+.social-icons-middle{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,14 +141,61 @@ span{
     margin: 3rem;
 }
 
-.social-icons-black a {
-    margin:1rem;
+
+/* --- ICONS STYLE --- */
+
+.icon-white g {
+    fill: #ffffff;
+}
+.icon-white path {
+    fill: #ffffff;
+    stroke: #ffffff;
+    stroke-width: .1px;
+}
+.icon-white-gold path {
+    fill: #ffffff;
+    stroke: var(--color-gold);
+    stroke-width: .08rem;
 }
 
-.social-icons-black img {
-    height: 6rem;
-    width: 6rem;
+.icon-black g {
+    fill: #0f0f0f;
 }
+.icon-black path {
+    fill: #0f0f0f;
+    stroke: #0f0f0f;
+    stroke-width: .1px;
+}
+.icon-black path {
+    fill: #0f0f0f;
+    stroke: #0f0f0f;
+    stroke-width: .1px;
+}
+.icon-black-gold path {
+    fill: #0f0f0f;
+    stroke: var(--color-gold);
+    stroke-width: .1rem;
+}
+
+.icon-small{
+    height: 4rem;
+    width: auto;
+    margin: 0.5rem;
+}
+
+.icon-medium{
+    height: 6rem;
+    width: auto;
+    margin: 1rem;
+}
+
+.icon-large{
+    height: 8rem;
+    width: auto;
+    margin: 1rem;
+}
+
+/* --- ICONS STYLE --- */
 
 .pula-linha {
     margin: 0 0 0 0; 
@@ -153,6 +211,11 @@ span{
     :root {
         font-size: 45%;
     }
+
+    .social-icons-corner{
+        visibility: visible;
+    }
+
 }
 
 @media (min-width: 700px) {

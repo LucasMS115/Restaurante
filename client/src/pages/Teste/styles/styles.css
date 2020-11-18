@@ -1,6 +1,6 @@
 .testContainer{
     text-align: center;
-    background-color: rgb(115, 239, 255);
+    background-color: rgb(244, 249, 250);
 }
 
 .t5{
@@ -8,10 +8,3 @@
     font-size: 5rem;
 }
 
-.home__icon g {
-    fill: #FFFFFF;
-}
-.home__icon path {
-    stroke: #e5e5e5;
-    stroke-width: 10px;
-}

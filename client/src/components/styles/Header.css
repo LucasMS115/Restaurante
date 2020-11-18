@@ -32,23 +32,6 @@
     justify-content: center;  
 }
 
-.social-icons{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 1rem;
-    color:white;
-    font-size: 2rem;
-    filter: brightness(100%);
-    visibility: hidden;
-}
-
-.social-icons .item{
-    height: 3rem;
-    width: 3rem;
-    margin: 0.5rem;
-}
-
 
 
 @media (min-width: 500px) {
@@ -61,10 +44,5 @@
     .filter{
         height: 100vh;
     }
-
-    .social-icons{
-        visibility: visible;
-    }
-
 
 }
