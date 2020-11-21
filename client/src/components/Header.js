@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../assets/styles/global.css';
 import './styles/Header.css';
-import logo from '../assets/images/icons/logo.svg';
-/* import faceWhite from '../assets/images/icons/icon-face.svg';
-import instaWhite from '../assets/images/icons/icon-insta.svg';
-import wppWhite from '../assets/images/icons/icon-wpp.svg'; */
 import NavBt from './NavBt';
 import SepWhite from "./SepWhite";
 import Btn1Set from './Btn1Set';

@@ -28,6 +28,7 @@ export class Icon extends Component {
             case "facebook": return <Facebook onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className={this.state.class}/>;
             case "instagram": return <Instagram onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className={this.state.class}/>;
             case "whatsapp": return <Wpp onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className={this.state.class}/>;
+            default: return console.log("Unsigned icon");
         }
         
     }

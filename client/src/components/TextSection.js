@@ -9,12 +9,10 @@ import './styles/TextSection.css';
 function NewlineText(props) {
     let id = 0;
     const text = props.text;
-    console.log(text);
     const newText = text.split('\\n').map(str => {
         id++;
         return <p style={{margin: "0.5rem"}} className='paragrafo pula-linha' key={id}>{str}</p>
     });
-    console.log(newText);
     return newText;
     //Solução retirada de: https://forum.freecodecamp.org/t/newline-in-react-string-solved/68484
 }

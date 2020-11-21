@@ -36,8 +36,24 @@ span{
     font-size: 1.3rem;
 }
 
+/* for testing */
+
+.test-border{
+    border: 1rem solid coral;
+}
+/* for testing */
+
+
 .flex-container{
     display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 1rem;
+}
+
+.flex-container-colum{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     margin: 1rem;
@@ -122,6 +138,18 @@ span{
     margin: 0;
 }
 
+.paragrafo-center {
+    color: var(--color-grey-1);
+    font-family: Sintony;
+    text-align: center;
+    width: 50%;
+    margin: 1rem;
+}
+
+.white{
+    color: #FFFFFF;
+}
+
 .social-icons-corner{
     display: flex;
     position: absolute;
@@ -140,7 +168,6 @@ span{
     filter: brightness(100%);
     margin: 3rem;
 }
-
 
 /* --- ICONS STYLE --- */
 
