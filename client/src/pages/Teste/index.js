@@ -4,7 +4,7 @@ import './styles/styles.css';
 import CompTest from '../../components/testComponents/CompTest';
 import NavBarTest from '../../components/testComponents/NavBarTest';
 import Btn1 from '../../components/Btn1';
-import SvgTest from '../../components/testComponents/svgTest';
+{/*import SvgTest from '../../components/testComponents/svgTest';*/}
 
 
 const url = config.url;
@@ -172,7 +172,7 @@ class teste extends Component {
                 <br/>
                 <br/>
 
-                <SvgTest />
+                {/*<SvgTest />*/}
 
             </div>
         );
