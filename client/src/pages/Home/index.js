@@ -3,10 +3,8 @@ import './styles/styles.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import TextSection from '../../components/TextSection';
+import ContactSection from '../../components/ContactSection';
 import Btn2 from '../../components/Btn2';
-import faceWhite from '../../assets/images/icons/icon-face-black.svg';
-import instaWhite from '../../assets/images/icons/icon-insta-black.svg';
-import wppWhite from '../../assets/images/icons/icon-wpp-black.svg';
 
 
 export class Home extends Component {
@@ -19,7 +17,7 @@ export class Home extends Component {
         btns: [
             {
                 text: "Cardápio",
-                path: "/working"
+                path: "/menu"
             },
             {
                 text: "Reservas",
@@ -40,7 +38,7 @@ export class Home extends Component {
             },
             {
                 text: "Cardápio",
-                path: "/working"
+                path: "/menu"
             },
             {
                 text: "Reservas",
@@ -93,21 +91,7 @@ export class Home extends Component {
                 />
 
 
-                <TextSection
-                    type="normal"
-                    titulo="Fale conosco"
-                    subtitulo="ALGUMA COISA"
-                    texto='Telefone: 11 9999-9999 \n E-mail: restaurante@email.com \n Endereço: Vila Sésamo,Rua dos bolos 0'
-                />
-    
-    
-                    <div className="social-icons-black">
-                        <a href='https://www.facebook.com/' target="blank"> <img src={faceWhite} className="item" alt="face"/> </a>
-                        <a href='https://www.instagram.com/' target="blank">
-                             <img src={instaWhite} style={{marginLeft: "-1.4rem"}} className="item" alt="insta"/>
-                        </a>
-                        <a href='https://www.whatsapp.com/' target="blank"> <img src={wppWhite} className="item" alt="whats"/> </a>     
-                    </div>
+                <ContactSection />
 
                 <Footer />
             </div>

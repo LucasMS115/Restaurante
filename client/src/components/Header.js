@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../assets/styles/global.css';
 import './styles/Header.css';
-import logo from '../assets/images/icons/logo.svg';
-import faceWhite from '../assets/images/icons/icon-face.svg';
-import instaWhite from '../assets/images/icons/icon-insta.svg';
-import wppWhite from '../assets/images/icons/icon-wpp.svg';
 import NavBt from './NavBt';
 import SepWhite from "./SepWhite";
 import Btn1Set from './Btn1Set';
+import Icon from './Icon';
 import { Link } from 'react-router-dom';
 
 export class Header extends Component {
@@ -36,7 +33,7 @@ export class Header extends Component {
                     <div className="filter"/>
 
                     <Link className="logo-container" to='/'>
-                        <img src={logo} className="logo" alt="logo"/>
+                        <Icon type="logo" class="logo" />
                     </Link>
 
                     <div className="nav-bar"> 
@@ -46,12 +43,16 @@ export class Header extends Component {
                         <NavBt path={this.state.nav3.path} name={this.state.nav3.text}/>
                     </div>
 
-                    <div className="social-icons">
-                        <a href='https://www.facebook.com/' target="blank"> <img src={faceWhite} className="item" alt="face"/> </a>
+                    <div className="social-icons-corner">
                         <a href='https://www.instagram.com/' target="blank">
-                             <img src={instaWhite} style={{marginLeft: "-0.2rem"}} className="item" alt="insta"/>
+                            <Icon type="instagram" class="icon-small icon-white"/>
                         </a>
-                        <a href='https://www.whatsapp.com/' target="blank"> <img src={wppWhite} className="item" alt="whats"/> </a>     
+                        <a href='https://www.facebook.com/' target="blank">
+                            <Icon type="facebook" class="icon-small icon-white"/>
+                        </a>
+                        <a href='https://www.whatsapp.com/' target="blank">
+                            <Icon type="whatsapp" class="icon-small icon-white"/>
+                        </a>
                     </div>
 
                     <h1 style={{marginBottom: "-5rem"}} className="titulo1">{this.props.title}</h1>
