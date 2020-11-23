@@ -1,0 +1,59 @@
+.formsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-white);
+}
+
+.formsContainer {
+    width: 95%;
+    margin-top: -6rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-gold);
+}
+
+.formTitle {
+    filter: none;
+    background: var(--color-white);
+    z-index: 2;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+}
+
+.itemForms {
+    width: 100%;
+    display: flex;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+label {
+    margin-left: 4rem;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+input {
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 20px;
+    font-size: 1.25em;
+    
+    border: 2px solid black;
+}
+
+select {
+    width: 90%;
+    height: 20px;
+    margin: auto;
+    border: 2px solid black;
+}

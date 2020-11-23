@@ -6,7 +6,6 @@ import TextSection from '../../components/TextSection';
 import ContactSection from '../../components/ContactSection';
 import Btn2 from '../../components/Btn2';
 
-
 export class Home extends Component {
     
     state = {

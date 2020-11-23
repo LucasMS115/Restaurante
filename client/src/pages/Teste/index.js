@@ -171,11 +171,6 @@ class teste extends Component {
                 <br/>
                 <br/>
 
-<<<<<<< HEAD
-                {/*<SvgTest />*/}
-
-=======
->>>>>>> 29f457e2d82e2633797dd67371e9b3d915542604
             </div>
         );
     }
