@@ -6,6 +6,8 @@ import Adm from './pages/Adm';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Reserves from './pages/Reserves';
+import ReservesContinue from './pages/Reserves/continue.js';
+import ReservesConclude from './pages/Reserves/conclude.js';
 import Teste from './pages/Teste';
 import User from './pages/User';
 import Working from './pages/Working';
@@ -21,6 +23,8 @@ class App extends Component{
           <Route path="/adm" exact component={Adm}/>
           <Route path="/menu" exact component={Menu}/>
           <Route path="/reserves" exact component={Reserves}/>
+          <Route path="/reservesContinue" exact component={ReservesContinue}/>
+          <Route path="/reservesConclude" exact component={ReservesConclude}/>
           <Route path="/teste" exact component={Teste}/>
           <Route path="/user" exact component={User}/>
           <Route path="/working" exact component={Working}/>

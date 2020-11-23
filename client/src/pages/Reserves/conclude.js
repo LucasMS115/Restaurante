@@ -4,16 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
 
-/* import 'date-fns';
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers'; */
-
-class Reserves extends Component {
+class ReservesConclude extends Component {
 
     state = {
         title: "Reservas",
@@ -21,6 +12,7 @@ class Reserves extends Component {
         separator: "",
 
         nav: [
+            
             {
                 text: "Início",
                 path: "/"
@@ -40,32 +32,7 @@ class Reserves extends Component {
             
         ],
 
-        inputs: [
-            {
-                text: "Selecione o dia:",
-                type: "text"
-            },
-            {
-                text: "Horário:",
-                type: "time"
-            },
-            {
-                text: "Mesa para:",
-                type: "number"
-            },
-            {
-                text: "Salão:",
-                type: "select",
-                options: ["", "Principal", "VIP"]
-            },
-        ],
-
-        btns: [
-            {
-                path: "",
-                text: "Próximo"
-            }
-        ]
+        
     }
 
     render() {
@@ -81,11 +48,7 @@ class Reserves extends Component {
                 separator={this.state.separator}
             />
 
-            <Forms 
-                title="Informações"
-                inputs={this.state.inputs}
-                btns={this.state.btns}
-            />
+            
 
             <Footer />
     
@@ -95,4 +58,4 @@ class Reserves extends Component {
 
 };
 
-export default Reserves;
+export default ReservesConclude;
