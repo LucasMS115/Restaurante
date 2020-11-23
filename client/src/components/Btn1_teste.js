@@ -86,27 +86,30 @@ export class Btn1 extends Component {
     click = () => {
         this.setState({color1: "white"});
         this.setState({color2: "white"});
+
     }
 
     render() {
         return (
             <div style={this.container}>
-                <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
+                <div style={this.outStyle()} onMouseEnter={this.mouse}
+                 onMouseLeave={this.mouse} onClick={this.props.func.bind(this, this.props.text.toLowerCase())}>
                     <div style={this.backgroundStyle()}/>
                     <div style={this.innerStyle()}>
                         <img style={this.iconStyle} src={icon1} alt=':('></img>
                         <span style={this.iconLeg()}>{this.props.text}</span>
                     </div>
-                </Link>
+                </div>
+                
             </div>
         )
     }
 }
 
 Btn1.propTypes = {
-    path: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     icon: PropTypes.number,
+    func: PropTypes.func
 }
 
 export default Btn1;

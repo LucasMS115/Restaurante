@@ -5,6 +5,7 @@ import Footer from '../../components/Footer';
 import DishSet from '../../components/DishSet';
 import ContactSection from '../../components/ContactSection';
 import config from '../../config';
+import Btn1_teste from '../../components/Btn1_teste'
 
 const url = config.url;
 
@@ -55,19 +56,15 @@ export class Menu extends Component {
             },
             
         ],
-        dishes: [
-            {
-                id: "1",
-                name: "Placeholder",
-                description: "Uma pequena descrição do prato blabla blabla bla blalbalbalbal lba bla",
-                price: "1.000,00"
-            }
-        ]
+        dishesBase: [],
+        dishes: []
     }
 
     async componentDidMount() {
         window.scrollTo(0, 0);
-        this.setState({dishes: await this.getDishes()});
+        const dishes = await this.getDishes();
+        this.setState({dishes: dishes});
+        this.setState({dishesBase: dishes});
     }
 
     getDishes = async () => {
@@ -83,6 +80,19 @@ export class Menu extends Component {
     
         return dishesData;
     }
+
+    filter = (btn) => {
+
+        let filtred = [];
+         this.state.dishesBase.forEach((el) => {
+            console.log(el);
+            console.log(el.type);
+            console.log(btn);
+            if(el.type === btn) filtred.push(el);
+        })
+        console.log(filtred);
+        this.setState({dishes: filtred});
+    } 
 
     render(){
 
@@ -104,6 +114,8 @@ export class Menu extends Component {
                 />
 
                 <ContactSection />
+
+                <Btn1_teste text="Sobremesa" func={this.filter}/>
 
                 <Footer />
             </div>

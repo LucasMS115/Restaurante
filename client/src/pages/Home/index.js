@@ -16,7 +16,7 @@ export class Home extends Component {
         btns: [
             {
                 text: "Cardápio",
-                path: "/menu"
+                path: "/working"
             },
             {
                 text: "Reservas",
@@ -37,7 +37,7 @@ export class Home extends Component {
             },
             {
                 text: "Cardápio",
-                path: "/menu"
+                path: "/working"
             },
             {
                 text: "Reservas",
