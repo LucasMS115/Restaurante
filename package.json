@@ -7,7 +7,6 @@
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
     "client": "cd client && npm start",
-    "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "author": "",
