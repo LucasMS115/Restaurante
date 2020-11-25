@@ -16,7 +16,7 @@ import Working from './pages/Working';
 class App extends Component{
   render(){
     return (
-      <Router>
+      <Router basename={window.location.pathname || ''}>
         <Switch>
   
           <Route path="/" exact component={Home}/>
