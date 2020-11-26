@@ -20,14 +20,22 @@ class App extends Component{
   }
 
   componentDidMount(){
-    var deploy = window.location.pathname.includes("https");
-    if(deploy) this.setState({url:"https://5fbeed7f33d94467f28b5465--cocky-kepler-53d77e.netlify.app/"})
+    var temp = localStorage.getItem('url');
+    if(temp){
+      this.setState({url: temp});
+      console.log(temp);
+    } 
+    else{
+      this.setState({url: window.location.pathname});
+      localStorage.setItem('url', window.location.pathname);
+      console.log("n tem");
+    }
   }
 
   render(){
     return (
       /* window.location.pathname  */
-      <Router basename={ this.state.url }>
+      <Router basename={this.state.url}>
         <Switch>
   
           <Route path="/" exact component={Home}/>
