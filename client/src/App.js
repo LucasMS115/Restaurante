@@ -15,27 +15,10 @@ import Working from './pages/Working';
 
 class App extends Component{
 
-  state = {
-    url: ""
-  }
-
-  componentDidMount(){
-    var temp = localStorage.getItem('url');
-    if(temp){
-      this.setState({url: temp});
-      console.log(temp);
-    } 
-    else{
-      this.setState({url: window.location.pathname});
-      localStorage.setItem('url', window.location.pathname);
-      console.log("n tem");
-    }
-  }
-
   render(){
     return (
-      /* window.location.pathname  */
-      <Router basename={this.state.url}>
+      /*basename =  {window.location.pathname || ""}  */
+      <Router >
         <Switch>
   
           <Route path="/" exact component={Home}/>
