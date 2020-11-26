@@ -7,11 +7,11 @@ import {Link} from 'react-router-dom';
 export class Btn1 extends Component {
 
     state = {
-        btnSize: "12.5vw",
+        btnSize: "11rem",
         color1: "#E9D56F",
         color2: "white",
-        innerSize: "10.2vw",
-        iconSize: "6vw",
+        innerSize: "9rem",
+        iconSize: "5rem",
         link: "teste",
         text: "teste",
         icon: icon1
