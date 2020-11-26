@@ -12,7 +12,7 @@ export class NavBtTest extends Component {
         return{
             textDecoration: 'none',
             color: this.state.color,
-            fontSize: '1.5rem'
+            fontSize: '1.9rem'
         }
     };
 

@@ -14,9 +14,20 @@ import Working from './pages/Working';
 
 
 class App extends Component{
+
+  state = {
+    url: ""
+  }
+
+  componentDidMount(){
+    var deploy = window.location.pathname.includes("https");
+    if(deploy) this.setState({url:"https://5fbeed7f33d94467f28b5465--cocky-kepler-53d77e.netlify.app/"})
+  }
+
   render(){
     return (
-      <Router basename={window.location.pathname || ''}>
+      /* window.location.pathname  */
+      <Router basename={ this.state.url }>
         <Switch>
   
           <Route path="/" exact component={Home}/>

@@ -54,7 +54,7 @@ export class Btn2 extends Component {
     text = () => {
         return {
             color: this.state.color2,
-            fontSize:'1.2rem',
+            fontSize:'1.5rem',
             margin: 'auto'
         }
     }

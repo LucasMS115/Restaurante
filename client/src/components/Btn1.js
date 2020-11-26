@@ -72,7 +72,8 @@ export class Btn1 extends Component {
     iconLeg = () => {
         return {
             color: this.state.color2,
-            fontSize:'1rem',
+            filter: 'brightness(100%)',
+            fontSize:'1.45rem',
             margin: 'auto'
         }
     }
