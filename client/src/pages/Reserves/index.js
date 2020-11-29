@@ -20,7 +20,7 @@ class Reserves extends Component {
         title: "Reservas",
         subtitle: "Faça sua reserva online",
         separator: "",
-        activeForms: "0",
+        activeForms: "1",
 
         nav: [
             {
@@ -98,35 +98,8 @@ class Reserves extends Component {
         ]
     }
 
-    /* increaseActiveFormState = () => {
-        console.log('increase')
-        this.state.activeForms++
-    }
-
-    decreaseActiveFormState = () => {
-        console.log('decrease')
-        this.state.activeForms--
-    } */
-
-    changeActiveFormState = () => {
-        console.log('Entrou pra mudar')
-        /* this.setState({activeForms: newState}) */
-    }
-
-    selectForm = () => {
-
-        let call
-        if(this.state.activeForms === "0")
-
-        return (
-            <Forms
-                /* activeForms= {this.state.activeForms} */
-                title="Informações"
-                inputs={this.state.inputs[this.state.activeForms]}
-                btns={this.state.btns[this.state.activeForms]}
-                func={this.changeActiveFormState}
-            />
-        )
+    changeActiveFormState = (goTo) => {
+        this.setState({activeForms: goTo});
     }
 
     render() {
@@ -142,28 +115,12 @@ class Reserves extends Component {
                     separator={this.state.separator}
                 />
 
-                {this.selectForm()}
-
-                {/* <Forms 
-                title="Informações"
-                inputs={this.state.inputs}
-                btns={this.state.btns}
-                style={{position: "absolute",
-                visibility: "hidden"}}
-            />
-
-            <Forms 
-                title="Informações"
-                inputs={this.state.inputs}
-                btns={this.state.btns}
-                
-            /> */}
-
-                <Btn2 
-                        text={this.state.btns[0].text}
-                        func={this.increaseActiveFormState}
-                        type="0"
-                    />
+                <Forms
+                    title="Informações"
+                    inputs={this.state.inputs[this.state.activeForms]}
+                    btns={this.state.btns[this.state.activeForms]}
+                    func={this.changeActiveFormState}
+                />
 
                 <Footer />
 

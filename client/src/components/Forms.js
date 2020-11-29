@@ -7,9 +7,9 @@ import Btn2 from './Btn2';
 
 class Forms extends Component {
 
-    /* componentDidMount() {
-        console.log(this.props.func)
-    } */
+    componentDidMount() {
+        console.log("No forms:" + this.props.func)
+    }
 
     render() {
         return(

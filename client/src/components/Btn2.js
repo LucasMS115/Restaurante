@@ -3,7 +3,7 @@ import '../assets/styles/global.css';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-export class Btn2 extends Component {
+class Btn2 extends Component {
 
     state = {
         heigth: "3.8rem",
@@ -14,6 +14,7 @@ export class Btn2 extends Component {
         innerWidth: "21.5rem",
         link: "teste",
         text: "teste",
+        aux: 0,
 
         func: this.props.func
     }
@@ -74,16 +75,16 @@ export class Btn2 extends Component {
 
     defineButtonType = () => {
         if(this.props.type === '0') {
-            console.log('Entrou no if')
+            /* console.log('Entrou no if') */
             return (
-                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.props.func}>
+                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.state.func.bind(this, this.props.goTo)}> {/* .bind(this, this.props.tarefa.goTo) */}
                     <div style={this.innerStyle()}>
                         <span style={this.text()}>{this.props.text}</span>
                     </div>
                 </div>
             )
         } else {
-            console.log('Entrou no else')
+            /* console.log('Entrou no else') */
             return (
                 <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
                     <div style={this.innerStyle()}>
@@ -92,10 +93,6 @@ export class Btn2 extends Component {
                 </Link>
             )
         }
-    }
-
-    componentDidMount() {
-        console.log(this.state.func)
     }
 
     render() {
@@ -112,7 +109,7 @@ Btn2.propTypes = {
     text: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     goTo: PropTypes.string,
-    func: PropTypes.func,
+    func: PropTypes.func.isRequired,
 }
 
 export default Btn2;
