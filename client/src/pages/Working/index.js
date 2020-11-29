@@ -9,20 +9,21 @@ export class Home extends Component {
         title: "Ooops",
         subtitle: "ESTA PAGINA AINDA NÃO ESTÁ PRONTA",
         separator: "Alguma Coisa",
+        btnsType: "link", //not used on this page
 
-        btns: [],
+        btns: [], //not used on this page
 
         nav: [
             {
-                text: "Inicio",
+                text: "Início",
                 path: "/"
             },
             {
-                text: "Cardapio",
+                text: "Cardápio",
                 path: "/working"
             },
             {
-                text: "Reserves",
+                text: "Reservas",
                 path: "/working"
             },
             {
@@ -44,6 +45,7 @@ export class Home extends Component {
                     type="2"
                     nav={this.state.nav}
                     btns={this.state.btns}
+                    btnsType={this.state.btnsType} //not used on this page
                     title={this.state.title}
                     subtitle={this.state.subtitle}
                     separator={this.state.separator}

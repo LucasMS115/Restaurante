@@ -33,7 +33,7 @@ export class Dish extends Component {
             display: "flex",
             height: "30vw",
             width: "auto",
-            marginTop: "-3rem"
+            marginTop: "-1rem"
         }
     }
 

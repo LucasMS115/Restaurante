@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import DishSet from '../../components/DishSet';
 import ContactSection from '../../components/ContactSection';
 import config from '../../config';
-import Btn1_teste from '../../components/Btn1_teste'
 
 const url = config.url;
 
@@ -15,27 +14,7 @@ export class Menu extends Component {
         title: "Cardápio",
         subtitle: "Tudo muito caro mesmo ;)",
         separator: "Alguma Coisa",
-
-        btns: [
-            {
-                text: "Entradas",
-                path: "/working"
-            },
-            {
-                text: "Principais",
-                path: "/working"
-            },
-            {
-                text: "Sobremesas",
-                path: "/working"
-            },
-            {
-                text: "Bebidas",
-                path: "/working"
-            }
-            
-            
-        ],
+        btnsType: "function",
 
         nav: [
             {
@@ -67,6 +46,7 @@ export class Menu extends Component {
         this.setState({dishesBase: dishes});
     }
 
+    /* ESSA FUNCAO TEM Q SAIR DAKI */
     getDishes = async () => {
 
         let dishesData;
@@ -80,17 +60,14 @@ export class Menu extends Component {
     
         return dishesData;
     }
-
-    filter = (btn) => {
+    /* ESSA FUNCAO TEM Q SAIR DAKI */
+    
+    filter = (btnName) => {
 
         let filtred = [];
          this.state.dishesBase.forEach((el) => {
-            console.log(el);
-            console.log(el.type);
-            console.log(btn);
-            if(el.type === btn) filtred.push(el);
+            if(el.type === btnName) filtred.push(el);
         })
-        console.log(filtred);
         this.setState({dishes: filtred});
     } 
 
@@ -103,7 +80,15 @@ export class Menu extends Component {
                 <Header 
                     type="1"
                     nav={this.state.nav}
-                    btns={this.state.btns}
+
+                    btns={ [{ text: "Entradas", func: this.filter },
+                            { text: "Principais", func: this.filter},
+                            { text: "Sobremesas", func: this.filter },
+                            { text: "Bebidas", func: this.filter }
+                           ]
+                    }
+
+                    btnsType={this.state.btnsType}
                     title={this.state.title}
                     subtitle={this.state.subtitle}
                     separator={this.state.separator}
@@ -114,8 +99,6 @@ export class Menu extends Component {
                 />
 
                 <ContactSection />
-
-                <Btn1_teste text="Sobremesa" func={this.filter}/>
 
                 <Footer />
             </div>
