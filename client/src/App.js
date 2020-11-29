@@ -18,7 +18,7 @@ class App extends Component{
   render(){
     return (
       /*basename =  {window.location.pathname || ""}  */
-      <Router basename="/">
+      <HashRouter basename="/">
         <Switch>
   
           <Route path="/" exact component={Home}/>
@@ -32,7 +32,7 @@ class App extends Component{
           <Route path="/working" exact component={Working}/>
   
         </Switch>
-      </Router>
+      </HashRouter>
     );
   }
   
