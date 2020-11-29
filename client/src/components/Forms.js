@@ -7,6 +7,10 @@ import Btn2 from './Btn2';
 
 class Forms extends Component {
 
+    /* componentDidMount() {
+        console.log(this.props.func)
+    } */
+
     render() {
         return(
             <div className="formsPage">
@@ -20,8 +24,10 @@ class Forms extends Component {
 
 
                     <Btn2 
-                        path={this.props.btns[0].path}
                         text={this.props.btns[0].text}
+                        goTo={this.props.btns[0].goTo}
+                        func={this.props.func}
+                        type="0"
                     />
                 </form>
             
@@ -33,9 +39,11 @@ class Forms extends Component {
 };
 
 Forms.propTypes = {
+    /* activeForms: PropTypes.string.isRequired, */
     title: PropTypes.string.isRequired, 
     inputs: PropTypes.array.isRequired, 
     btns: PropTypes.array.isRequired, 
+    func: PropTypes.func,
 }
 
 export default Forms;

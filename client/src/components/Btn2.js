@@ -13,7 +13,9 @@ export class Btn2 extends Component {
         innerHeigth: "2.3vw",
         innerWidth: "21.5vw",
         link: "teste",
-        text: "teste"
+        text: "teste",
+
+        func: this.props.func
     }
 
     container = {
@@ -70,23 +72,47 @@ export class Btn2 extends Component {
         this.setState({color2: "black"});
     }
 
-    render() {
-        return (
-            <div style={this.container}>
+    defineButtonType = () => {
+        if(this.props.type === '0') {
+            console.log('Entrou no if')
+            return (
+                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.props.func}>
+                    <div style={this.innerStyle()}>
+                        <span style={this.text()}>{this.props.text}</span>
+                    </div>
+                </div>
+            )
+        } else {
+            console.log('Entrou no else')
+            return (
                 <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
                     <div style={this.innerStyle()}>
                         <span style={this.text()}>{this.props.text}</span>
                     </div>
                 </Link>
-                
+            )
+        }
+    }
+
+    componentDidMount() {
+        console.log(this.state.func)
+    }
+
+    render() {
+        return (
+            <div style={this.container}>
+                {this.defineButtonType()}
             </div>
         )
     }
 }
 
 Btn2.propTypes = {
-    path: PropTypes.string.isRequired,
+    path: PropTypes.string,
     text: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    goTo: PropTypes.string,
+    func: PropTypes.func,
 }
 
 export default Btn2;
