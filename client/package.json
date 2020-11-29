@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://5fbef0c30f9074000802e0b2--cocky-kepler-53d77e.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

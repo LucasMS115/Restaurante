@@ -7,14 +7,14 @@ import {Link} from 'react-router-dom';
 export class Btn1 extends Component {
 
     state = {
-        btnSize: "12.5vw",
+        btnSize: "10.5rem",
         color1: "#E9D56F",
         color2: "white",
-        innerSize: "10.2vw",
-        iconSize: "6vw",
+        innerSize: "9.2rem",
+        iconSize: "5rem",
         link: "teste",
         text: "teste",
-        icon: icon1
+        icon: icon1,
     }
 
     container = {
@@ -45,7 +45,8 @@ export class Btn1 extends Component {
             display: 'flex',
             alignItens: 'center',
             justifyItens: 'center',
-            textDecoration:'none'
+            textDecoration:'none',
+            cursor:'pointer'
         }
     }
 
@@ -72,7 +73,8 @@ export class Btn1 extends Component {
     iconLeg = () => {
         return {
             color: this.state.color2,
-            fontSize:'1rem',
+            filter: 'brightness(100%)',
+            fontSize:'1.45rem',
             margin: 'auto'
         }
     }
@@ -88,9 +90,9 @@ export class Btn1 extends Component {
         this.setState({color2: "white"});
     }
 
-    render() {
-        return (
-            <div style={this.container}>
+    defineBtn = () => {
+        if(this.props.type === "link")
+            return (
                 <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
                     <div style={this.backgroundStyle()}/>
                     <div style={this.innerStyle()}>
@@ -98,13 +100,36 @@ export class Btn1 extends Component {
                         <span style={this.iconLeg()}>{this.props.text}</span>
                     </div>
                 </Link>
+            )
+        else if(this.props.type === "function")
+            return (
+                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse}
+                onClick={this.props.func.bind(this, this.props.text.toLowerCase())}>
+
+                    <div style={this.backgroundStyle()}/>
+
+                    <div style={this.innerStyle()}>
+                        <img style={this.iconStyle} src={icon1} alt=':('></img>
+                        <span style={this.iconLeg()}>{this.props.text}</span>
+                    </div>
+
+                </div>
+            )
+    }
+
+    render() {
+        return (
+            <div style={this.container}>
+                {this.defineBtn()}
             </div>
         )
     }
 }
 
 Btn1.propTypes = {
-    path: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    path: PropTypes.string,
+    func: PropTypes.func,
     text: PropTypes.string.isRequired,
     icon: PropTypes.number,
 }

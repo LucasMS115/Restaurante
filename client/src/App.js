@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; 
+import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom'; 
 import './assets/styles/global.css';
 
 import Adm from './pages/Adm';
@@ -14,9 +14,11 @@ import Working from './pages/Working';
 
 
 class App extends Component{
+
   render(){
     return (
-      <Router>
+      /*basename =  {window.location.pathname || ""}  */
+      <HashRouter basename="/">
         <Switch>
   
           <Route path="/" exact component={Home}/>
@@ -30,7 +32,7 @@ class App extends Component{
           <Route path="/working" exact component={Working}/>
   
         </Switch>
-      </Router>
+      </HashRouter>
     );
   }
   

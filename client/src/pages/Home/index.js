@@ -12,6 +12,7 @@ export class Home extends Component {
         title: "Bem Vindo",
         subtitle: "NOME DO RESTAURANTE",
         separator: "Alguma Coisa",
+        btnsType: "link",
 
         btns: [
             {
@@ -65,6 +66,7 @@ export class Home extends Component {
                     type="1"
                     nav={this.state.nav}
                     btns={this.state.btns}
+                    btnsType={this.state.btnsType}
                     title={this.state.title}
                     subtitle={this.state.subtitle}
                     separator={this.state.separator}

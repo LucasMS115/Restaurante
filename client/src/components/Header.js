@@ -65,7 +65,7 @@ export class Header extends Component {
                     </div>
 
                     <div className="flex-container">
-                        <Btn1Set itens={this.props.btns}/>
+                        <Btn1Set btnsType={this.props.btnsType} itens={this.props.btns}/>
                     </div>
                     
                     
@@ -80,6 +80,7 @@ Header.propTypes = {
     type: PropTypes.string.isRequired, //Toggle the separator visibility 
     nav: PropTypes.array.isRequired, //Nav bar itens
     btns: PropTypes.array.isRequired, //Information of the buttons 
+    btnsType: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired, 
     subtitle: PropTypes.string.isRequired,
     separator: PropTypes.string.isRequired,
