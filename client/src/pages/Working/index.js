@@ -21,14 +21,6 @@ export class Home extends Component {
             {
                 text: "Cardápio",
                 path: "/menu"
-            },
-            {
-                text: "Reservas",
-                path: "/"
-            },
-            {
-                text: "Conta",
-                path: "/"
             }
         ]
     }
