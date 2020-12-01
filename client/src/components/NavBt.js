@@ -27,6 +27,10 @@ export class NavBtTest extends Component {
         this.state.color === 'white' ? this.setState({color: '#E9D56F'}) : this.setState({color: 'white'});
     };
 
+    componentDidMount(){
+        this.setState({color: 'white'})
+    }
+
     render() {
         return (
             <div>
