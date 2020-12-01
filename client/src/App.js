@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Switch, Route, HashRouter} from 'react-router-dom'; 
+import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom'; 
 import './assets/styles/global.css';
 
 import Adm from './pages/Adm';
@@ -18,7 +18,7 @@ class App extends Component{
   render(){
     return (
       /*basename =  {window.location.pathname || ""}  */
-      <HashRouter basename="/">
+      <HashRouter>
         <Switch>
   
           <Route path="/" exact component={Home}/>
