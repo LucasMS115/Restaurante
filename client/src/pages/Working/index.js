@@ -20,15 +20,15 @@ export class Home extends Component {
             },
             {
                 text: "Cardápio",
-                path: "/working"
+                path: "/menu"
             },
             {
                 text: "Reservas",
-                path: "/working"
+                path: "/"
             },
             {
                 text: "Conta",
-                path: "/working"
+                path: "/"
             }
         ]
     }
