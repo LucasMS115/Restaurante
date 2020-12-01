@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'; 
+import {NavLink} from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 
 export class NavBtTest extends Component {
@@ -31,11 +31,12 @@ export class NavBtTest extends Component {
         return (
             <div>
                 <div style={this.divStyle}> 
-                    <Link style={this.linkStyle()}
+                    <NavLink
+                        style={this.linkStyle()}
                         onMouseEnter={this.hover}
                         onMouseLeave={this.hover}
                         onClick={this.hover}
-                        to={this.props.path}> {this.props.name} </Link>  
+                        to={this.props.path} > {this.props.name} </NavLink>  
                 </div>
             </div>
         )

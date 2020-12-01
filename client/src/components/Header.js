@@ -80,7 +80,6 @@ Header.propTypes = {
     type: PropTypes.string.isRequired, //Toggle the separator visibility 
     nav: PropTypes.array.isRequired, //Nav bar itens
     btns: PropTypes.array.isRequired, //Information of the buttons 
-    btnsType: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired, 
     subtitle: PropTypes.string.isRequired,
     separator: PropTypes.string.isRequired,
