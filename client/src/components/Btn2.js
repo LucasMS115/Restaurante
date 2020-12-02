@@ -5,6 +5,11 @@ import {Link} from 'react-router-dom';
 
 class Btn2 extends Component {
 
+    componentDidMount() {
+        console.log(this.props.func)
+        console.log('ta aqui')
+    }
+
     state = {
         heigth: "3.8rem",
         width: "23rem",
@@ -23,7 +28,7 @@ class Btn2 extends Component {
         display: 'flex',
         alignItens: 'center',
         justifyItens: 'center',
-        margin: '3rem'
+        margin: '1rem'
     }
 
     outStyle = () => {

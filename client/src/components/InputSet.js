@@ -2,18 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles/Forms.css';
 
-export class Btn1Set extends Component {
+export class InputSet extends Component {
+
+    componentDidMount() {
+        console.log(this.props.getInputValueFunc)
+        console.log('ta aqui')
+    }
 
     inputTypes = (el) => {
         if(el.type == "select") {
             return(
-                <select>
+                <select onChange = {(event) => {this.props.getInputValueFunc()/* .bind(this, el.name) */}} >
                     {this.selectOptions(el)}
                 </select>
             )
         } else {
             return (
-                <input type={el.type}></input>
+                <input type={el.type} onChange = {(event) => {this.props.getInputValueFunc()/* .bind(this, el.name) */}} ></input>
             )
         }
     }
@@ -35,8 +40,9 @@ export class Btn1Set extends Component {
     }
 }
 
-Btn1Set.propTypes = {
+InputSet.propTypes = {
     inputs: PropTypes.array.isRequired,
+    getInputValueFunc: PropTypes.func,
 }
 
-export default Btn1Set;
+export default InputSet;

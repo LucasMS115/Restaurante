@@ -3,7 +3,7 @@ import './styles/styles.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
-import Btn2 from '../../components/Btn2';
+import Alert from '../../components/Alert';
 
 /* import 'date-fns';
 import Grid from '@material-ui/core/Grid';
@@ -20,7 +20,16 @@ class Reserves extends Component {
         title: "Reservas",
         subtitle: "Faça sua reserva online",
         separator: "",
-        activeForms: "1",
+        activeForms: "0",
+        alertDisplay: "block",
+
+        data: "",
+        horario: "",
+        qntPessoas: "",
+        salao: "",
+        nome: "Teste",
+        celular: "",
+        email: "",
 
         nav: [
             {
@@ -42,22 +51,41 @@ class Reserves extends Component {
 
         ],
 
-        inputs: [
+        formContentConfig: [
+            {
+                title: "Informações",
+                contentType: "Inputs"
+            },
+            {
+                title: "Informações",
+                contentType: "Inputs"
+            },
+            {
+                title: "Concluído",
+                contentType: "Text"
+            },
+        ],
+
+        formContent: [
             [
                 {
                     text: "Selecione o dia:",
+                    name: "data",
                     type: "text"
                 },
                 {
                     text: "Horário:",
+                    name: "horario",
                     type: "time"
                 },
                 {
                     text: "Mesa para:",
+                    name: "qntPessoas",
                     type: "number"
                 },
                 {
                     text: "Salão:",
+                    name: "salao",
                     type: "select",
                     options: ["", "Principal", "VIP"]
                 },
@@ -65,18 +93,29 @@ class Reserves extends Component {
             [
                 {
                     text: "Seu nome completo:",
+                    name: "nome",
                     type: "text"
                 },
                 {
                     text: "Celular (com DDD):",
+                    name: "celular",
                     type: "number"
                 },
                 {
                     text: "Email:",
+                    name: "email",
                     type: "email"
                 },
+            ],
+            [
+                "Em nome de: ",
+                "Mesa para: x pessoas",
+                "Celular: ",
+                "Email: ",
+                " ",
+                "Data: ",
+                "Salão"
             ]
-
         ],
 
         btns: [
@@ -84,22 +123,52 @@ class Reserves extends Component {
                 {
                     path: "",
                     text: "Próximo",
-                    goTo: "1"
+                    goTo: "1",
+                    type: "0"
                 }
             ],
             [
                 {
                     path: "",
                     text: "Voltar",
-                    goTo: "0"
+                    goTo: "0",
+                    type: "0"
+                },
+                {
+                    path: "",
+                    text: "Finalizar",
+                    goTo: "2",
+                    type: "0"
+                }
+            ],
+            [
+                {
+                    path: "",
+                    text: "Início",
+                    goTo: "1",
+                    type: "0"
                 }
             ]
-            
-        ]
+        ],
     }
 
     changeActiveFormState = (goTo) => {
         this.setState({activeForms: goTo});
+    }
+
+    getInputValue = (inputName) => {
+        console.log('AAAAA')
+        /* console.log(inputName) */
+        /* console.log(inputValue) */
+    }
+
+    showAlert = () => {
+        this.setState({alertDisplay: "block"});
+    }
+
+    hideAlert = () => {
+        console.log('entrou')
+        this.setState({alertDisplay: "none"});
     }
 
     render() {
@@ -115,11 +184,20 @@ class Reserves extends Component {
                     separator={this.state.separator}
                 />
 
+                <div style={{ display: this.state.alertDisplay }}>
+                    <Alert 
+                        text="Por favor preencha todos os campos antes de prosseguir"
+                        func={this.hideAlert}
+                    />
+                </div>
+
                 <Forms
-                    title="Informações"
-                    inputs={this.state.inputs[this.state.activeForms]}
+                    title={this.state.formContentConfig[this.state.activeForms].title}
+                    contentType={this.state.formContentConfig[this.state.activeForms].contentType}
+                    formContent={this.state.formContent[this.state.activeForms]}
                     btns={this.state.btns[this.state.activeForms]}
                     func={this.changeActiveFormState}
+                    getInputValueFunc={this.getInputValue}
                 />
 
                 <Footer />

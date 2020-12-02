@@ -57,3 +57,8 @@ select {
     margin: auto;
     border: 2px solid black;
 }
+
+.formsText {
+    color: black;
+    margin: .4rem;
+}
