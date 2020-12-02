@@ -7,11 +7,6 @@ import Btn2Set from './Btn2Set';
 
 class Forms extends Component {
 
-    /* componentDidMount() {
-        console.log(this.props.getInputValueFunc)
-        console.log('ta aqui')
-    } */
-
     contentType = () => {
         if(this.props.contentType === "Inputs") {
             return(
@@ -22,7 +17,7 @@ class Forms extends Component {
             )
         } else {
             return this.props.formContent.map((el) => (
-                <p className="formsText">{el}</p>
+                 <p key={el} className="formsText">{el}</p>
             ));
         }
     }
@@ -36,10 +31,13 @@ class Forms extends Component {
 
                     {this.contentType()}
 
-                    <Btn2Set 
-                        itens={this.props.btns}
-                        func={this.props.func}
-                    />
+                    <div className="flex-container">
+                        <Btn2Set 
+                            itens={this.props.btns}
+                            func={this.props.func}
+                        />
+                    </div>
+                    
                 </form>
             
     

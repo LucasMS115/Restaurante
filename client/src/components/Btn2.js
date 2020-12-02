@@ -5,11 +5,6 @@ import {Link} from 'react-router-dom';
 
 class Btn2 extends Component {
 
-    componentDidMount() {
-        console.log(this.props.func)
-        console.log('ta aqui')
-    }
-
     state = {
         heigth: "3.8rem",
         width: "23rem",
@@ -41,7 +36,8 @@ class Btn2 extends Component {
             display: 'flex',
             alignItens: 'center',
             justifyItens: 'center',
-            textDecoration:'none'
+            textDecoration:'none',
+            cursor:'pointer'
         }
     }
 
@@ -112,9 +108,9 @@ class Btn2 extends Component {
 Btn2.propTypes = {
     path: PropTypes.string,
     text: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     goTo: PropTypes.string,
-    func: PropTypes.func.isRequired,
+    func: PropTypes.func
 }
 
 export default Btn2;

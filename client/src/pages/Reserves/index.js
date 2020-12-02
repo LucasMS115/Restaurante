@@ -21,7 +21,7 @@ class Reserves extends Component {
         subtitle: "Faça sua reserva online",
         separator: "",
         activeForms: "0",
-        alertDisplay: "block",
+        alertDisplay: "none",
 
         data: "",
         horario: "",
@@ -143,10 +143,10 @@ class Reserves extends Component {
             ],
             [
                 {
-                    path: "",
+                    path: "/",
                     text: "Início",
                     goTo: "1",
-                    type: "0"
+                    type: "1"
                 }
             ]
         ],
@@ -157,9 +157,7 @@ class Reserves extends Component {
     }
 
     getInputValue = (inputName) => {
-        console.log('AAAAA')
-        /* console.log(inputName) */
-        /* console.log(inputValue) */
+        console.log("inputName")
     }
 
     showAlert = () => {
@@ -170,6 +168,7 @@ class Reserves extends Component {
         console.log('entrou')
         this.setState({alertDisplay: "none"});
     }
+
 
     render() {
         return (

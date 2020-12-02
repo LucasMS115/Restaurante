@@ -27,7 +27,6 @@ export class Btn1Set extends Component {
 
 Btn1Set.propTypes = {
     itens: PropTypes.array.isRequired,
-    /* btnsType: PropTypes.string.isRequired */
 }
 
 export default Btn1Set;
