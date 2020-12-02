@@ -18,7 +18,7 @@ class App extends Component{
   render(){
     return (
       /*basename =  {window.location.pathname || ""}  */
-      <HashRouter basename="/">
+      <HashRouter>
         <Switch>
   
           <Route path="/" exact component={Home}/>

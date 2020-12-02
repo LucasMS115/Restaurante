@@ -12,24 +12,7 @@ export class Home extends Component {
         title: "Bem Vindo",
         subtitle: "NOME DO RESTAURANTE",
         separator: "Alguma Coisa",
-        btnsType: "link",
-
-        btns: [
-            {
-                text: "Cardápio",
-                path: "/working"
-            },
-            {
-                text: "Reservas",
-                path: "/working"
-            },
-            {
-                text: "Contato",
-                path: "/"
-            },
-            
-            
-        ],
+        contactRef: React.createRef(),
 
         nav: [
             {
@@ -38,7 +21,7 @@ export class Home extends Component {
             },
             {
                 text: "Cardápio",
-                path: "/working"
+                path: "/menu"
             },
             {
                 text: "Reservas",
@@ -56,6 +39,13 @@ export class Home extends Component {
         window.scrollTo(0, 0);
     }
 
+    toContact = () => {
+        window.scrollTo({
+            top: this.state.contactRef.current.offsetTop,
+            behavior: 'smooth'
+          })
+    }
+
     render(){
 
         return(
@@ -65,8 +55,10 @@ export class Home extends Component {
                 <Header 
                     type="1"
                     nav={this.state.nav}
-                    btns={this.state.btns}
-                    btnsType={this.state.btnsType}
+                    btns={ [{ text: "Cardápio", path: "/menu", type: "link" },
+                        { text: "Reservas", path: "/working", type: "link"},
+                        { text: "Contato", func: this.toContact , type: "function"},
+                    ]}
                     title={this.state.title}
                     subtitle={this.state.subtitle}
                     separator={this.state.separator}
@@ -92,7 +84,7 @@ export class Home extends Component {
                 />
 
 
-                <ContactSection />
+                <div ref={this.state.contactRef}><ContactSection/></div>
 
                 <Footer />
             </div>

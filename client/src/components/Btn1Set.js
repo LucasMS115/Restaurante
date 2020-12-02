@@ -9,18 +9,15 @@ export class Btn1Set extends Component {
     }
 
     componentDidMount(){
-        if(this.props.btnsType === "link")
-            this.setState({btns:
-                this.props.itens.map((el) => (
-                    <Btn1 key={el.text} type="link" text={el.text} path={el.path}/>
-                ))
-            })
-        else if (this.props.btnsType === "function")
-            this.setState({btns:
-                this.props.itens.map((el) => (
-                    <Btn1 key={el.text} type="function" text={el.text} func={el.func}/>
-                ))
-            })
+
+        let temp = [];
+
+        this.props.itens.forEach( el => {
+            if(el.type === "link") temp.push(<Btn1 key={el.text} type="link" text={el.text} path={el.path}/>);
+            else if(el.type === "function") temp.push(<Btn1 key={el.text} type="function" text={el.text} func={el.func}/>);;
+        });
+
+        this.setState({btns: temp});
     }
 
     render() {
@@ -30,7 +27,7 @@ export class Btn1Set extends Component {
 
 Btn1Set.propTypes = {
     itens: PropTypes.array.isRequired,
-    btnsType: PropTypes.string.isRequired
+    /* btnsType: PropTypes.string.isRequired */
 }
 
 export default Btn1Set;

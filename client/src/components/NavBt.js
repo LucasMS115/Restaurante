@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'; 
+import {NavLink} from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 
 export class NavBtTest extends Component {
@@ -27,15 +27,20 @@ export class NavBtTest extends Component {
         this.state.color === 'white' ? this.setState({color: '#E9D56F'}) : this.setState({color: 'white'});
     };
 
+    componentDidMount(){
+        this.setState({color: 'white'})
+    }
+
     render() {
         return (
             <div>
                 <div style={this.divStyle}> 
-                    <Link style={this.linkStyle()}
+                    <NavLink
+                        style={this.linkStyle()}
                         onMouseEnter={this.hover}
                         onMouseLeave={this.hover}
                         onClick={this.hover}
-                        to={this.props.path}> {this.props.name} </Link>  
+                        to={this.props.path} > {this.props.name} </NavLink>  
                 </div>
             </div>
         )

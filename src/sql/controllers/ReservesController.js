@@ -1,14 +1,18 @@
 const User = require('../models/User');  
 const Reserves = require('../models/Reserves');
+const max = 4; //max reserves to each hour
 
 class ReservesController {
+
   async store(req, res) {
     const {user_id} = req.params;
     const {hour, day, room, people} = req.body;
-
     const user = await User.findByPk(user_id);
+    const freeHours = await new ReservesController().freeHours({day: day});
     if(!user){
       return res.status(400).json({ error: 'User not found' })
+    }else if(!freeHours.includes(hour)){
+      return res.status(400).json({ error: 'Reached max limit to this date'})
     }else{
       const reserve = await Reserves.create({user_id, hour, day, room, people});
       return res.json(reserve);
@@ -17,6 +21,7 @@ class ReservesController {
   }
 
   async index(req, res){
+
     const reserves = await Reserves.findAll();
     return res.json(reserves);
   }
@@ -38,6 +43,38 @@ class ReservesController {
     const reserves = await Reserves.findAll({ where: day});
     if(!reserves[0]) return res.json({ error: `We dont have a reserve to this DAY (${day.day}).` });
     return res.json(reserves);
+    
+  }
+
+  async freeHours(req, res){
+
+    //get reserves 
+    let day;
+    if(req.body !== undefined)day = req.body; 
+    else day = req; // if the function was called in other function here
+    if(!day) return res.status(400).json({ error: "No day received for the search"});
+    const reserves = await Reserves.findAll({ where: day });
+
+    const hours = ["11:00:00", "12:00:00","13:00:00","14:00:00", "19:00:00", "20:00:00", "21:00:00", "22:00:00"];
+    let counters = [0,0,0,0,0,0,0,0];
+    let freeHours = []; 
+    
+    // counting
+    reserves.forEach( (el) => {
+      for(let i = 0; i < hours.length; i++){
+        if(el.hour == hours[i]) counters[i] = counters[i]+1;
+      }
+    });
+
+    // push the free hours to freeHours
+    for(let i = 0; i < hours.length; i++){
+      if(counters[i] < max) {
+        freeHours.push(hours[i]);
+      };
+    }
+
+    if(!req.body) return freeHours; // if the function was called in other function here
+    return res.json(freeHours);
     
   }
 
@@ -65,8 +102,10 @@ class ReservesController {
     const {id} = req.params;
     let reserve = await Reserves.findByPk(id);
     const newValues = req.body;
+    const freeHours = await new ReservesController().freeHours({day: newValues.day});
 
     if(!reserve) return res.status(400).json({ error: "Reserve not found"});
+    if(!freeHours.includes(newValues.hour)) return res.status(400).json({ error: 'Reached max limit to this date'});
     
     await reserve.update({
       hour: newValues.hour,

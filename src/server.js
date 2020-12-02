@@ -10,7 +10,7 @@ server.use(cors());
 server.use(express.json());
 server.use(
     "/files",
-    express.static(path.resolve(__dirname, "..", "temp", "uploads"))
+    express.static(path.resolve(__dirname, "..", "uploads"))
 );
 server.use((req, res, next) => {
     console.log("\nMiddlewere\n");

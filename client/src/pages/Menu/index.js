@@ -14,8 +14,7 @@ export class Menu extends Component {
         title: "Cardápio",
         subtitle: "Tudo muito caro mesmo ;)",
         separator: "Alguma Coisa",
-        btnsType: "function",
-
+        
         nav: [
             {
                 text: "Início",
@@ -81,14 +80,13 @@ export class Menu extends Component {
                     type="1"
                     nav={this.state.nav}
 
-                    btns={ [{ text: "Entradas", func: this.filter },
-                            { text: "Principais", func: this.filter},
-                            { text: "Sobremesas", func: this.filter },
-                            { text: "Bebidas", func: this.filter }
+                    btns={ [{ text: "Entradas", func: this.filter, type: "function" },
+                            { text: "Principais", func: this.filter, type: "function"},
+                            { text: "Sobremesas", func: this.filter, type: "function" },
+                            { text: "Bebidas", func: this.filter, type: "function" }
                            ]
                     }
 
-                    btnsType={this.state.btnsType}
                     title={this.state.title}
                     subtitle={this.state.subtitle}
                     separator={this.state.separator}
