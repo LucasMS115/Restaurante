@@ -69,7 +69,7 @@ export class Dish extends Component {
 
     render() {
         return (
-            <div style={this.containerStyle()} className="flex-container-colum">
+            <div style={this.containerStyle()} className="flex-container-column">
 
                 <h2 className="titulo2"> {this.props.name} </h2>
                 <div style={this.imgContainerStyle()}>

@@ -4,11 +4,11 @@ import './styles/styles.css';
 import CompTest from '../../components/testComponents/CompTest';
 import NavBarTest from '../../components/testComponents/NavBarTest';
 import Btn1 from '../../components/Btn1';
-
+import { withHooksHOC } from '../../utils/withHooksHOC';
 
 const url = config.url;
 
-class teste extends Component {
+class Teste extends Component {
 
     state = {
         name: "",
@@ -38,6 +38,10 @@ class teste extends Component {
         ]
 
     };
+
+    componentDidMount(){
+        console.log(" Usuario ativo =>" + this.props.token);
+    }
 
     /* Show names */
     getUsers = async () => {
@@ -209,4 +213,4 @@ class teste extends Component {
 
 
 
-export default teste;
+export default withHooksHOC(Teste);

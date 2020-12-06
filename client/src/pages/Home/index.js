@@ -29,7 +29,7 @@ export class Home extends Component {
             },
             {
                 text: "Conta",
-                path: "/working"
+                path: "/user"
             },
             
         ]

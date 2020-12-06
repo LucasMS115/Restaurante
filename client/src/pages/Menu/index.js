@@ -30,7 +30,7 @@ export class Menu extends Component {
             },
             {
                 text: "Conta",
-                path: "/working"
+                path: "/user"
             },
             
         ],

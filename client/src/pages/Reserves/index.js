@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles/styles.css';
+import { withHooksHOC } from '../../utils/withHooksHOC';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
@@ -46,7 +47,7 @@ class Reserves extends Component {
             },
             {
                 text: "Conta",
-                path: "/working"
+                path: "/user"
             },
 
         ],
@@ -169,6 +170,10 @@ class Reserves extends Component {
         this.setState({alertDisplay: "none"});
     }
 
+    componentDidMount(){
+        console.log("Usuário ativo => " + this.props.token);
+    }
+
 
     render() {
         return (
@@ -207,4 +212,4 @@ class Reserves extends Component {
 
 };
 
-export default Reserves;
+export default withHooksHOC(Reserves);

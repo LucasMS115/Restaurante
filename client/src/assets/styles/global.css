@@ -36,6 +36,24 @@ span{
     font-size: 1.3rem;
 }
 
+.form-field{
+    height: 1rem;
+    width: 30rem;
+    margin: 1rem;
+    padding: 1rem 
+}
+
+.form-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    height: 2.5rem;
+    width: 10rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
 /* for testing */
 
 .test-border{
@@ -51,7 +69,7 @@ span{
     margin: 1rem;
 }
 
-.flex-container-colum{
+.flex-container-column{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,6 +237,10 @@ span{
     height: 8rem;
     width: auto;
     margin: 1rem;
+}
+
+.form-item{
+   
 }
 
 /* --- ICONS STYLE --- */

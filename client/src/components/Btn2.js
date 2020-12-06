@@ -76,16 +76,14 @@ class Btn2 extends Component {
 
     defineButtonType = () => {
         if(this.props.type === '0') {
-            /* console.log('Entrou no if') */
             return (
-                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.state.func.bind(this, this.props.goTo)}> {/* .bind(this, this.props.tarefa.goTo) */}
+                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.state.func.bind(this, this.props.funcArgs)}> 
                     <div style={this.innerStyle()}>
                         <span style={this.text()}>{this.props.text}</span>
                     </div>
                 </div>
             )
         } else {
-            /* console.log('Entrou no else') */
             return (
                 <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
                     <div style={this.innerStyle()}>
@@ -108,8 +106,8 @@ class Btn2 extends Component {
 Btn2.propTypes = {
     path: PropTypes.string,
     text: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    goTo: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    funcArgs: PropTypes.string,
     func: PropTypes.func
 }
 
