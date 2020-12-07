@@ -4,30 +4,17 @@ import './styles/Forms.css';
 
 export class InputSet extends Component {
 
-    state = {
-        value: ""
-    }
-
-    componentDidMount() {
-        console.log('ta aqui')
-        console.log(this.props.inputs)
-    }
-
-    teste = (name) => {
-        this.setState({value: name});
-        console.log(this.state.value);
-    }
-
     inputTypes = (el) => {
         if(el.type === "select") {
             return(
-                <select onChange={(event) => {this.props.getInputValueFunc.bind(this, el.name)}} >
+                <select onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} >
                     {this.selectOptions(el)}
                 </select>
             )
         } else {
             return (
-                <input type={el.type} onChange={(event) => {this.teste.bind(this, el.name) }} ></input>
+                <input type={el.type} value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
+                
             )
         }
     }

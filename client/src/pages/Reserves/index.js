@@ -28,7 +28,7 @@ class Reserves extends Component {
         horario: "",
         qntPessoas: "",
         salao: "",
-        nome: "Teste",
+        nome: "",
         celular: "",
         email: "",
 
@@ -72,17 +72,17 @@ class Reserves extends Component {
                 {
                     text: "Selecione o dia:",
                     name: "data",
-                    type: "text"
+                    type: "text",
                 },
                 {
                     text: "Horário:",
                     name: "horario",
-                    type: "time"
+                    type: "time",
                 },
                 {
                     text: "Mesa para:",
                     name: "qntPessoas",
-                    type: "number"
+                    type: "number",
                 },
                 {
                     text: "Salão:",
@@ -146,7 +146,7 @@ class Reserves extends Component {
                 {
                     path: "/",
                     text: "Início",
-                    goTo: "1",
+                    goTo: "",
                     type: "1"
                 }
             ]
@@ -154,11 +154,23 @@ class Reserves extends Component {
     }
 
     changeActiveFormState = (goTo) => {
+        if(goTo === "1") {
+            if(this.state.data === "" || this.state.horario === "" || this.state.qntPessoas === "" || this.state.salao === "") {
+                this.showAlert()
+                return;
+            }
+        } 
         this.setState({activeForms: goTo});
     }
 
-    getInputValue = (inputName) => {
-        console.log("inputName")
+    getInputValue = (inputName, value) => {
+        if(inputName === "data") this.setState({data: value});
+        if(inputName === "horario") this.setState({horario: value});
+        if(inputName === "qntPessoas") this.setState({qntPessoas: value});
+        if(inputName === "salao") this.setState({salao: value});
+        if(inputName === "nome") this.setState({nome: value});
+        if(inputName === "celular") this.setState({celular: value});
+        if(inputName === "email") this.setState({email: value});
     }
 
     showAlert = () => {
