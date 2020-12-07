@@ -159,7 +159,13 @@ class Reserves extends Component {
                 this.showAlert()
                 return;
             }
-        } 
+        } else if (goTo === "2") {
+            if(this.state.nome === "" || this.state.celular === "" || this.state.email === "") {
+                this.showAlert()
+                return;
+            }
+        }
+        this.hideAlert();
         this.setState({activeForms: goTo});
     }
 
