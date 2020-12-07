@@ -11,7 +11,7 @@ class Alert extends Component {
     render() {
         return (
             <div className="alert-container" >
-                <div className="alert" onClick={this.props.func}>
+                <div className="alert" onClick={() => {this.props.func()}}>
                     <span className="closebtn" >&times;</span>
                         {this.props.text}
                 </div>
