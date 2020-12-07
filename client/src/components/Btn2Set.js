@@ -10,7 +10,7 @@ export class Btn2Set extends Component {
                 key={el.text} 
                 path={el.path}
                 text={el.text}
-                goTo={el.goTo}
+                funcArgs={el.goTo}
                 func={this.props.func}
                 type={el.type}
             />
