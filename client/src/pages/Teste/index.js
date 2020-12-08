@@ -39,8 +39,10 @@ class Teste extends Component {
 
     };
 
-    componentDidMount(){
+    async componentDidMount(){
         console.log(" Usuario ativo =>" + this.props.token);
+        const id = await this.testUsers();
+        console.log(id);
     }
 
     /* Show names */
@@ -56,6 +58,19 @@ class Teste extends Component {
         
     
         return usersData;
+    }
+
+    testUsers = async () => {
+
+        let id;
+        
+        await fetch(`${url}users/testUser/gi@email.com/senha`, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => { 
+            id = data;
+        });
+    
+        return id;
     }
 
     usersNames = async () => {

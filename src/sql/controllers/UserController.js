@@ -38,6 +38,21 @@ class UserController {
     
   }
 
+  async testUser(req, res){
+
+    if(!req.params.email) return res.status(400).json({ error: "No email received for the search"});
+    const {email} = req.params;
+    const user = await User.findOne({ where: {email}});
+
+    if(!user) return res.json({ error: `We dont have a user to this EMAIL (${email}).` });
+
+    const {password} = req.params;
+
+    if(user.password === password) return res.json(user.id);
+    return res.json({ error: `Invalid Password` });
+    
+  }
+
   async searchByName(req, res){
 
     if(!req.body.name) return res.status(400).json({ error: "No name received for the search"});
