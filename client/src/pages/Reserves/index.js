@@ -32,26 +32,6 @@ class Reserves extends Component {
         celular: "",
         email: "",
 
-        nav: [
-            {
-                text: "Início",
-                path: "/"
-            },
-            {
-                text: "Cardápio",
-                path: "/menu"
-            },
-            {
-                text: "Reservas",
-                path: "/reserves"
-            },
-            {
-                text: "Conta",
-                path: "/user"
-            },
-
-        ],
-
         formContentConfig: [
             {
                 title: "Informações",
@@ -199,7 +179,6 @@ class Reserves extends Component {
 
                 <Header
                     type="2"
-                    nav={this.state.nav}
                     btns={[]}
                     title={this.state.title}
                     subtitle={this.state.subtitle}

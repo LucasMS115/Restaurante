@@ -43,7 +43,7 @@ export class Dish extends Component {
             justifyItens: "center",
             alignItens: "center",
             /* border: '1rem solid coral', */
-            height: "15rem",
+            height: "19vw",
             width: "44vw",
             marginBottom: "3rem",
             overflow: "hidden",

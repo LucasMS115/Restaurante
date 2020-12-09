@@ -12,27 +12,7 @@ export class Home extends Component {
         title: "Bem Vindo",
         subtitle: "NOME DO RESTAURANTE",
         separator: "Alguma Coisa",
-        contactRef: React.createRef(),
-
-        nav: [
-            {
-                text: "Início",
-                path: "/"
-            },
-            {
-                text: "Cardápio",
-                path: "/menu"
-            },
-            {
-                text: "Reservas",
-                path: "/working"
-            },
-            {
-                text: "Conta",
-                path: "/user"
-            },
-            
-        ]
+        contactRef: React.createRef()
     }
 
     componentDidMount() {
@@ -54,7 +34,6 @@ export class Home extends Component {
 
                 <Header 
                     type="1"
-                    nav={this.state.nav}
                     btns={ [{ text: "Cardápio", path: "/menu", type: "link" },
                         { text: "Reservas", path: "/working", type: "link"},
                         { text: "Contato", func: this.toContact , type: "function"},
@@ -79,6 +58,7 @@ export class Home extends Component {
                 />
         
                 <Btn2 
+                    type="1"
                     path="/working"
                     text="Faça uma reserva"
                 />

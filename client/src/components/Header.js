@@ -11,18 +11,19 @@ import { Link } from 'react-router-dom';
 export class Header extends Component {
 
     state = {
-        nav0: this.props.nav[0],
-        nav1: this.props.nav[1],
-        nav2: this.props.nav[2],
-        nav3: this.props.nav[3],
-    }
+        nav: [  { text: "Início", path: "/" },
+                { text: "Cardápio", path: "/menu" },
+                { text: "Reservas", path: "/working" },
+                { text: "Conta", path: "/working" },    
+            ]
+    };
 
     hidden = () => {
         if(this.props.type === "2") return {
             position: "absolute",
             visibility: "hidden"
-        }
-    }
+        };
+    };
 
     render() {
         return (
@@ -37,10 +38,10 @@ export class Header extends Component {
                     </Link>
 
                     <div className="nav-bar"> 
-                        <NavBt path={this.state.nav0.path} name={this.state.nav0.text}/>
-                        <NavBt path={this.state.nav1.path} name={this.state.nav1.text}/>
-                        <NavBt path={this.state.nav2.path} name={this.state.nav2.text}/>
-                        <NavBt path={this.state.nav3.path} name={this.state.nav3.text}/>
+                        <NavBt path={this.state.nav[0].path} name={this.state.nav[0].text}/>
+                        <NavBt path={this.state.nav[1].path} name={this.state.nav[1].text}/>
+                        <NavBt path={this.state.nav[2].path} name={this.state.nav[2].text}/>
+                        <NavBt path={this.state.nav[3].path} name={this.state.nav[3].text}/>
                     </div>
 
                     <div className="social-icons-corner">
@@ -78,7 +79,6 @@ export class Header extends Component {
 
 Header.propTypes = {
     type: PropTypes.string.isRequired, //Toggle the separator visibility 
-    nav: PropTypes.array.isRequired, //Nav bar itens
     btns: PropTypes.array.isRequired, //Information of the buttons 
     title: PropTypes.string.isRequired, 
     subtitle: PropTypes.string.isRequired,

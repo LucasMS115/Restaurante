@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import './styles/styles.css';
-import CompTest from '../../components/testComponents/CompTest';
-import NavBarTest from '../../components/testComponents/NavBarTest';
-import Btn1 from '../../components/Btn1';
 import { withHooksHOC } from '../../utils/withHooksHOC';
 
 const url = config.url;
@@ -153,7 +150,6 @@ class Teste extends Component {
         return(
             <div className="testContainer">
 
-                <NavBarTest/>
                 <br/>
                 
                 <h1 className="t5">TESTE</h1> 
@@ -177,18 +173,6 @@ class Teste extends Component {
                     <button style={this.btnStyle} type="button" onClick={this.addUser}>Registrar</button><br/><br/>
                 </form>
                 {/*  Create user */}
-
-                <div style={this.styleTest()}>
-                    <CompTest countries={this.state.countries} changeColor={this.changeColor}/>
-                </div>
-
-                <br/>
-                <br/>
-                <br/>
-                <Btn1 text="working" path="/working"/>
-                <br/>
-                <br/>
-                <br/>
 
             </div>
         );

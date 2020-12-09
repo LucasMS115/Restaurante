@@ -16,13 +16,6 @@ const Login = () => {
 
     const {setToken} = useContext(StoreContext);
     const history = useHistory();
-
-    const nav = [
-                   { text: "Início", path: "/"},
-                   { text: "Cardápio", path: "/menu" },
-                   { text: "Reservas", path: "/" },
-                   { text: "", path: "/"}
-                ]
     
     const  {register, handleSubmit, errors} = useForm();
 
@@ -65,7 +58,6 @@ const Login = () => {
 
                 <Header 
                     type="2"
-                    nav={nav}
                     btns={[]}
                     btnsType={'link'} //not used on this page
                     title={'Entrar'}

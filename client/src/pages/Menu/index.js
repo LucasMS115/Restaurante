@@ -14,28 +14,8 @@ export class Menu extends Component {
         title: "Cardápio",
         subtitle: "Tudo muito caro mesmo ;)",
         separator: "Alguma Coisa",
-        
-        nav: [
-            {
-                text: "Início",
-                path: "/"
-            },
-            {
-                text: "Cardápio",
-                path: "/menu"
-            },
-            {
-                text: "Reservas",
-                path: "/working"
-            },
-            {
-                text: "Conta",
-                path: "/user"
-            },
-            
-        ],
-        dishesBase: [],
-        dishes: []
+        dishesBase: [], //this will have all dishes in the database
+        dishes: [] // this will have the dishes according to the active filter
     }
 
     async componentDidMount() {
@@ -78,7 +58,6 @@ export class Menu extends Component {
 
                 <Header 
                     type="1"
-                    nav={this.state.nav}
 
                     btns={ [{ text: "Entradas", func: this.filter, type: "function" },
                             { text: "Principais", func: this.filter, type: "function"},

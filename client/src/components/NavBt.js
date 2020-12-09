@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 
-export class NavBtTest extends Component {
+export class NavBt extends Component {
 
     state = {
-        color: 'white'
+        color: 'white',
+        location: ""        
     }
 
     linkStyle = () => {
@@ -17,19 +18,26 @@ export class NavBtTest extends Component {
     };
 
     divStyle = {
-        /* border: '0.2rem solid black', */
         margin: '0.5rem',
         alignContent: 'center',
         justifyContent: 'center',
     };
 
-    hover = () => {
-        this.state.color === 'white' ? this.setState({color: '#E9D56F'}) : this.setState({color: 'white'});
+    mouseEnter = () => {
+        this.setState({color: '#E9D56F'});
+    };
+
+    mouseLeave = () => {
+        console.log(this.state.location);
+        if(this.state.location !== this.props.path) this.setState({color: 'white'});
     };
 
     componentDidMount(){
-        this.setState({color: 'white'})
-    }
+        const location = window.location.href.split("#")[1];
+        if(location === this.props.path) this.setState({color: '#E9D56F'});
+        else this.setState({color: 'white'});
+        this.setState({ location: location });
+    };
 
     render() {
         return (
@@ -37,9 +45,9 @@ export class NavBtTest extends Component {
                 <div style={this.divStyle}> 
                     <NavLink
                         style={this.linkStyle()}
-                        onMouseEnter={this.hover}
-                        onMouseLeave={this.hover}
-                        onClick={this.hover}
+                        onMouseEnter={this.mouseEnter}
+                        onMouseLeave={this.mouseLeave}
+                        onClick={this.mouseEnter}
                         to={this.props.path} > {this.props.name} </NavLink>  
                 </div>
             </div>
@@ -47,9 +55,9 @@ export class NavBtTest extends Component {
     }
 }
 
-NavBtTest.propTypes = {
+NavBt.propTypes = {
     path: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
 }
 
-export default NavBtTest;
+export default NavBt;

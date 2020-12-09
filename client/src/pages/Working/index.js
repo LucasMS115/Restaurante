@@ -13,24 +13,6 @@ export class Home extends Component {
 
         btns: [], //not used on this page
 
-        nav: [
-            {
-                text: "Início",
-                path: "/"
-            },
-            {
-                text: "Cardápio",
-                path: "/menu"
-            },
-            {
-                text: "",
-                path: "/"
-            },
-            {
-                text: "",
-                path: "/"
-            }
-        ]
     }
 
     componentDidMount() {
@@ -43,7 +25,6 @@ export class Home extends Component {
 
                 <Header 
                     type="2"
-                    nav={this.state.nav}
                     btns={this.state.btns}
                     btnsType={this.state.btnsType} //not used on this page
                     title={this.state.title}
