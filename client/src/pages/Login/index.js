@@ -4,13 +4,11 @@ import {useHistory} from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import StoreContext from '../../components/Store/Context';
-import config from '../../config';
+import { usersTable } from '../../Api';
 import './styles/style.css';
 
 
 const Login = () => {
-
-    const url = config.url;
 
     const [message, setMessage] = useState('');
 
@@ -19,27 +17,11 @@ const Login = () => {
     
     const  {register, handleSubmit, errors} = useForm();
 
-    const testUsers = async (email, password) => {
-
-        let id;
-        
-        await fetch(`${url}users/testUser/${email}/${password}`, { method: 'GET' })
-        .then(response => response.json())
-        .then(data => { 
-            id = data;
-        });
-
-        console.log(id);
-    
-        return id;
-    }
-
     const onSubmit = async (data) => {
 
         setToken(null);
         setMessage('');
-        let token = await testUsers(data.email, data.password);
-        /* if(data.email === 'adm@email.com' && data.password === 'senhaforte') token = data.email; */
+        let token = await usersTable.validateUser(data.email, data.password);
 
         console.log(data.email);
         console.log(data.password)

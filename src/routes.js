@@ -16,7 +16,7 @@ const ImagesController = require('./sql/controllers/ImagesController');
 //Users table
 routes.post('/users', UserController.store); // Create user
 routes.get('/users', UserController.index); // Show ALL users
-routes.get('/users/byId', UserController.searchById); // Search user by Id
+routes.get('/users/byId/:id', UserController.searchById); // Search user by Id
 routes.get('/users/byEmail', UserController.searchByEmail); // Search user by email
 routes.get('/users/testUser/:email/:password', UserController.testUser); 
 routes.get('/users/byName', UserController.searchByName); // Search users by name

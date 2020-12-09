@@ -4,9 +4,8 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import DishSet from '../../components/DishSet';
 import ContactSection from '../../components/ContactSection';
-import config from '../../config';
+import { dishesTable } from '../../Api';
 
-const url = config.url;
 
 export class Menu extends Component {
     
@@ -20,26 +19,10 @@ export class Menu extends Component {
 
     async componentDidMount() {
         window.scrollTo(0, 0);
-        const dishes = await this.getDishes();
+        const dishes = await dishesTable.getDishes();
         this.setState({dishes: dishes});
         this.setState({dishesBase: dishes});
     }
-
-    /* ESSA FUNCAO TEM Q SAIR DAKI */
-    getDishes = async () => {
-
-        let dishesData;
-        
-        await fetch(`${url}dishesTable/`, { method: 'GET' })
-        .then(response => response.json())
-        .then(data => { 
-            dishesData = data;
-        });
-        
-    
-        return dishesData;
-    }
-    /* ESSA FUNCAO TEM Q SAIR DAKI */
     
     filter = (btnName) => {
 

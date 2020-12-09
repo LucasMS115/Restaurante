@@ -1,34 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './styles/styles.css';
-import config from '../../config';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
 import Card from '../../components/Card';
 import Footer from '../../components/Footer';
+import { reservesTable } from '../../Api';
 
-const url = config.url;
 
 const Adm = (props) => {
 
     const [rows, setRows] = useState([]);
 
-    const getReserves = async () => {
+    const setReserves = async () => {
+        setRows(await reservesTable.getReserves()); 
+    };
 
-        let reserves;
-        
-        await fetch(`${url}reservesTable/`, { method: 'GET' })
-        .then(response => response.json())
-        .then(data => { 
-            reserves = data;
-        });
-        
-        console.log(reserves)
-        setRows(reserves)
-    }
 
-    useEffect(() => {
-        getReserves()
-    }, [])
+    useEffect( () => {
+        setReserves();
+    }, []);
+
+
 
     return (
         <div id="title">

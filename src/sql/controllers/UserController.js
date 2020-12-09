@@ -20,11 +20,11 @@ class UserController {
 
   async searchById(req, res){
   
-    if(!req.body.id) return res.status(400).json({ error: "No id received for the search"});
-    const id = req.body;
-    const users = await User.findOne({ where: id});
-    if(!users) return res.json({ error: `We dont have a user to this ID (${id.id}).` });
-    return res.json(users);
+    if(!req.params.id) return res.status(400).json({ error: "No id received for the search"});
+    const id = req.params;
+    const user = await User.findOne({ where: id});
+    if(!user) return res.json({ error: `We dont have a user to this ID (${id}).` });
+    return res.json(user);
     
   }
 

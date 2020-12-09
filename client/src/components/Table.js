@@ -18,7 +18,7 @@ class Table extends Component {
                     </tr>
                     {this.props.rows.map((el) => (
                         <tr>
-                            <td>{el.id}</td>
+                            <td>{el.name}</td>
                             <td>{el.people}</td>
                             <td>{el.day}</td>
                             <td>{el.hour}</td>

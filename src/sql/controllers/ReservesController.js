@@ -99,6 +99,7 @@ class ReservesController {
   }
 
   async update(req, res) {
+    
     const {id} = req.params;
     let reserve = await Reserves.findByPk(id);
     const newValues = req.body;

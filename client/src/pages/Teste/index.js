@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import config from '../../config';
 import './styles/styles.css';
 import { withHooksHOC } from '../../utils/withHooksHOC';
+import { teste, dishesTable } from '../../Api';
 
-const url = config.url;
+const url = "https://restaurante-sintese.herokuapp.com/"; ;
 
 class Teste extends Component {
 
@@ -37,6 +37,10 @@ class Teste extends Component {
     };
 
     async componentDidMount(){
+
+        const menu = await dishesTable.getDishes();
+        teste.print();
+        console.log(menu);
         console.log(" Usuario ativo =>" + this.props.token);
         const id = await this.testUsers();
         console.log(id);
