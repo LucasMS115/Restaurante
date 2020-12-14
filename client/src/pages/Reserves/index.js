@@ -49,44 +49,65 @@ class Reserves extends Component {
 
         formContent: [
             [
-                {
-                    text: "Selecione o dia:",
-                    name: "data",
-                    type: "text",
-                },
-                {
-                    text: "Horário:",
-                    name: "horario",
-                    type: "time",
-                },
-                {
-                    text: "Mesa para:",
-                    name: "qntPessoas",
-                    type: "number",
-                },
-                {
-                    text: "Salão:",
-                    name: "salao",
-                    type: "select",
-                    options: ["", "Principal", "VIP"]
-                },
+                [
+                    {
+                        text: "Selecione o dia:",
+                        name: "data",
+                        type: "text",
+                        value: "",
+                    },
+                ],
+                [
+                    {
+                        text: "Horário:",
+                        name: "horario",
+                        type: "time",
+                        value: "",
+                    },
+                ],
+                [
+                    {
+                        text: "Mesa para:",
+                        name: "qntPessoas",
+                        type: "number",
+                        value: "",
+                    },
+                ],
+                [
+                    {
+                        text: "Salão:",
+                        name: "salao",
+                        type: "select",
+                        options: ["", "Principal", "VIP"],
+                        value: ""
+                    },
+                ]
             ],
             [
-                {
-                    text: "Seu nome completo:",
-                    name: "nome",
-                    type: "text"
-                },
-                {
-                    text: "Celular (com DDD):",
-                    name: "celular",
-                    type: "number"
-                },
-                {
-                    text: "Email:",
-                    name: "email",
-                    type: "email"
-                },
+                [
+                    {
+                        text: "Seu nome completo:",
+                        name: "nome",
+                        type: "text",
+                        value: "",
+                    },
+                ],
+                [
+                    {
+                        text: "Celular (com DDD):",
+                        name: "celular",
+                        type: "number",
+                        value: "",
+                    },
+                ],
+                [
+                    {
+                        text: "Email:",
+                        name: "email",
+                        type: "email",
+                        value: "",
+                    },
+                ]
             ],
             [
                 "Em nome de: ",
@@ -149,14 +170,43 @@ class Reserves extends Component {
         this.setState({activeForms: goTo});
     }
 
-    getInputValue = (inputName, value) => {
-        if(inputName === "data") this.setState({data: value});
-        if(inputName === "horario") this.setState({horario: value});
-        if(inputName === "qntPessoas") this.setState({qntPessoas: value});
-        if(inputName === "salao") this.setState({salao: value});
-        if(inputName === "nome") this.setState({nome: value});
-        if(inputName === "celular") this.setState({celular: value});
-        if(inputName === "email") this.setState({email: value});
+    getInputValue = (inputName, insert) => {
+        let inputs = this.state.formContent;
+        let inputPosition = 0;
+
+        if(inputName === "data") {
+            this.setState({data: insert});
+            inputPosition = 0;
+        }
+        if(inputName === "horario") {
+            this.setState({horario: insert});
+            inputPosition = 1;
+        }
+        if(inputName === "qntPessoas") {
+            this.setState({qntPessoas: insert});
+            inputPosition = 2;
+        }
+        if(inputName === "salao") {
+            this.setState({salao: insert});
+            inputPosition = 3;
+        }
+        if(inputName === "nome") {
+            this.setState({nome: insert});
+            inputPosition = 0;
+        }
+        if(inputName === "celular") {
+            this.setState({celular: insert});
+            inputPosition = 1;
+        }
+        if(inputName === "email") {
+            this.setState({email: insert});
+            inputPosition = 2;
+        }
+
+        let input = inputs[this.state.activeForms][inputPosition][0];
+        input.value = insert;
+        inputs[this.state.activeForms][inputPosition][0] = input;
+        this.setState({formContent: inputs})
     }
 
     showAlert = () => {
@@ -164,7 +214,6 @@ class Reserves extends Component {
     }
 
     hideAlert = () => {
-        console.log('entrou')
         this.setState({alertDisplay: "none"});
     }
 
