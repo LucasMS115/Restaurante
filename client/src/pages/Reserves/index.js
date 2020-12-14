@@ -110,13 +110,15 @@ class Reserves extends Component {
                 ]
             ],
             [
-                "Em nome de: ",
-                "Mesa para: x pessoas",
-                "Celular: ",
-                "Email: ",
-                " ",
-                "Data: ",
-                "Salão"
+                [
+                    "Em nome de: ",
+                    "Mesa para: x pessoas",
+                    "Celular: ",
+                    "Email: ",
+                    " ",
+                    "Data: ",
+                    "Salão"
+                ]
             ]
         ],
 
@@ -165,6 +167,16 @@ class Reserves extends Component {
                 this.showAlert()
                 return;
             }
+            let inputs = this.state.formContent;
+            inputs[2] = [
+                "Em nome de: " + this.state.nome,
+                "Mesa para: s" + this.state.qntPessoas,
+                "Celular: " + this.state.celular,
+                "Email: " + this.state.email,
+                " ",
+                "Data: " + this.state.data,
+                "Salão: " + this.state.salao
+            ];
         }
         this.hideAlert();
         this.setState({activeForms: goTo});
