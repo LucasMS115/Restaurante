@@ -1,5 +1,5 @@
-/* const url = "http://localhost:5000/" ; */
-const url = "https://restaurante-sintese.herokuapp.com/";
+const url = "http://localhost:5000/" ;
+/* const url = "https://restaurante-sintese.herokuapp.com/"; */
 
 const teste = {
     print: () => {
@@ -44,7 +44,7 @@ const reservesTable = {
 
         let reserves;
         
-        await fetch(`${url}reservesTable/`, { method: 'GET' })
+        await fetch(`${url}reservesTable/listWithUser`, { method: 'GET' })
         .then(response => response.json())
         .then(data => { 
             reserves = data;

@@ -10,20 +10,24 @@ class Table extends Component {
                 <h1 className="table-title">{this.props.title}</h1>
 
                 <table className="generic-table">
-                    <tr>
-                        {this.props.columns.map((el) => (
-                            <th>{el}</th>
-                        ))}
-
-                    </tr>
-                    {this.props.rows.map((el) => (
+                    <thead>
                         <tr>
-                            <td>{el.name}</td>
-                            <td>{el.people}</td>
-                            <td>{el.day}</td>
-                            <td>{el.hour}</td>
-                            <td>{el.room}</td>
+                            {this.props.columns.map((el) => (
+                                <th key={el}>{el}</th>
+                            ))}
                         </tr>
+                    </thead>
+                    
+                    {this.props.rows.map((el) => (
+                        <tbody key={el.id}>
+                            <tr>
+                                <td>{el.name}</td>
+                                <td>{el.people}</td>
+                                <td>{el.day}</td>
+                                <td>{el.hour}</td>
+                                <td>{el.room}</td>
+                            </tr>
+                        </tbody>
 
                     ))}
                 </table>

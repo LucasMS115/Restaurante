@@ -1,6 +1,10 @@
 const User = require('../models/User');  
 const Reserves = require('../models/Reserves');
+const Sequelize = require('sequelize');
+const {QueryTypes} = require('sequelize');
+const databaseConfig = require('../../config/database');
 const max = 4; //max reserves to each hour
+const sequelize = new Sequelize(databaseConfig);
 
 class ReservesController {
 
@@ -19,10 +23,17 @@ class ReservesController {
     }
 
   }
-
+  
   async index(req, res){
 
     const reserves = await Reserves.findAll();
+    return res.json(reserves);
+  }
+
+  async indexWithUser(req, res){
+    const reserves = await sequelize.query(
+      "SELECT reserves.id, name, people, day, hour, room FROM users INNER JOIN reserves ON users.id = reserves.user_id;",
+      { type: QueryTypes.SELECT });
     return res.json(reserves);
   }
 
