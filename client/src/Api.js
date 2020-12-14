@@ -1,5 +1,5 @@
-/* const url = "http://localhost:5000/" ; */
-const url = "https://restaurante-sintese.herokuapp.com/";
+const url = "http://localhost:5000/" ;
+/* const url = "https://restaurante-sintese.herokuapp.com/"; */
 
 const teste = {
     print: () => {
@@ -34,7 +34,8 @@ const usersTable = {
         });
     
         return id;
-    }
+    },
+
 
 }
 
@@ -69,6 +70,31 @@ const dishesTable = {
         });
     
         return dishesData;
+    },
+
+    updateActive: async (id) => {
+
+        console.log('updateActive => ' + id);
+        try {
+            await fetch(`${url}dishesTable/update/${id}`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'PUT',
+                body: JSON.stringify({
+                    active: false,
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
+
+    deleteDish: async (id) => {
+        console.log("Deleting dish: " + id);
+        await fetch(`${url}dishesTable/${parseInt(id)}`, { method: 'DELETE' })
+        .then(response => response.json());
     }
 
 };

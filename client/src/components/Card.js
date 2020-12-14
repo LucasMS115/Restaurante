@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles/Card.css'
 import Btn2Set from './Btn2Set';
+import Btn2 from './Btn2';
+import {dishesTable} from '../Api';
 
 class Card extends Component {
 
@@ -10,20 +12,16 @@ class Card extends Component {
                 {
                     path: "",
                     text: "Excluir",
-                    goTo: "",
+                    goTo: "22",
                     type: "0"
                 },
                 {
                     path: "",
                     text: "Arquivar",
-                    goTo: "",
+                    goTo: "23",
                     type: "0"
                 }
         ],
-    }
-
-    buttonFunc = () => {
-        console.log('botooooes')
     }
 
     render() {
@@ -35,9 +33,17 @@ class Card extends Component {
                 <p>{"Descrição: " + this.props.description}</p>
 
                 <div className="flex-container">
-                    <Btn2Set 
-                        itens={this.state.btns}
-                        func={this.buttonFunc}
+                    <Btn2 
+                        text="Excluir"
+                        funcArgs={this.props.id}
+                        func={this.props.funcDel}
+                        type="0"
+                    />
+                    <Btn2 
+                        text="Arquivar"
+                        funcArgs={this.props.id}
+                        func={this.props.funcUpt}
+                        type="0"
                     />
                 </div>
                 
@@ -49,9 +55,12 @@ class Card extends Component {
 };
 
 Card.propTypes = {
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    funcDel: PropTypes.func,
+    funcUpt: PropTypes.func
 }
 
 export default Card;

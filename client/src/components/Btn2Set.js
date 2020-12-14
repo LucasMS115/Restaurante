@@ -6,14 +6,16 @@ export class Btn2Set extends Component {
 
     render() {
         return this.props.itens.map((el) => (
-            <Btn2
-                key={el.text} 
-                path={el.path}
-                text={el.text}
-                funcArgs={el.goTo}
-                func={this.props.func}
-                type={el.type}
-            />
+            <div>
+                 <Btn2
+                     key={el.text} 
+                     path={el.path}
+                     text={el.text}
+                     funcArgs={el.goTo}
+                     func={this.props.func}
+                     type={el.type}
+                 />
+            </div>
         ));
     }
 }

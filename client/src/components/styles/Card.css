@@ -6,6 +6,7 @@
     border: 2px solid var(--color-grey-1);
     width: 90%;
     margin: auto;
+    margin-bottom: 1rem;
 }
 
 .card h1 {

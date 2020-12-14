@@ -18,8 +18,15 @@ export class Menu extends Component {
     }
 
     async componentDidMount() {
+
         window.scrollTo(0, 0);
-        const dishes = await dishesTable.getDishes();
+        const dishesRaw = await dishesTable.getDishes();
+        let dishes = [];
+        
+        dishesRaw.forEach((el) => {
+            if(el.active === true) dishes.push(el);
+        });
+
         this.setState({dishes: dishes});
         this.setState({dishesBase: dishes});
     }

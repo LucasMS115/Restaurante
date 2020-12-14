@@ -71,7 +71,8 @@ class DishesController {
 
   async delete(req, res) {
 
-    const {id} = req.body;
+    const {id} = req.params;
+    console.log(id);
     const dish = await Dishes.findByPk(id);
     const img = await Images.findOne({where: {dish_id: id}});
     

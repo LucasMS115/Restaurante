@@ -33,7 +33,7 @@ routes.get('/reservesTable/freeHours', ReservesController.freeHours);
 routes.get('/reservesTable/byRoom', ReservesController.searchByRoom); 
 routes.get('/reservesTable/byUser', ReservesController.searchByUser); 
 routes.put('/reservesTable/update/:id', ReservesController.update); 
-routes.delete('/reservesTable', ReservesController.delete);
+routes.delete('/reservesTable/', ReservesController.delete);
 
 //Dishes Table 
 routes.post('/dishesTable', DishesController.store);
@@ -42,7 +42,7 @@ routes.get('/dishesTable/byId', DishesController.searchById);
 routes.get('/dishesTable/byName', DishesController.searchByName);
 routes.get('/dishesTable/byType', DishesController.searchByType); 
 routes.put('/dishesTable/update/:id', DishesController.update); 
-routes.delete('/dishesTable', DishesController.delete);
+routes.delete('/dishesTable/:id', DishesController.delete);
 
 // Images Table
 routes.post('/imagesTable/:id', multer(multerConfig).single("image"), ImagesController.store);

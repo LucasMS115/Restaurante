@@ -4,23 +4,45 @@ import Header from '../../components/Header';
 import Table from '../../components/Table';
 import Card from '../../components/Card';
 import Footer from '../../components/Footer';
-import { reservesTable } from '../../Api';
+import { reservesTable, dishesTable } from '../../Api';
 
 
 const Adm = (props) => {
 
     const [rows, setRows] = useState([]);
+    const [dishes, setDishes] = useState([]);
 
-    const setReserves = async () => {
+    const getReserves = async () => {
         setRows(await reservesTable.getReserves()); 
     };
 
+    const getDishes = async () => {
+        console.log("Gets batata");
+        setDishes(await dishesTable.getDishes()); 
+    };
 
-    useEffect( () => {
-        setReserves();
+    const buttonFuncDel = (id) => {
+        console.log("aaaa => " + dishes);
+        let confirmDelete = window.confirm('Tem certeza que deseja deletar esse item?')
+        if (confirmDelete) {
+            /* dishesTable.deleteDish(id); */
+            setDishes(dishes.filter(el => el.id !== parseInt(id)));
+            /* getDishes(); */
+        };
+
+    };
+
+    const buttonFuncUpdate = (id) => {
+        let confirmArq = window.confirm('Tem certeza que deseja arquivar esse item?')
+        if (confirmArq) {
+            dishesTable.updateActive(id);
+        };
+    };
+
+    useEffect(() => {
+        getReserves();
+        getDishes();
     }, []);
-
-
 
     return (
         <div id="title">
@@ -33,17 +55,24 @@ const Adm = (props) => {
                 separator={'Alguma coisa'}
             />
 
+
             <Table
                 title="Reservas"
                 columns={["Nome", "Quantidade", "Dia", "Hora", "Salão"]}
                 rows={rows}
             />
 
-            <Card
-                name="Prato 1"
-                price="100,00"
-                description="Top demais"
-            />
+                    {dishes.map((el) => (
+                        <Card
+                            key={el.id}
+                            id={el.id.toString()}
+                            name={el.name}
+                            price={el.price}
+                            description={el.description}
+                            funcDel={buttonFuncDel}
+                            funcUpt={buttonFuncUpdate}
+                        />
+                    ))}
 
             <Footer />
         </div>
