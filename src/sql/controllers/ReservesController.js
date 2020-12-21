@@ -10,7 +10,7 @@ class ReservesController {
 
   async store(req, res) {
     const {user_id} = req.params;
-    const {hour, day, room, people} = req.body;
+    const {name, cel, email, hour, day, room, people} = req.body;
     const user = await User.findByPk(user_id);
     const freeHours = await new ReservesController().freeHours({day: day});
     if(!user){
@@ -18,7 +18,7 @@ class ReservesController {
     }else if(!freeHours.includes(hour)){
       return res.status(400).json({ error: 'Reached max limit to this date'})
     }else{
-      const reserve = await Reserves.create({user_id, hour, day, room, people});
+      const reserve = await Reserves.create({user_id, name, cel, email, hour, day, room, people});
       return res.json(reserve);
     }
 
@@ -120,6 +120,9 @@ class ReservesController {
     if(!freeHours.includes(newValues.hour)) return res.status(400).json({ error: 'Reached max limit to this date'});
     
     await reserve.update({
+      name: newValues.name,
+      cel: newValues.cel,
+      email:newValues.email,
       hour: newValues.hour,
       day: newValues.day,
       room: newValues.room,

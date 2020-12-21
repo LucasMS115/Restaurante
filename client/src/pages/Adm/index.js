@@ -128,7 +128,7 @@ const Adm = (props) => {
 
                 <div style={{margin: "3rem"}}>
 
-                <h1 style={{margin: "1rem", fontSize:"3rem"}}> Adicionar novo prato </h1>
+                    <h1 style={{margin: "1rem", fontSize:"3rem"}}> Adicionar novo prato </h1>
 
 
                     <form className='flex-container-column' onSubmit={handleSubmit((event) => onSubmit(event))}>

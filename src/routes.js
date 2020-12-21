@@ -24,7 +24,7 @@ routes.put('/users/update/:id', UserController.update); // Update user
 routes.delete('/users', UserController.delete); // Delete user
 
 //Reserves table
-routes.post('/users/reservesTable/:user_id', ReservesController.store);
+routes.post('/reservesTable/:user_id', ReservesController.store);
 routes.get('/reservesTable', ReservesController.index); 
 routes.get('/reservesTable/listWithUser', ReservesController.indexWithUser);
 routes.get('/reservesTable/byId', ReservesController.searchById); 

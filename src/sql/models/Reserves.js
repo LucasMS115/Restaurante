@@ -7,6 +7,9 @@ class Reserves extends Sequelize.Model {
     super.init(
       //1st, Colums that aren't assigned automatically
       {
+        name: Sequelize.STRING,
+        cel: Sequelize.STRING,
+        email: Sequelize.STRING,
         hour: Sequelize.TIME,        
         day: Sequelize.DATEONLY,
         room: Sequelize.INTEGER,

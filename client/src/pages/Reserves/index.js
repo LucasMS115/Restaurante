@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
 import Alert from '../../components/Alert';
-import { reservesTable } from '../../Api';
+import { reservesTable, usersTable } from '../../Api';
 
 /* import 'date-fns';
 import Grid from '@material-ui/core/Grid';
@@ -225,12 +225,18 @@ class Reserves extends Component {
 
     addReserve = () => {
         const hour = this.state.horario + ":00";
+        let id;
+        this.props.token !== null ? id = this.props.token: id = 1;
 
         const reserve = {
-            "hour": hour,
-            "day": this.state.data,
-            "room": "1",
-            "people": this.state.qntPessoas
+            name: this.state.nome,
+            cel: this.state.celular,
+            email: this.state.email,
+            hour: hour,
+            day: this.state.data,
+            room: this.state.salao,
+            people: this.state.qntPessoas,
+            user_id: id
         }
 
         reservesTable.postReserve(reserve)

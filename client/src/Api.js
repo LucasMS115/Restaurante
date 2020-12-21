@@ -59,12 +59,15 @@ const reservesTable = {
         console.log(data)
 
         try {
-            await fetch(`${url}users/reservesTable/3`, { 
+            await fetch(`${url}reservesTable/${data.user_id}`, { 
                 headers: {
                     'Content-type': 'application/json'
                 },
                 method: 'POST',
                 body: JSON.stringify({
+                    name: data.name,
+                    cel: data.cel,
+                    email: data.email,
                     hour: data.hour,
                     day: data.day,
                     room: data.room,

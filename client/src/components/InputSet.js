@@ -7,13 +7,13 @@ export class InputSet extends Component {
     inputTypes = (el) => {
         if(el.type === "select") {
             return(
-                <select value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} >
+                <select className="form-select" value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} >
                     {this.selectOptions(el)}
                 </select>
             )
         } else {
             return (
-                <input type={el.type} value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
+                <input className="form-field" type={el.type} value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
                 
             )
         }
@@ -28,7 +28,7 @@ export class InputSet extends Component {
     render() {
         return this.props.inputs.map((el) => (
             <div key={el[0].text} className="itemForms">
-                <label>{el[0].text}</label>
+                <label className="form-label">{el[0].text}</label>
                 {this.inputTypes(el[0])}
             </div>
         ));

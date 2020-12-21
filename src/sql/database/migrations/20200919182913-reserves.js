@@ -18,6 +18,18 @@ module.exports = {
         onUpdate:'CASCADE',
         onDelete:'CASCADE'
       },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      cel: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
       hour: {
         type: Sequelize.TIME,
         allowNull: false
@@ -27,7 +39,7 @@ module.exports = {
         allowNull: false
       },
       room: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       people: {

@@ -23,7 +23,6 @@
 body {
     background: var(--color-white);
     margin: 0 0 0 0 !important;
-    text-align: center;
 }
 
 * {
@@ -37,16 +36,24 @@ span{
     font-size: 1.3rem;
 }
 
+input {
+    border: 2px solid var(--color-grey-2);
+}
+
+select {
+    border: 2px solid var(--color-grey-2);
+}
+
 .form-field{
     height: 1rem;
-    width: 35rem;
+    width: 40vw;
     margin: 1rem;
     padding: 1rem 
 }
 
 .form-select{
     height: 3.5rem;
-    width: 37.5rem;
+    width: 20vw;
     margin: 1rem;
 }
 

@@ -32,7 +32,7 @@ class Forms extends Component {
                     {this.contentType()}
 
                     <div className="flex-container">
-                        <Btn2Set 
+                        <Btn2Set
                             itens={this.props.btns}
                             func={this.props.func}
                         />
@@ -48,7 +48,6 @@ class Forms extends Component {
 };
 
 Forms.propTypes = {
-    /* activeForms: PropTypes.string.isRequired, */
     title: PropTypes.string.isRequired, 
     contentType: PropTypes.string.isRequired, 
     formContent: PropTypes.array.isRequired, 
