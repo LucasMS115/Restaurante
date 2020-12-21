@@ -26,7 +26,8 @@ const Adm = (props) => {
         let confirmDelete = window.confirm('Tem certeza que deseja deletar esse item?')
         if (confirmDelete) {
             /* dishesTable.deleteDish(id); */
-            setDishes(dishes.filter(el => el.id !== parseInt(id)));
+            let leftDishes = dishes.filter(el => el.id !== parseInt(id))
+            setDishes(leftDishes);
             /* getDishes(); */
         };
 
@@ -43,6 +44,12 @@ const Adm = (props) => {
         getReserves();
         getDishes();
     }, []);
+
+    useEffect(() => {
+        setDishes(dishes)
+        console.log(dishes)
+        
+    }, [dishes]);
 
     return (
         <div id="title">
