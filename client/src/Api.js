@@ -53,7 +53,29 @@ const reservesTable = {
 
         return reserves;
 
-    }
+    },
+
+    postReserve: async (data) => {
+        console.log(data)
+
+        try {
+            await fetch(`${url}users/reservesTable/3`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    hour: data.hour,
+                    day: data.day,
+                    room: data.room,
+                    people: data.people,
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
 
 }
 

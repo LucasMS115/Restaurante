@@ -72,11 +72,11 @@ const Adm = (props) => {
         getDishes();
     }, []);
 
-    useEffect(() => {
+    /* useEffect(() => {
         setDishes(dishes)
         console.log(dishes)
         
-    }, [dishes]);
+    }, [dishes]); */
 
     return (
         <div style={{textAlign: "center"}} id="title">

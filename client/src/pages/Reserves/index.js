@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
 import Alert from '../../components/Alert';
+import { reservesTable } from '../../Api';
 
 /* import 'date-fns';
 import Grid from '@material-ui/core/Grid';
@@ -53,7 +54,7 @@ class Reserves extends Component {
                     {
                         text: "Selecione o dia:",
                         name: "data",
-                        type: "text",
+                        type: "date",
                         value: "",
                     },
                 ],
@@ -177,6 +178,7 @@ class Reserves extends Component {
                 "Data: " + this.state.data,
                 "Salão: " + this.state.salao
             ];
+            this.addReserve();
         }
         this.hideAlert();
         this.setState({activeForms: goTo});
@@ -219,6 +221,19 @@ class Reserves extends Component {
         input.value = insert;
         inputs[this.state.activeForms][inputPosition][0] = input;
         this.setState({formContent: inputs})
+    }
+
+    addReserve = () => {
+        const hour = this.state.horario + ":00";
+
+        const reserve = {
+            "hour": hour,
+            "day": this.state.data,
+            "room": "1",
+            "people": this.state.qntPessoas
+        }
+
+        reservesTable.postReserve(reserve)
     }
 
     showAlert = () => {
