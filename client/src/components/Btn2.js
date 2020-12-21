@@ -6,12 +6,12 @@ import {Link} from 'react-router-dom';
 class Btn2 extends Component {
 
     state = {
-        heigth: "3.4vw",
-        width: "20vw",
+        heigth: "3.4rem",
+        width: "20rem",
         color1: "#E9D56F",
         color2: "black",
-        innerHeigth: "2vw",
-        innerWidth: "18.5vw",
+        innerHeigth: "2rem",
+        innerWidth: "18.5rem",
         link: "teste",
         text: "teste",
         aux: 0,
@@ -59,7 +59,6 @@ class Btn2 extends Component {
         return {
             color: this.state.color2,
             fontSize:'1rem',
-            margin: '0',
             margin: 'auto'
         }
     }

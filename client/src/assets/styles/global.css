@@ -23,6 +23,7 @@
 body {
     background: var(--color-white);
     margin: 0 0 0 0 !important;
+    text-align: center;
 }
 
 * {
@@ -38,9 +39,24 @@ span{
 
 .form-field{
     height: 1rem;
-    width: 30rem;
+    width: 35rem;
     margin: 1rem;
     padding: 1rem 
+}
+
+.form-select{
+    height: 3.5rem;
+    width: 37.5rem;
+    margin: 1rem;
+}
+
+.form-text-area{
+    border: 2px solid var(--color-grey-2);
+    border-radius: 4px;
+    height: 6rem;
+    width: 35rem;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .form-btn{
@@ -239,10 +255,6 @@ span{
     margin: 1rem;
 }
 
-.form-item{
-   
-}
-
 /* --- ICONS STYLE --- */
 
 .pula-linha {
@@ -287,7 +299,7 @@ span{
 
 @media (min-width: 1200px) {
     :root {
-        font-size: 85%;
+        font-size: 75%;
     }
 }
 
