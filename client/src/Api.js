@@ -91,6 +91,48 @@ const dishesTable = {
 
     },
 
+    updateArq: async (id) => {
+
+        console.log('updateArq => ' + id);
+        try {
+            await fetch(`${url}dishesTable/update/${id}`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'PUT',
+                body: JSON.stringify({
+                    active: true,
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
+
+    postDish: async (data) => {
+
+        console.log('postDish => ' + data.name);
+        try {
+            await fetch(`${url}dishesTable`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    name: data.name,
+                    price: data.price,
+                    type: data.type,
+                    description: data.desc,
+                    active: "true" 
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
+
     deleteDish: async (id) => {
         console.log("Deleting dish: " + id);
         await fetch(`${url}dishesTable/${parseInt(id)}`, { method: 'DELETE' })

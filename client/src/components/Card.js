@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles/Card.css'
-import Btn2Set from './Btn2Set';
 import Btn2 from './Btn2';
-import {dishesTable} from '../Api';
 
 class Card extends Component {
 
@@ -34,13 +32,13 @@ class Card extends Component {
 
                 <div className="flex-container">
                     <Btn2 
-                        text="Excluir"
+                        text={this.props.btnNames[0]}
                         funcArgs={this.props.id}
                         func={this.props.funcDel}
                         type="0"
                     />
                     <Btn2 
-                        text="Arquivar"
+                        text={this.props.btnNames[1]}
                         funcArgs={this.props.id}
                         func={this.props.funcUpt}
                         type="0"
@@ -60,7 +58,8 @@ Card.propTypes = {
     price: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     funcDel: PropTypes.func,
-    funcUpt: PropTypes.func
+    funcUpt: PropTypes.func,
+    btnNames: PropTypes.array
 }
 
 export default Card;
