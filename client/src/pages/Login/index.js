@@ -65,7 +65,7 @@ const Login = () => {
                     </form>
 
                     <span style={{fontSize:"2rem"}}>Não pussui uma conta? </span>
-                    <Link style={{color:"black"}} to={"/"} >
+                    <Link style={{color:"black"}} to={"/sign_up"} >
                         <span style={{fontSize:"2rem"}}>Cadastre-se aki!</span>
                     </Link>
 

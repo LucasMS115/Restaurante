@@ -9,6 +9,7 @@ import Reserves from './pages/Reserves';
 import Teste from './pages/Teste';
 import User from './pages/User';
 import Login from './pages/Login';
+import Sign_up from './pages/Sign_up';
 import Working from './pages/Working';
 
 import StoreProvider from './components/Store/Provider';
@@ -33,6 +34,7 @@ class App extends Component{
             <Route path="/reserves" exact component={Reserves}/>
             <Route path="/teste" exact component={Teste}/>
             <Route path="/login" exact component={Login}/>
+            <Route path="/sign_up" exact component={Sign_up}/>
             <RoutesPrivate path="/user" exact component={User}/>
             <Route path="/working" exact component={Working}/>
 

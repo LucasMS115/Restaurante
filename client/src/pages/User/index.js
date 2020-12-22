@@ -63,7 +63,7 @@ const User = () => {
             />
 
 
-            <div className="page-container">
+            <div className="page-container" style={{textAlign: "center"}}>
 
                 {user && 
                     <Card
@@ -77,11 +77,18 @@ const User = () => {
                     />
                 }
 
-                <Table
-                    title="Suas Reservas"
-                    columns={["Nome", "Quantidade", "Dia", "Hora", "Salão"]}
-                    rows={rows}
-                />
+                {rows[0] &&
+                    <Table
+                        title="Suas Reservas"
+                        columns={["Nome", "Quantidade", "Dia", "Hora", "Salão"]}
+                        rows={rows}
+                    />
+                } 
+
+                {!rows[0] &&
+
+                    <h1 className="titulo2">Você ainda não possui reservas!</h1>
+                }
 
                 <Btn2 type="0" text="Sair" func={logOut}/>
 

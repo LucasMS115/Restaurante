@@ -36,6 +36,28 @@ const usersTable = {
         return id;
     },
 
+    postUser: async (data) => {
+        console.log(data)
+
+        try {
+            await fetch(`${url}users`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    name: data.name,
+                    cel: data.cel,
+                    email: data.email,
+                    password: data.password
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
+
 
 }
 

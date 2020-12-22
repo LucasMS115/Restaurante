@@ -1,4 +1,4 @@
-/* import React, {useState, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {useHistory} from 'react-router-dom';
@@ -6,34 +6,22 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import StoreContext from '../../components/Store/Context';
 import { usersTable } from '../../Api';
-import './styles/style.css';
 
-
-const Login = () => {
+const Sign_up = () => {
 
     const [message, setMessage] = useState('');
-
-    const {setToken} = useContext(StoreContext);
     const history = useHistory();
     
     const  {register, handleSubmit, errors} = useForm();
 
     const onSubmit = async (data) => {
-
-        setToken(null);
-        setMessage('');
-        let token = await usersTable.validateUser(data.email, data.password);
-
-        console.log(data.email);
-        console.log(data.password)
-        
-        if(Number.isInteger(token)){
-            console.log(data);
-            console.log(token);
-            setToken(token);
+        if(data.password === data.repeatPassword) {
+            setMessage('Cadastro completo com sucesso!');
+            usersTable.postUser(data)
             return history.push('/user');
+        } else {
+            setMessage('Favor inserir senhas iguais, otario!')
         }
-        else setMessage('Usuário Inválido');
     }
   
         return (
@@ -43,7 +31,7 @@ const Login = () => {
                     type="2"
                     btns={[]}
                     btnsType={'link'} //not used on this page
-                    title={'Entrar'}
+                    title={'Cadastro'}
                     subtitle={''}
                     separator={'Alguma coisa'}
                 />
@@ -54,19 +42,28 @@ const Login = () => {
                     <h2 className="titulo2"> Alguma coisa </h2>
 
                     <form className='flex-container-column' onSubmit={handleSubmit((event) => onSubmit(event))}>
-                        <input className='form-field' type='text' placeholder='E-mail' name='email' ref={register({required:true, minLength: 8})}/>
+                        <input className='form-field' type='text' placeholder='Nome' name='name' ref={register({required:true, minLength: 8})}/>
+                        {errors.name && <span style={{color: "red"}}>Nome inválido</span>}
+
+                        <input className='form-field' type='email' placeholder='E-mail' name='email' ref={register({required:true, minLength: 8})}/>
                         {errors.email && <span style={{color: "red"}}>E-mail inválido</span>}
+
+                        <input className='form-field' type='number' placeholder='Celular com DDD' name='cel' ref={register({required:true, minLength: 11})}/>
+                        {errors.cel && <span style={{color: "red", marginBottom: "1rem"}}>Número de celular inválido</span>}
 
                         <input className='form-field' type='password' placeholder='Senha' name='password' ref={register({required:true, minLength: 3})}/>
                         {errors.password && <span style={{color: "red", marginBottom: "1rem"}}>Senha inválida</span>}
 
+                        <input className='form-field' type='password' placeholder='Repita a senha' name='repeatPassword' ref={register({required:true, minLength: 3})}/>
+                        {errors.repeatPassword && <span style={{color: "red", marginBottom: "1rem"}}>Senha inválida</span>}
+
                         <input className='form-btn' type='submit'/>
-                        {!errors.email && !errors.password && <span style={{color: "red", margin: "1rem"}}>{message}</span>}
+                        {!errors.name && !errors.email && !errors.cel && !errors.password && !errors.repeatPassword && <span style={{color: "red", margin: "1rem"}}>{message}</span>}
                     </form>
 
-                    <span style={{fontSize:"2rem"}}>Não pussui uma conta? </span>
-                    <Link style={{color:"black"}} to={"/"} >
-                        <span style={{fontSize:"2rem"}}>Cadastre-se aki!</span>
+                    <span style={{fontSize:"2rem"}}>Já pussui uma conta? </span>
+                    <Link style={{color:"black"}} to={"/login"} >
+                        <span style={{fontSize:"2rem"}}>Faça login aki!</span>
                     </Link>
 
                 </div>
@@ -80,4 +77,4 @@ const Login = () => {
     
 }
 
-export default Login; */
+export default Sign_up;
