@@ -1,5 +1,5 @@
-const url = "http://localhost:5000/" ;
-/* const url = "https://restaurante-sintese.herokuapp.com/"; */
+/* const url = "http://localhost:5000/" ; */
+const url = "https://restaurante-sintese.herokuapp.com/";
 
 const teste = {
     print: () => {
