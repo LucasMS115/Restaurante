@@ -44,6 +44,11 @@ select {
     border: 2px solid var(--color-grey-2);
 }
 
+.page-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .form-field{
     height: 1rem;
     width: 40vw;

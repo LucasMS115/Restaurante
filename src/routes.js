@@ -30,7 +30,7 @@ routes.get('/reservesTable/byId', ReservesController.searchById);
 routes.get('/reservesTable/byDay', ReservesController.searchByDay);
 routes.get('/reservesTable/freeHours', ReservesController.freeHours);
 routes.get('/reservesTable/byRoom', ReservesController.searchByRoom); 
-routes.get('/reservesTable/byUser', ReservesController.searchByUser); 
+routes.get('/reservesTable/byUser/:user_id', ReservesController.searchByUser); 
 routes.put('/reservesTable/update/:id', ReservesController.update); 
 routes.delete('/reservesTable/', ReservesController.delete);
 

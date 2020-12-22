@@ -27,20 +27,20 @@ class Card extends Component {
             <div className="card">
                 <h1 className="card-title">{this.props.name}</h1>
 
-                <p>{"Preço: " + this.props.price}</p>
-                <p>{"Descrição: " + this.props.description}</p>
+                <p>{this.props.firstLine}</p>
+                <p>{this.props.secondLine}</p>
 
                 <div className="flex-container">
                     <Btn2 
                         text={this.props.btnNames[0]}
                         funcArgs={this.props.id}
-                        func={this.props.funcDel}
+                        func={this.props.func1}
                         type="0"
                     />
                     <Btn2 
                         text={this.props.btnNames[1]}
                         funcArgs={this.props.id}
-                        func={this.props.funcUpt}
+                        func={this.props.func2}
                         type="0"
                     />
                 </div>
@@ -55,10 +55,12 @@ class Card extends Component {
 Card.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    funcDel: PropTypes.func,
-    funcUpt: PropTypes.func,
+    firstLine: PropTypes.string.isRequired,
+    secondLine: PropTypes.string.isRequired,
+    /* thirdLine: PropTypes.string,
+    forthLine: PropTypes.string, */
+    func1: PropTypes.func,
+    func2: PropTypes.func,
     btnNames: PropTypes.array
 }
 

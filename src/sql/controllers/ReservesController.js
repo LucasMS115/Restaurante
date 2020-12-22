@@ -94,10 +94,10 @@ class ReservesController {
 
   async searchByUser(req, res){
 
-    if(!req.body.user_id) return res.status(400).json({ error: "No user_id received for the search"});
-    const user_id = req.body;
-    const reserves = await Reserves.findAll({ where: user_id});
-    if(!reserves[0]) return res.json({ error: `We dont have a reserve to this user_id (${user_id.user_id}).` });
+    if(!req.params.user_id) return res.status(400).json({ error: "No user_id received for the search"});
+    const {user_id} = req.params;
+    const reserves = await Reserves.findAll({ where: {user_id}});
+    if(!reserves[0]) return res.json({ error: `We dont have a reserve to this user_id (${user_id}).` });
     return res.json(reserves);
     
   }

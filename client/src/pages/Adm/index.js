@@ -33,11 +33,11 @@ const Adm = (props) => {
         let arq = [];
         
         raw.forEach((el) => {
-            if(el.active === true) active.push(el);
+            if(el.active) active.push(el);
         });
 
         raw.forEach((el) => {
-            if(el.active === false) arq.push(el);
+            if(!el.active) arq.push(el);
         });
         
         setActiveDishes(active); 
@@ -104,10 +104,10 @@ const Adm = (props) => {
                     key={el.id}
                     id={el.id.toString()}
                     name={el.name}
-                    price={el.price}
-                    description={el.description}
-                    funcDel={buttonFuncDel}
-                    funcUpt={buttonFuncUpdateActive}
+                    firstLine={`Preço: ${el.price}`}
+                    secondLine={`Descrição: ${el.description}`}
+                    func1={buttonFuncDel}
+                    func2={buttonFuncUpdateActive}
                     btnNames={["Excluir","Arquivar"]}
                 />
             ))}
@@ -119,10 +119,10 @@ const Adm = (props) => {
                     key={el.id}
                     id={el.id.toString()}
                     name={el.name}
-                    price={el.price}
-                    description={el.description}
-                    funcDel={buttonFuncDel}
-                    funcUpt={buttonFuncUpdateArq}
+                    firstLine={`Preço: ${el.price}`}
+                    secondLine={`Descrição: ${el.description}`}
+                    func1={buttonFuncDel}
+                    func2={buttonFuncUpdateArq}
                     btnNames={["Excluir","Ativar"]}
                 />
             ))}

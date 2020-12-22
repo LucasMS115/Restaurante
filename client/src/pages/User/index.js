@@ -1,11 +1,20 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import StoreContext from '../../components/Store/Context';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Table from '../../components/Table';
+import Card from '../../components/Card';
+import {usersTable, reservesTable} from '../../Api';
 import './styles/styles.css';
 
 import Btn2 from '../../components/Btn2';
 
 const User = () => {
+
+    const [user, setUser] = useState();
+    const [title, setTitle] = useState(" ");
+    const [rows, setRows] = useState([]);
 
     const { token, setToken } = useContext(StoreContext);
     const history = useHistory();
@@ -16,10 +25,71 @@ const User = () => {
         return history.push('/user');
     }
 
+    const getUserData = async () => {
+        let userData = await usersTable.getByID(token);
+        setTitle(`Olá ${userData.name}!`);
+        setUser(userData);
+    }
+
+    const getReservesData = async () => {
+        let data = await reservesTable.getByUser(token);
+        setRows(data);
+    }
+
+    const updateUser = async () => {
+        console.log("updateUser()");
+    }
+
+    const deleteUser = async () => {
+        console.log("deleteUser()");
+    }
+
+    useEffect(() => {
+        getUserData();
+        getReservesData();
+    }, [])
+
+
     return(
-        <div id="title">
-            <h1 className="t6">Página do usuário {token}</h1>
-            <Btn2 type="0" text="Sair" func={logOut}/>
+        <div >
+
+            <Header
+                type="2"
+                btns={[]}
+                btnsType={'link'} //not used on this page
+                title={title}
+                subtitle={''}
+                separator={'Alguma coisa'}
+            />
+
+
+            <div className="page-container">
+
+                {user && 
+                    <Card
+                        id={user.id.toString()}
+                        name={"Seus dados:"}
+                        firstLine={`Email: ${user.email}`}
+                        secondLine={`Celular: ${user.cel}`}
+                        func1={updateUser}
+                        func2={deleteUser}
+                        btnNames={["Atualizar","Excluir"]}
+                    />
+                }
+
+                <Table
+                    title="Suas Reservas"
+                    columns={["Nome", "Quantidade", "Dia", "Hora", "Salão"]}
+                    rows={rows}
+                />
+
+                <Btn2 type="0" text="Sair" func={logOut}/>
+
+            </div>
+
+            
+
+            <Footer/>
         </div>
     );
 };

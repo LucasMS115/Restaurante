@@ -55,6 +55,21 @@ const reservesTable = {
 
     },
 
+    getByUser: async (user_id) => {
+
+        let reserves;
+        
+        await fetch(`${url}reservesTable/byUser/${user_id}`, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => { 
+            reserves = data;
+        });
+
+        return reserves;
+
+    },
+
+
     postReserve: async (data) => {
         console.log(data)
 
