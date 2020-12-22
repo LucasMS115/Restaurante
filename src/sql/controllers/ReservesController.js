@@ -30,13 +30,6 @@ class ReservesController {
     return res.json(reserves);
   }
 
-  async indexWithUser(req, res){
-    const reserves = await sequelize.query(
-      "SELECT reserves.id, name, people, day, hour, room FROM users INNER JOIN reserves ON users.id = reserves.user_id;",
-      { type: QueryTypes.SELECT });
-    return res.json(reserves);
-  }
-
   async searchById(req, res){
 
     if(!req.body.id) return res.status(400).json({ error: "No id received for the search"});

@@ -22,7 +22,9 @@ const Adm = (props) => {
     const [activeDishes, setActiveDishes] = useState([]);
 
     const getReserves = async () => {
-        setRows(await reservesTable.getReserves()); 
+        const data = await reservesTable.getReserves();
+        console.log(data);
+        setRows(data); 
     };
 
     const getDishes = async () => {
@@ -138,8 +140,11 @@ const Adm = (props) => {
                         <input className='form-field' type='text' placeholder='Preço' name='price' ref={register({required:true, minLength: 2})}/>
                         {errors.price && <span style={{color: "red", marginBottom: "1rem"}}>Preço inválido</span>}
 
+                        <textarea className='form-text-area' type='text' placeholder='Descrição' name='desc' ref={register({required:true, minLength: 10})}/>
+                        {errors.desc && <span style={{color: "red", marginBottom: "1rem"}}>Descrição inválida</span>}
+                        
                         <select className='form-select' name='type' ref={register({required:true, minLength: 2})}>
-                            <option value="">Selecione...</option>
+                            <option value="">Tipo...</option>
                             <option value="entradas">Entradas</option>
                             <option value="principais">Principais</option>
                             <option value="bebidas">Bebidas</option>
@@ -147,8 +152,6 @@ const Adm = (props) => {
                         </select>
                         {errors.type && <span style={{color: "red", marginBottom: "1rem"}}>Tipo inválido</span>}
 
-                        <textarea className='form-text-area' type='text' placeholder='Descrição' name='desc' ref={register({required:true, minLength: 10})}/>
-                        {errors.desc && <span style={{color: "red", marginBottom: "1rem"}}>Descrição inválida</span>}
 
                         <input className='form-btn' type='submit'/>
                         {/* {!errors.email && !errors.password && <span style={{color: "red", margin: "1rem"}}>{message}</span>} */}

@@ -35,7 +35,7 @@ export class Home extends Component {
                 <Header 
                     type="1"
                     btns={ [{ text: "Cardápio", path: "/menu", type: "link" },
-                        { text: "Reservas", path: "/working", type: "link"},
+                        { text: "Reservas", path: "/reserves", type: "link"},
                         { text: "Contato", func: this.toContact , type: "function"},
                     ]}
                     title={this.state.title}

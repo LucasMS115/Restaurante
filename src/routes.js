@@ -26,7 +26,6 @@ routes.delete('/users', UserController.delete); // Delete user
 //Reserves table
 routes.post('/reservesTable/:user_id', ReservesController.store);
 routes.get('/reservesTable', ReservesController.index); 
-routes.get('/reservesTable/listWithUser', ReservesController.indexWithUser);
 routes.get('/reservesTable/byId', ReservesController.searchById); 
 routes.get('/reservesTable/byDay', ReservesController.searchByDay);
 routes.get('/reservesTable/freeHours', ReservesController.freeHours);

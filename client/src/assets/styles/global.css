@@ -53,7 +53,7 @@ select {
 
 .form-select{
     height: 3.5rem;
-    width: 20vw;
+    width: 30vw;
     margin: 1rem;
 }
 
@@ -61,7 +61,7 @@ select {
     border: 2px solid var(--color-grey-2);
     border-radius: 4px;
     height: 6rem;
-    width: 35rem;
+    width: 40vw;
     margin: 1rem;
     padding: 1rem;
 }
@@ -71,8 +71,8 @@ select {
     align-items: center;
     justify-content: center;
     background-color: var(--color-white);
-    height: 2.5rem;
-    width: 10rem;
+    height: 3.5rem;
+    width: 15rem;
     margin: 1rem;
     cursor: pointer;
 }
@@ -117,8 +117,8 @@ select {
 }
 
 .logo{
-    height: 8rem;
-    width: 8rem;
+    height: 10rem;
+    width: 10rem;
 }
 
 .nav-bar{
@@ -137,9 +137,8 @@ select {
     font-family: Italianno;
     font-style: normal;
     font-weight: normal;
-    font-size: 12.5rem;
+    font-size: 15rem;
     margin: 0; 
-    /* margin-bottom: -5rem; */
 }
 
 .titulo2 {
@@ -270,7 +269,7 @@ select {
 
 @media (max-width: 400px) {
     :root {
-        font-size: 40%;
+        font-size: 35%;
     }
 }
 

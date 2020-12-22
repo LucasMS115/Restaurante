@@ -13,7 +13,7 @@ export class Header extends Component {
     state = {
         nav: [  { text: "Início", path: "/" },
                 { text: "Cardápio", path: "/menu" },
-                { text: "Reservas", path: "/working" },
+                { text: "Reservas", path: "/reserves" },
                 { text: "Conta", path: "/working" },    
             ]
     };
