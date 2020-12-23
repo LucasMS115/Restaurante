@@ -115,8 +115,8 @@ select {
 
 .logo-container{
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 1rem;
+    left: 1rem;
     color:white;
     font-size: 2rem;
 }
@@ -129,10 +129,20 @@ select {
 .nav-bar{
     display: flex;
     position: absolute;
-    top: 0;
-    right: 0.75rem;
+    top: 1.5rem;
+    right: 1rem;
     color:white;
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+
+.nav-text{
+    font-size: 1.9rem;
+}
+
+.nav-btn {
+    margin: .5rem;
+    align-content: center;
+    justify-content: center;
 }
 
 .titulo1 {
@@ -336,6 +346,20 @@ select {
     }
 }
 
+
+
+@media (max-width: 768px) {
+
+    .nav-btn {
+        margin: 2rem 0 0 4rem;
+    }
+
+    .nav-text{
+        font-size: 3rem;
+    }
+   
+}
+
 @media (min-width: 700px) {
     :root {
         font-size: 60%;
@@ -347,13 +371,13 @@ select {
         font-size: 9rem;
     }
 
-    /* .logo{
+    .logo{
         visibility: hidden;
-    }
+    } 
     
-    .nav-bar{
+    /* .nav-bar{
         visibility: hidden;
-    } */
+    }  */
 }
 
 

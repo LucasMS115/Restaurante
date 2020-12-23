@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../assets/styles/global.css';
 import './styles/Header.css';
-import NavBt from './NavBt';
+import NavBar from './NavBar';
 import SepWhite from "./SepWhite";
 import Btn1Set from './Btn1Set';
 import Icon from './Icon';
 import { Link } from 'react-router-dom';
+/* import { withHooksHOC } from '../utils/withHooksHOC'; */
 
 export class Header extends Component {
 
@@ -31,18 +32,14 @@ export class Header extends Component {
             <div>
                 <div className="img-container">
                     
-                    <div className="filter"/>
+                    
+                    {<div className="filter"/>}
 
-                    <Link className="logo-container" to='/'>
+                    {/* <Link className="logo-container" to='/'>
                         <Icon type="logo" class="logo" />
-                    </Link>
+                    </Link> */}
 
-                    <div className="nav-bar"> 
-                        <NavBt path={this.state.nav[0].path} name={this.state.nav[0].text}/>
-                        <NavBt path={this.state.nav[1].path} name={this.state.nav[1].text}/>
-                        <NavBt path={this.state.nav[2].path} name={this.state.nav[2].text}/>
-                        <NavBt path={this.state.nav[3].path} name={this.state.nav[3].text}/>
-                    </div>
+                    <NavBar/>
 
                     <div className="social-icons-corner">
                         <a href='https://www.instagram.com/' target="blank">

@@ -13,14 +13,8 @@ export class NavBt extends Component {
         return{
             textDecoration: 'none',
             color: this.state.color,
-            fontSize: '1.9rem'
+            /* fontSize: '1.9rem' */
         }
-    };
-
-    divStyle = {
-        margin: '0.5rem',
-        alignContent: 'center',
-        justifyContent: 'center',
     };
 
     mouseEnter = () => {
@@ -42,8 +36,9 @@ export class NavBt extends Component {
     render() {
         return (
             <div>
-                <div style={this.divStyle}> 
+                <div className="nav-btn"> 
                     <NavLink
+                        className="nav-text"
                         style={this.linkStyle()}
                         onMouseEnter={this.mouseEnter}
                         onMouseLeave={this.mouseLeave}
