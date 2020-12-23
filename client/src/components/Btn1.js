@@ -7,14 +7,15 @@ import {Link} from 'react-router-dom';
 export class Btn1 extends Component {
 
     state = {
-        btnSize: "10.5rem",
+        btnSize: "12.5vw",
         color1: "#E9D56F",
         color2: "white",
-        innerSize: "9.2rem",
-        iconSize: "5rem",
+        innerSize: "11vw",
+        iconSize: "5.5vw",
         link: "teste",
         text: "teste",
         icon: icon1,
+        legSize: "1.7vw"
     }
 
     container = {
@@ -28,7 +29,7 @@ export class Btn1 extends Component {
         return {
             position: 'absolute',
             backgroundColor: this.state.color1,
-            filter: 'opacity(16%)', 
+            filter: 'opacity(22%)', 
             width: this.state.btnSize,
             height: this.state.btnSize,
             margin: 'auto'
@@ -74,7 +75,7 @@ export class Btn1 extends Component {
         return {
             color: this.state.color2,
             filter: 'brightness(100%)',
-            fontSize:'1.45rem',
+            fontSize: this.state.legSize,
             margin: 'auto'
         }
     }
@@ -93,24 +94,24 @@ export class Btn1 extends Component {
     defineBtn = () => {
         if(this.props.type === "link")
             return (
-                <Link style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
-                    <div style={this.backgroundStyle()}/>
-                    <div style={this.innerStyle()}>
-                        <img style={this.iconStyle} src={icon1} alt=':('></img>
-                        <span style={this.iconLeg()}>{this.props.text}</span>
+                <Link className="btn1-out" style={this.outStyle()} to={this.props.path} onMouseEnter={this.mouse} onMouseLeave={this.mouse} onClick={this.click}>
+                    <div className="btn1-back" style={this.backgroundStyle()}/>
+                    <div className="btn1-in" style={this.innerStyle()}>
+                        <img className="btn1-icon" style={this.iconStyle} src={icon1} alt=':('></img>
+                        <span className="btn1-leg" style={this.iconLeg()}>{this.props.text}</span>
                     </div>
                 </Link>
             )
         else if(this.props.type === "function")
             return (
-                <div style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse}
+                <div className="btn1-out" style={this.outStyle()} onMouseEnter={this.mouse} onMouseLeave={this.mouse}
                 onClick={this.props.func.bind(this, this.props.text.toLowerCase())}>
 
-                    <div style={this.backgroundStyle()}/>
+                    <div className="btn1-back" style={this.backgroundStyle()}/>
 
-                    <div style={this.innerStyle()}>
-                        <img style={this.iconStyle} src={icon1} alt=':('></img>
-                        <span style={this.iconLeg()}>{this.props.text}</span>
+                    <div className="btn1-in" style={this.innerStyle()}>
+                        <img className="btn1-icon" style={this.iconStyle} src={icon1} alt=':('></img>
+                        <span className="btn1-leg" style={this.iconLeg()}>{this.props.text}</span>
                     </div>
 
                 </div>

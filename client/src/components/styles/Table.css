@@ -33,3 +33,9 @@
     background-color: var(--color-grey-1);
     color: white;
   }
+
+  @media (max-width: 700px) {
+    .table-item{
+      font-size: 1.31rem;
+    }
+}

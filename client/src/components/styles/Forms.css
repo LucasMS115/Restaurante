@@ -67,3 +67,9 @@ label {
     color: black;
     margin: .4rem;
 }
+
+@media (max-width: 700px) {
+    .formsContainer {
+        width: 87%;
+    }
+}

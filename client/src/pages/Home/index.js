@@ -34,9 +34,9 @@ export class Home extends Component {
 
                 <Header 
                     type="1"
-                    btns={ [{ text: "Cardápio", path: "/menu", type: "link" },
-                        { text: "Reservas", path: "/reserves", type: "link"},
-                        { text: "Contato", func: this.toContact , type: "function"},
+                    btns={ [{ text: "CARDÁPIO", path: "/menu", type: "link" },
+                        { text: "RESERVAS", path: "/reserves", type: "link"},
+                        { text: "CONTATO", func: this.toContact , type: "function"},
                     ]}
                     title={this.state.title}
                     subtitle={this.state.subtitle}
@@ -59,8 +59,8 @@ export class Home extends Component {
         
                 <Btn2 
                     type="1"
-                    path="/working"
-                    text="Faça uma reserva"
+                    path="/reserves"
+                    text="Fazer reserva"
                 />
 
 

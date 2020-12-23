@@ -49,10 +49,10 @@ export class Menu extends Component {
                 <Header 
                     type="1"
 
-                    btns={ [{ text: "Entradas", func: this.filter, type: "function" },
-                            { text: "Principais", func: this.filter, type: "function"},
-                            { text: "Sobremesas", func: this.filter, type: "function" },
-                            { text: "Bebidas", func: this.filter, type: "function" }
+                    btns={ [{ text: "ENTRADAS", func: this.filter, type: "function" },
+                            { text: "PRINCIPAIS", func: this.filter, type: "function"},
+                            { text: "SOBREMESAS", func: this.filter, type: "function" },
+                            { text: "BEBIDAS", func: this.filter, type: "function" }
                            ]
                     }
 

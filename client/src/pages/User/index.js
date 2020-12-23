@@ -27,7 +27,7 @@ const User = () => {
 
     const getUserData = async () => {
         let userData = await usersTable.getByID(token);
-        setTitle(`Olá ${userData.name}!`);
+        setTitle(`Olá ${userData.name.split(" ")[0]}!`);
         setUser(userData);
     }
 

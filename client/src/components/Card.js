@@ -27,8 +27,8 @@ class Card extends Component {
             <div className="card">
                 <h1 className="card-title">{this.props.name}</h1>
 
-                <p>{this.props.firstLine}</p>
-                <p>{this.props.secondLine}</p>
+                <p className="paragrafo">{this.props.firstLine}</p>
+                <p className="paragrafo">{this.props.secondLine}</p>
 
                 <div className="flex-container">
                     <Btn2 

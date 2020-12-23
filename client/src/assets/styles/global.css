@@ -152,7 +152,7 @@ select {
     font-family: Italianno;
     font-style: normal;
     font-weight: normal;
-    font-size: 8.5rem;
+    font-size: 10rem;
     margin: 0; 
 }
 
@@ -274,13 +274,13 @@ select {
 
 @media (max-width: 400px) {
     :root {
-        font-size: 35%;
+        font-size: 40%;
     }
 }
 
 @media (min-width: 401px) {
     :root {
-        font-size: 45%;
+        font-size: 50%;
     }
 
     .social-icons-corner{
@@ -289,9 +289,56 @@ select {
 
 }
 
+@media (max-width: 700px) {
+
+    .form-field{
+        height: 3rem;
+        width: 60vw;
+
+    }
+    
+    .form-select{
+        height: 6rem;
+        width: 40vw;
+    }
+
+    .form-text-area{
+        height: 7rem;
+        width: 60vw;
+    }
+
+    .titulo1 {
+        font-size: 13rem; 
+    }
+
+    .btn1-out{
+        height: 20vw !important;
+        width: 20vw !important;
+    }
+
+    .btn1-back{
+        height: 20vw !important;
+        width: 20vw !important;
+    }
+
+    .btn1-in{
+        height: 17vw !important;
+        width: 17vw !important;
+    }
+
+    .btn1-icon{
+        height: 10vw !important;
+        width: 10vw !important;
+    }
+
+    .btn1-leg{
+        font-size: 2.5vw !important;
+    }
+}
+
 @media (min-width: 700px) {
     :root {
-        font-size: 55%;
+        font-size: 60%;
     }
 }
 
@@ -299,6 +346,14 @@ select {
     .titulo2{
         font-size: 9rem;
     }
+
+    /* .logo{
+        visibility: hidden;
+    }
+    
+    .nav-bar{
+        visibility: hidden;
+    } */
 }
 
 

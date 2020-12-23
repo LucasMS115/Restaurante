@@ -21,11 +21,11 @@ class Table extends Component {
                     {this.props.rows.map((el) => (
                         <tbody key={el.id}>
                             <tr>
-                                <td>{el.name}</td>
-                                <td>{el.people}</td>
-                                <td>{el.day}</td>
-                                <td>{el.hour}</td>
-                                <td>{el.room}</td>
+                                <td className="table-item">{el.name}</td>
+                                <td className="table-item">{el.people}</td>
+                                <td className="table-item">{el.day}</td>
+                                <td className="table-item">{el.hour}</td>
+                                <td className="table-item">{el.room}</td>
                             </tr>
                         </tbody>
 

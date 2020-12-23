@@ -14,7 +14,7 @@ export class Header extends Component {
         nav: [  { text: "Início", path: "/" },
                 { text: "Cardápio", path: "/menu" },
                 { text: "Reservas", path: "/reserves" },
-                { text: "Conta", path: "/working" },    
+                { text: "Conta", path: "/user" },    
             ]
     };
 
