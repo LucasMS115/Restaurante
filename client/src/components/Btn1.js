@@ -29,7 +29,7 @@ export class Btn1 extends Component {
         return {
             position: 'absolute',
             backgroundColor: this.state.color1,
-            filter: 'opacity(22%)', 
+            filter: 'opacity(33%)', 
             width: this.state.btnSize,
             height: this.state.btnSize,
             margin: 'auto'
@@ -76,6 +76,7 @@ export class Btn1 extends Component {
             color: this.state.color2,
             filter: 'brightness(100%)',
             fontSize: this.state.legSize,
+            fontWeight:'bold' ,
             margin: 'auto'
         }
     }
