@@ -9,7 +9,7 @@ import Btn2 from '../../components/Btn2';
 export class Home extends Component {
     
     state = {
-        title: "Bem Vindo",
+        title: "Benvenuto",
         subtitle: "NOME DO RESTAURANTE",
         separator: "Alguma Coisa",
         contactRef: React.createRef()
