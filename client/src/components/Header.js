@@ -53,7 +53,7 @@ export class Header extends Component {
                         </a>
                     </div>
 
-                    <h1 style={{marginBottom: "-5rem"}} className="titulo1">{this.props.title}</h1>
+                    <h1 style={{marginBottom: "-2rem"}} className="titulo1">{this.props.title}</h1>
                     <h2 className="subtitulo1">{this.props.subtitle}</h2>
                     
                     <div style={this.hidden()} className="sepContainer">
