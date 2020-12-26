@@ -10,6 +10,7 @@ import { dishesTable } from '../../Api';
 export class Menu extends Component {
     
     state = {
+        first: true,
         title: "Cardápio",
         subtitle: "Tudo muito caro mesmo ;)",
         separator: "Alguma Coisa",
@@ -19,7 +20,6 @@ export class Menu extends Component {
 
     async componentDidMount() {
 
-        window.scrollTo(0, 0);
         const dishesRaw = await dishesTable.getDishes();
         let dishes = [];
         
@@ -29,6 +29,7 @@ export class Menu extends Component {
 
         this.setState({dishes: dishes});
         this.setState({dishesBase: dishes});
+        this.setState({first: false});
     }
     
     filter = (btnName) => {

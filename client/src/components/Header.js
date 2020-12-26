@@ -6,8 +6,6 @@ import NavBar from './NavBar';
 import SepWhite from "./SepWhite";
 import Btn1Set from './Btn1Set';
 import Icon from './Icon';
-import { Link } from 'react-router-dom';
-/* import { withHooksHOC } from '../utils/withHooksHOC'; */
 
 export class Header extends Component {
 

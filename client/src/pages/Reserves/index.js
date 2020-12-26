@@ -5,16 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
 import Alert from '../../components/Alert';
-import { reservesTable, usersTable } from '../../Api';
-
-/* import 'date-fns';
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers'; */
+import { reservesTable } from '../../Api';
 
 class Reserves extends Component {
 

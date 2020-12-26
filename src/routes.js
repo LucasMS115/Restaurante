@@ -21,7 +21,7 @@ routes.get('/users/byEmail', UserController.searchByEmail); // Search user by em
 routes.get('/users/testUser/:email/:password', UserController.testUser); 
 routes.get('/users/byName', UserController.searchByName); // Search users by name
 routes.put('/users/update/:id', UserController.update); // Update user
-routes.delete('/users', UserController.delete); // Delete user
+routes.delete('/users/:id', UserController.delete); // Delete user
 
 //Reserves table
 routes.post('/reservesTable/:user_id', ReservesController.store);

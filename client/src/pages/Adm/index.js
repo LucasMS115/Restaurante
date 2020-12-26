@@ -10,20 +10,24 @@ import {useForm} from 'react-hook-form';
 
 const Adm = (props) => {
 
-    const  {register, handleSubmit, errors} = useForm();
+    const  {register, handleSubmit, errors, reset} = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
-        dishesTable.postDish(data);
+        
+        await dishesTable.postDish(data);
+        await getDishes();
+        reset();
+        setMessage("Concluído :)");
+
     }
 
     const [rows, setRows] = useState([]);
     const [arqDishes, setArqDishes] = useState([]);
     const [activeDishes, setActiveDishes] = useState([]);
+    const [message, setMessage] = useState(" ");
 
     const getReserves = async () => {
         const data = await reservesTable.getReserves();
-        console.log(data);
         setRows(data); 
     };
 
@@ -44,28 +48,28 @@ const Adm = (props) => {
         setArqDishes(arq);
     };
 
-    const buttonFuncDel = (id) => {
-        console.log("aaaa => " + activeDishes);
+    const buttonFuncDel = async (id) => {
         let confirmDelete = window.confirm('Tem certeza que deseja deletar PERMANENTEMENTE esse item?')
         if (confirmDelete) {
-            /* dishesTable.deleteDish(id); */
-            setActiveDishes(activeDishes.filter(el => el.id !== parseInt(id)));
-            /* getDishes(); */
+            await dishesTable.deleteDish(id);
+            await getDishes();
         };
 
     };
 
-    const buttonFuncUpdateActive = (id) => {
+    const buttonFuncUpdateActive = async (id) => {
         let confirmArq = window.confirm('Tem certeza que deseja arquivar esse item?')
         if (confirmArq) {
-            dishesTable.updateActive(id);
+            await dishesTable.updateActive(id);
+            await getDishes();
         };
     };
 
-    const buttonFuncUpdateArq = (id) => {
+    const buttonFuncUpdateArq = async (id) => {
         let confirmArq = window.confirm('Tem certeza que deseja arquivar esse item?')
         if (confirmArq) {
-            dishesTable.updateArq(id);
+            await dishesTable.updateArq(id);
+            await getDishes();
         };
     };
 
@@ -73,12 +77,6 @@ const Adm = (props) => {
         getReserves();
         getDishes();
     }, []);
-
-    /* useEffect(() => {
-        setDishes(dishes)
-        console.log(dishes)
-        
-    }, [dishes]); */
 
     return (
         <div style={{textAlign: "center"}} id="title">
@@ -154,7 +152,7 @@ const Adm = (props) => {
 
 
                         <input className='form-btn' type='submit'/>
-                        {/* {!errors.email && !errors.password && <span style={{color: "red", margin: "1rem"}}>{message}</span>} */}
+                        {!errors.name && !errors.price && !errors.desc && <span style={{color: "green", margin: "1rem", fontSize: "2rem"}}>{message}</span>}
                     </form>
 
                 </div>

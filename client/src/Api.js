@@ -37,7 +37,6 @@ const usersTable = {
     },
 
     postUser: async (data) => {
-        console.log(data)
 
         try {
             await fetch(`${url}users`, { 
@@ -57,6 +56,42 @@ const usersTable = {
         }
 
     },
+
+    updateUser: async (data, id) => {
+
+        try {
+            await fetch(`${url}users/update/${id}`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'PUT',
+                body: JSON.stringify({
+                    name: data.name,
+                    cel: data.cel,
+                    email: data.email,
+                    password: data.password
+                })
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    },
+
+    deleteUser: async (id) => {
+
+        try {
+            await fetch(`${url}users/${id}`, { 
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'DELETE',
+            })
+        } catch (err) {
+            console.log(err);
+        }
+
+    }
 
 
 }

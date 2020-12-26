@@ -23,13 +23,8 @@ const Login = () => {
         setToken(null);
         setMessage('');
         let token = await usersTable.validateUser(data.email, data.password);
-
-        console.log(data.email);
-        console.log(data.password)
         
         if(Number.isInteger(token)){
-            console.log(data);
-            console.log(token);
             setToken(token);
             return history.push('/user');
         }
