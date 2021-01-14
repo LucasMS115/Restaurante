@@ -258,13 +258,6 @@ class Reserves extends Component {
                     separator={this.state.separator}
                 />
 
-                <div style={{ display: this.state.alertDisplay }}>
-                    <Alert 
-                        text="Por favor preencha todos os campos antes de prosseguir"
-                        func={this.hideAlert}
-                    />
-                </div>
-
                 <Forms
                     title={this.state.formContentConfig[this.state.activeForms].title}
                     contentType={this.state.formContentConfig[this.state.activeForms].contentType}
@@ -273,6 +266,13 @@ class Reserves extends Component {
                     func={this.changeActiveFormState}
                     getInputValueFunc={this.getInputValue}
                 />
+
+                <div style={{ display: this.state.alertDisplay, marginTop: "-2rem" }}>
+                    <Alert 
+                        text="Por favor preencha todos os campos antes de prosseguir"
+                        func={this.hideAlert}
+                    />
+                </div>
 
                 <Footer />
 

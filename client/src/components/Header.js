@@ -33,10 +33,6 @@ export class Header extends Component {
                     
                     {<div className="filter"/>}
 
-                    {/* <Link className="logo-container" to='/'>
-                        <Icon type="logo" class="logo" />
-                    </Link> */}
-
                     <NavBar/>
 
                     <div className="social-icons-corner">

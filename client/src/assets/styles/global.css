@@ -283,13 +283,13 @@ select {
     margin: 0 0 0 0; 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 499px) {
     :root {
         font-size: 40%;
     }
 }
 
-@media (min-width: 401px) {
+@media (min-width: 500px) {
     :root {
         font-size: 50%;
     }
