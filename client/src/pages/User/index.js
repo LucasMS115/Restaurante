@@ -49,9 +49,11 @@ const User = () => {
 
     const deleteUser = async () => {
         let confirmDelete = window.confirm('Tem certeza que deseja excluir PERMANENTEMENTE sua conta?');
-        if(confirmDelete) await usersTable.deleteUser(user.id);
-        setToken(null);
-        return history.push('/user');
+        if(confirmDelete){
+            await usersTable.deleteUser(user.id);
+            setToken(null);
+            return history.push('/user');
+        } 
     };
 
     const onSubmit = async (data) => {
