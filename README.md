@@ -12,3 +12,6 @@ Running here: https://restaurante-sintese.netlify.app/#/
 <p>server -> run the back-end locally</p>
 <p>client -> run the front-end</p>
 <p>dev -> run both</p>
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
