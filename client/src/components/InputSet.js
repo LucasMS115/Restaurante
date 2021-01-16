@@ -11,10 +11,13 @@ export class InputSet extends Component {
                     {this.selectOptions(el)}
                 </select>
             )
+        } else if(el.type === "date"){
+            return (
+                <input className="form-field" type={el.type} min={new Date().toISOString().slice(0, 10)} value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
+            )
         } else {
             return (
-                <input className="form-field" type={el.type} value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
-                
+                <input className="form-field" type={el.type} min="1" max="6" value={el.value} onChange={(event) => {this.props.getInputValueFunc(el.name, event.target.value)}} ></input>
             )
         }
     }

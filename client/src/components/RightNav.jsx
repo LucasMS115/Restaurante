@@ -47,7 +47,7 @@ const RightNav = ({ open }) => {
 
       <div className="nav-bar">
         <Ul open={open}>
-            <NavBt path="/" name="Incio"/>
+            <NavBt path="/" name="Início"/>
             <NavBt path="/menu" name="Cardápio"/>
             <NavBt path="/reserves" name="Reservas"/>
             <NavBt path="/user" name="Conta"/>

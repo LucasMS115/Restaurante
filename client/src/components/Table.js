@@ -4,6 +4,18 @@ import './styles/Table.css'
 
 class Table extends Component {
 
+    rowStyle = (day) => {
+        const today = new Date().toISOString().slice(0, 10);
+        console.log(today)
+        console.log(this.props.rows.day);
+        console.log(day)
+        if (today > day){
+            console.log("passou");
+            return {backgroundColor: "grey"}
+        } 
+        return {backgroundColor: "white"}
+    }
+
     render() {
         return (
             <div className="table-container">
@@ -19,8 +31,8 @@ class Table extends Component {
                     </thead>
                     
                     {this.props.rows.map((el) => (
-                        <tbody key={el.id}>
-                            <tr>
+                        <tbody style={this.rowStyle.bind(this, el.day)()} key={el.id}>
+                            <tr >
                                 <td className="table-item">{el.name}</td>
                                 <td className="table-item">{el.people}</td>
                                 <td className="table-item">{el.day}</td>

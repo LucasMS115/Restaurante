@@ -53,8 +53,10 @@ class Reserves extends Component {
                     {
                         text: "Horário:",
                         name: "horario",
-                        type: "time",
-                        value: "",
+                        type: "select",
+                        options: ["", "11:00:00", "12:00:00", "13:00:00","14:00:00","19:00:00",
+                            "20:00:00", "21:00:00", "22:00:00"],
+                        value: ""
                     },
                 ],
                 [
@@ -162,7 +164,7 @@ class Reserves extends Component {
             let inputs = this.state.formContent;
             inputs[2] = [
                 "Em nome de: " + this.state.nome,
-                "Mesa para: s" + this.state.qntPessoas,
+                "Mesa para: " + this.state.qntPessoas,
                 "Celular: " + this.state.celular,
                 "Email: " + this.state.email,
                 " ",
@@ -215,7 +217,7 @@ class Reserves extends Component {
     }
 
     addReserve = () => {
-        const hour = this.state.horario + ":00";
+        const hour = this.state.horario;
         let id;
         this.props.token !== null ? id = this.props.token: id = 1;
 
@@ -267,7 +269,7 @@ class Reserves extends Component {
                     getInputValueFunc={this.getInputValue}
                 />
 
-                <div style={{ display: this.state.alertDisplay, marginTop: "-2rem" }}>
+                <div style={{ display: this.state.alertDisplay, marginTop: "-4rem" }}>
                     <Alert 
                         text="Por favor preencha todos os campos antes de prosseguir"
                         func={this.hideAlert}

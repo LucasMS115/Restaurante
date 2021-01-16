@@ -51,14 +51,14 @@ select {
 
 .form-field{
     height: 1rem;
-    width: 40vw;
+    width: 38vw;
     margin: 1rem;
     padding: 1rem 
 }
 
 .form-select{
     height: 3.5rem;
-    width: 30vw;
+    width: 40vw;
     margin: 1rem;
 }
 
@@ -304,13 +304,12 @@ select {
 
     .form-field{
         height: 3rem;
-        width: 60vw;
-
+        width: 38vw;
     }
     
     .form-select{
         height: 6rem;
-        width: 40vw;
+        width: 42vw;
     }
 
     .form-text-area{
@@ -350,6 +349,10 @@ select {
 
 
 @media (max-width: 768px) {
+
+    .form-field{
+        width: 37vw;
+    }
 
     .nav-btn {
         margin: 2rem 0 0 4rem;
