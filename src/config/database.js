@@ -8,6 +8,9 @@ module.exports = {
   "port": "5432",
   "host": process.env.HOST,
   "dialect": "postgres",
+  "dialectOptions": {
+    "ssl": true
+  },
   "define": {
     "timestamps": true,
     "underscored": true,
