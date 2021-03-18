@@ -9,7 +9,9 @@ module.exports = {
   "host": process.env.HOST,
   "dialect": "postgres",
   "dialectOptions": {
-    "ssl": true
+    "ssl": {
+        "rejectUnauthorized": false
+    }
   },
   "define": {
     "timestamps": true,
