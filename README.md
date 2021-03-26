@@ -16,6 +16,9 @@ Running here: https://restaurante-sintese.netlify.app/#/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+<p>------------------------------------------------------------------------------------------------------------------------------</p>
+
 <p>O projeto consiste em uma ideia de SPA para um sistema de reservas online de um restaurante, ele se encontra funcional e responsivo, porém não foram implementadas medidas de segurança em relação ao login dos usuários. Ele contém uma home page de apresentação, uma página com os formulários para a realização das reservas, uma página de cardápio que mostra pratos e preços e possui alguns filtros por tipo, uma página de login, uma página do usuário onde é possível visualizar as reservas feitas ou alterar informações cadastrais. Também há uma página de administrador para a visualização das reservas feitas e gerência dos pratos disponíveis no cardápio.</p>
 
 <p> O back-end consiste de uma restfull API feita em Node.js, PostgreSQL e Sequelize ORM, esta se encontra na pasta raiz deste repositório. O front-end foi feito em React.js e se encontra na pasta “client” deste repositório. </p>
