@@ -29,7 +29,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <p>Apenas isto já torna possível a execução local do front, basta executar o comando npm run client no diretório raiz, ou npm run start no diretório client. A aplicação iniciará na porta 3000 do seu localhost utilizando a API hospedada no https://www.heroku.com/.</p>
 
-<p>Para utilizar uma API local, crie um BD no PostgresSQL da maneira que preferir, e crie um arquivo “.env” com as variáveis a seguir e preencha de acordo com as informações do seu banco.</p>
+<p>Para utilizar uma API local, crie um BD no PostgresSQL da maneira que preferir, e crie um arquivo “.env” na pasta raiz do projeto com as variáveis a seguir e preencha de acordo com as informações do seu banco.</p>
 
 <p>
 NODE_ENV=dev <br>
