@@ -54,22 +54,22 @@ Vale lembrar também que a configuração de conexão do sequelize está em ./sr
 
 <h2>Alguns vídeos que serviram como base para a construção da aplicação:</h2>
 
-<p>-Iniciando com react</p>
-https://youtu.be/sBws8MSXN7A
-https://youtu.be/Law7wfdg_ls
+<span>-Iniciando com react</span>
+<p>https://youtu.be/sBws8MSXN7A <br>
+<p>https://youtu.be/Law7wfdg_ls</p>
 
-<p>-Context API</p>
-https://youtu.be/FVxdFxxkdDI
+<span>-Context API</span>
+<p>https://youtu.be/FVxdFxxkdDI</p>
 
-<p>Nav-bar responsiva com styled-components</p>
-https://youtu.be/GGkBwpxV7AI
+<span>Nav-bar responsiva com styled-components</span>
+<p>https://youtu.be/GGkBwpxV7AI</p>
 
-<p>- Sequelize</p>
-https://youtu.be/mpKXSe08yqA
-https://youtu.be/Fbu7z5dXcRs
-
-<p>-A respeito do upload de imagens:</p>
-https://youtu.be/MkkbUfcZUZM
+<span>- Sequelize</span>
+<p>https://youtu.be/mpKXSe08yqA <br>
+https://youtu.be/Fbu7z5dXcRs</p>
+</p>
+<span>-A respeito do upload de imagens:</span>
+<p>https://youtu.be/MkkbUfcZUZM</p>
 
 <p>Link do design original: https://www.figma.com/file/80SIALyhhM0GZ34m5YzGsG/Restaurante-S%C3%ADntese?node-id=0%3A1 </p>
 
