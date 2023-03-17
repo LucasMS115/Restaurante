@@ -1,7 +1,7 @@
 # Restaurante
 
 Running here: https://restaurante-sintese.netlify.app/#/
-OBS: the projects back end was running with heroku free dynos. So, it is not running anymore :(
+OBS: the project back-end was running with heroku free dynos. So, it is not running anymore :(
 
 <p>SPA template for a restaurant with a reservation, login and adm systems using Node.js, Postgresql, Sequelize and React.js</p>
 
